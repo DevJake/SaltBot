@@ -59,6 +59,7 @@ public class FileLogger {
         if (this.header == null) {
             throw new MalformedParametersException("The specified eventName could not be found or isn't listed");
         }
+
         this.eventName = eventName.substring(0, eventName.length() - 5).concat("Log");
         dir = new File("Data/Logger/"
                 + guild.getName()
@@ -111,5 +112,5 @@ public class FileLogger {
 
     public void setLogToConsole(boolean LogToConsole) {
         this.consoleLog = LogToConsole;
-        }
-        }
+    }
+}

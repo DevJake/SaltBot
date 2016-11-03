@@ -39,13 +39,13 @@ public class Main {
 
     public static void handleCommand(CommandParser.CommandContainer cmd) {
         if (commands.containsKey(cmd.getCmd())) {
-            boolean safe = commands.get(cmd.getCmd()).called(cmd.getArgs(), cmd.getEvent());
+            boolean safe = commands.get(cmd.getCmd()).called(cmd);
 
             if (safe) {
-                commands.get(cmd.getCmd()).action(cmd.getRaw(), cmd.getCmd(), cmd.getBeheaded(), cmd.getSplitBeheaded(), cmd.getArgs(), cmd.getArgsUpper(), cmd.getEvent());
-                commands.get(cmd.getCmd()).executed(safe, cmd.getEvent());
+                commands.get(cmd.getCmd()).action(cmd);
+                commands.get(cmd.getCmd()).executed(safe);
             } else {
-                commands.get(cmd.getCmd()).executed(safe, cmd.getEvent());
+                commands.get(cmd.getCmd()).executed(safe);
             }
         }
     }
