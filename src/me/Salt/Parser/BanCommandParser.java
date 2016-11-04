@@ -8,23 +8,36 @@ import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by zuezy on 03/11/2016.
- */
 public class BanCommandParser {
+    private User bannedUser = null;
+
+    private final String ERROR_NO_USER_SPECIFIED = "No user was specified";
+    private final String ERROR_USER_NOT_FOUND = "The user could not be found";
 
     public BanCommandContainer parse(CommandParser.CommandContainer cmd) {
+
         List<User> users = cmd.getEvent().getGuild().getUsersByName(cmd.getArgs()[0]);
         if (users.size() <= 1) {
-            cmd.getEvent().getTextChannel().sendMessage("No user was specified!");
+            cmd.getEvent().getTextChannel().sendMessage(ERROR_NO_USER_SPECIFIED);
             return null; // Incorrect arguments, retry command
         }
 
         for (User user : users) {
             if (user == null) {
-                cmd.getEvent().getTextChannel().sendMessage("The user specified could not be found!");
+                cmd.getEvent().getTextChannel().sendMessage(ERROR_USER_NOT_FOUND);
                 break;
+                return null;
             }
+
+            if (user.getUsername().contains(cmd.getArgs()[0])){
+                bannedUser = user;
+            }
+
+        }
+
+        if (bannedUser==null){
+            cmd.getEvent().getTextChannel().sendMessage(ERROR_NO_USER_SPECIFIED);
+            return null;
         }
 
         for (String arg : cmd.getArgs()) {
@@ -34,7 +47,7 @@ public class BanCommandParser {
 
             }
         }
-        return new BanCommandContainer(cmd.getEvent().getAuthor(), cmd.getEvent().getGuild(), new Date(), , cmd.getEvent());
+        return new BanCommandContainer(cmd.getEvent().getAuthor(), bannedUser, cmd.getEvent().getGuild(), new Date(), , cmd.getEvent());
     }
 
     public class BanCommandContainer {
