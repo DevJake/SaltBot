@@ -6,6 +6,7 @@ import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by zuezy on 03/11/2016.
@@ -13,7 +14,27 @@ import java.util.Date;
 public class BanCommandParser {
 
     public BanCommandContainer parse(CommandParser.CommandContainer cmd) {
-        return new BanCommandContainer();
+        List<User> users = cmd.getEvent().getGuild().getUsersByName(cmd.getArgs()[0]);
+        if (users.size() <= 1) {
+            cmd.getEvent().getTextChannel().sendMessage("No user was specified!");
+            return null; // Incorrect arguments, retry command
+        }
+
+        for (User user : users) {
+            if (user == null) {
+                cmd.getEvent().getTextChannel().sendMessage("The user specified could not be found!");
+                break;
+            }
+        }
+
+        for (String arg : cmd.getArgs()) {
+            if (arg.startsWith("d:")) {
+
+            } else if (arg.startsWith("r:")) {
+
+            }
+        }
+        return new BanCommandContainer(cmd.getEvent().getAuthor(), cmd.getEvent().getGuild(), new Date(), , cmd.getEvent());
     }
 
     public class BanCommandContainer {
@@ -21,18 +42,18 @@ public class BanCommandParser {
         private Guild guild;
         private Date banTime;
         private String banReason;
-        private Date banDuration;
+        private int banDuration;
         private MessageReceivedEvent event;
         private boolean isTempBan;
 
-        public BanCommandContainer(User banner, Guild guild, Date banTime, String banReason, Date banDuration, MessageReceivedEvent event) {
+        public BanCommandContainer(User banner, User bannedUser, Guild guild, Date banTime, String banReason, int banDuration, MessageReceivedEvent event) {
             this.banner = banner;
             this.guild = guild;
             this.banTime = banTime;
             this.banReason = banReason;
             this.banDuration = banDuration;
             this.event = event;
-            this.isTempBan = banDuration.getTime() > 0;
+            this.isTempBan = banDuration > 0;
         }
 
         public boolean isTempBan() {

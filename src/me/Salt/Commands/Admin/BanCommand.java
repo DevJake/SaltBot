@@ -11,6 +11,7 @@ public class BanCommand implements Command {
 
     private BanCommandParser.BanCommandContainer bc;
 
+
     @Override
     public boolean called(CommandParser.CommandContainer cmd) {
         bc = new BanCommandParser().parse(cmd);
