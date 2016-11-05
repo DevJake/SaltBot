@@ -1,4 +1,4 @@
-package me.Salt.Parser.Commands.Admin;
+package me.Salt.Parser.Admin;
 
 /**
  * Created by Salt001 on 05/11/2016.

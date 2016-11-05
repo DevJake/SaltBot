@@ -1,4 +1,4 @@
-package me.Salt.Parser.Commands;
+package me.Salt.Parser;
 
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 

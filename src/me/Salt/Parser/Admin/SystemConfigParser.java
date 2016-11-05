@@ -1,6 +1,6 @@
-package me.Salt.Parser.Commands.Admin;
+package me.Salt.Parser.Admin;
 
-import me.Salt.Parser.Commands.CommandParser;
+import me.Salt.Parser.CommandParser;
 
 /**
  * Created by Salt001 on 05/11/2016.

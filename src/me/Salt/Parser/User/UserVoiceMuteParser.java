@@ -1,4 +1,4 @@
-package me.Salt.Parser.Commands.User;
+package me.Salt.Parser.User;
 
 
 public class UserVoiceMuteParser {

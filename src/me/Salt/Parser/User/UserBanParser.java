@@ -1,11 +1,11 @@
-package me.Salt.Parser.Commands.User;
+package me.Salt.Parser.User;
 
 /**
  * Created by zuezy on 05/11/2016.
  */
-public class UserBanCommandParser {
+public class UserBanParser {
 
-    public UserBanCommandContainer parse() {
+    public UserBanContainer parse() {
 
         /**
          try {
@@ -15,6 +15,6 @@ public class UserBanCommandParser {
          }
          **/
 
-        return new UserBanCommandContainer();
+        return new UserBanContainer();
     }
 }
