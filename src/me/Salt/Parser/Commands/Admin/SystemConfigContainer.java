@@ -7,6 +7,6 @@ package me.Salt.Parser.Commands.Admin;
 public class SystemConfigContainer {
 
     public SystemConfigContainer(){
-        
+
     }
 }

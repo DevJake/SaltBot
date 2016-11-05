@@ -1,4 +1,4 @@
-package me.Salt.Parser.Commands.Guild;
+package me.Salt.Parser.Commands.User;
 
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.User;
@@ -6,7 +6,7 @@ import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 import java.util.Date;
 
-public class GuildBanCommandContainer {
+public class UserBanCommandContainer {
     private User banner;
     private User bannedUser;
     private Guild guild;
@@ -16,7 +16,7 @@ public class GuildBanCommandContainer {
     private MessageReceivedEvent event;
     private boolean isTempBan;
 
-    public GuildBanCommandContainer(User banner, User bannedUser, Guild guild, Date banTime, String banReason, Date banDuration, MessageReceivedEvent event) {
+    public UserBanCommandContainer(User banner, User bannedUser, Guild guild, Date banTime, String banReason, Date banDuration, MessageReceivedEvent event) {
         this.banner = banner;
         this.bannedUser = bannedUser;
         this.guild = guild;

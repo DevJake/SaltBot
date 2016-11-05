@@ -1,4 +1,4 @@
-package me.Salt.Parser.Channel;
+package me.Salt.Parser.Commands.Channel;
 
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.TextChannel;

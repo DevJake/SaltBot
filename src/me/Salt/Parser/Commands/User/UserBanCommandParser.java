@@ -1,11 +1,11 @@
-package me.Salt.Parser.Commands.Guild;
+package me.Salt.Parser.Commands.User;
 
 /**
  * Created by zuezy on 05/11/2016.
  */
-public class GuildBanCommandParser {
+public class UserBanCommandParser {
 
-    public GuildBanCommandContainer parse() {
+    public UserBanCommandContainer parse() {
 
         /**
          try {
@@ -15,6 +15,6 @@ public class GuildBanCommandParser {
          }
          **/
 
-        return new GuildBanCommandContainer();
+        return new UserBanCommandContainer();
     }
 }
