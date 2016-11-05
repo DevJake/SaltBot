@@ -1,4 +1,4 @@
-package me.Salt.Parser.Guild;
+package me.Salt.Parser.Commands.Guild;
 
 /**
  * Created by zuezy on 05/11/2016.

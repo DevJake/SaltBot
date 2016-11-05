@@ -1,6 +1,6 @@
-package me.Salt.Parser.Channel;
+package me.Salt.Parser.Commands.Channel;
 
-import me.Salt.Parser.CommandParser;
+import me.Salt.Parser.Commands.CommandParser;
 
 /**
  * Created by zuezy on 05/11/2016.
@@ -12,3 +12,5 @@ public class ChannelMuteCommandParser {
         return new ChannelMuteCommandContainer();
     }
 }
+
+

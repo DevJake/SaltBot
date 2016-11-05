@@ -1,12 +1,18 @@
-package me.Salt.Parser.Voice;
+package me.Salt.Parser.Commands.Channel;
 
 import net.dv8tion.jda.entities.Guild;
+import net.dv8tion.jda.entities.TextChannel;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 import java.util.Date;
 
-public class VoiceMuteCommandContainer {
+/**
+ * Created by Salt001 on 05/11/2016.
+ */
+
+public class ChannelMuteCommandContainer {
+    private TextChannel[] mutedChannels;
     private User muter;
     private User mutedUser;
     private Guild guild;
@@ -14,29 +20,21 @@ public class VoiceMuteCommandContainer {
     private String muteReason;
     private Date muteDuration;
     private MessageReceivedEvent event;
-    private boolean isTempMute;
 
-    public VoiceMuteCommandContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, MessageReceivedEvent event) {
-        this.muter = muter;
-        this.mutedUser = mutedUser;
-        this.guild = guild;
-        this.muteTime = muteTime;
-        this.muteReason = muteReason;
-        this.muteDuration = muteDuration;
-        this.event = event;
-        this.isTempMute = muteDuration.getTime() > 0;
+    public ChannelMuteCommandContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, TextChannel[] mutedChannels, MessageReceivedEvent event) {
+
     }
 
-    public boolean isTempMute() {
-        return isTempMute;
-    }
-
-    public MessageReceivedEvent getEvent() {
-        return event;
+    public TextChannel[] getMutedChannels() {
+        return mutedChannels;
     }
 
     public User getMuter() {
         return muter;
+    }
+
+    public User getMutedUser() {
+        return mutedUser;
     }
 
     public Guild getGuild() {
@@ -53,5 +51,9 @@ public class VoiceMuteCommandContainer {
 
     public Date getMuteDuration() {
         return muteDuration;
+    }
+
+    public MessageReceivedEvent getEvent() {
+        return event;
     }
 }

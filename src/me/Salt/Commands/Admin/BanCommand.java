@@ -1,7 +1,7 @@
 package me.Salt.Commands.Admin;
 
 import me.Salt.Parser.BanCommandParser;
-import me.Salt.Parser.CommandParser;
+import me.Salt.Parser.Commands.CommandParser;
 import me.Salt.Util.Command;
 
 /**

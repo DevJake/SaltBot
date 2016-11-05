@@ -1,7 +1,6 @@
 package me.Salt.Util;
 
-import me.Salt.Parser.CommandParser;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import me.Salt.Parser.Commands.CommandParser;
 
 /**
  * Created by zuezy on 06/08/2016.

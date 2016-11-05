@@ -1,4 +1,4 @@
-package me.Salt.Parser.Guild;
+package me.Salt.Parser.Commands.Guild;
 
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.User;
