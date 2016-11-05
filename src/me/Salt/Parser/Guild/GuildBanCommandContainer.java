@@ -4,12 +4,11 @@ import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class GuildBanCommandContainer {
     private User banner;
+    private User bannedUser;
     private Guild guild;
     private Date banTime;
     private String banReason;
@@ -19,16 +18,17 @@ public class GuildBanCommandContainer {
 
     public GuildBanCommandContainer(User banner, User bannedUser, Guild guild, Date banTime, String banReason, Date banDuration, MessageReceivedEvent event) {
         this.banner = banner;
+        this.bannedUser = bannedUser;
         this.guild = guild;
         this.banTime = banTime;
         this.banReason = banReason;
         this.event = event;
         this.isTempBan = banDuration.getTime() > 0;
-        try {
-            this.banDuration = new SimpleDateFormat("yyyyMMdd").parse(banDuration.toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        this.banDuration = banDuration;
+    }
+
+    public User getBannedUser() {
+        return bannedUser;
     }
 
     public boolean isTempBan() {
