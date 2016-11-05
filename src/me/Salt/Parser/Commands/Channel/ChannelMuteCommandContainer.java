@@ -21,9 +21,14 @@ public class ChannelMuteCommandContainer {
     private String muteReason;
     private Date muteDuration;
     private MessageReceivedEvent event;
+    private boolean notifyUser; //notify user of their inability to voice chat
 
-    public ChannelMuteCommandContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, TextChannel[] mutedChannels, MessageReceivedEvent event) {
+    public ChannelMuteCommandContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, TextChannel[] mutedChannels, boolean notifyUser, MessageReceivedEvent event) {
 
+    }
+
+    public boolean isNotifyUser() {
+        return notifyUser;
     }
 
     public TextChannel[] getMutedChannels() {
