@@ -1,4 +1,4 @@
-package me.Salt.Parser.Commands.Voice;
+package me.Salt.Parser.Commands.User;
 
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.User;
@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Created by Salt001 on 05/11/2016.
  */
-public class VoiceDeafenCommandContainer {
+public class UserDeafenCommandContainer {
     private User deafener;
     private User deafenedUser;
     private Guild guild;
@@ -19,7 +19,7 @@ public class VoiceDeafenCommandContainer {
     private Date deafenDuration;
     private VoiceChannel[] deafenedVoiceChannels;
 
-    public VoiceDeafenCommandContainer(User deafener, User deafenedUser, Guild guild, Date deafenTime, String deafenReason, Date deafenDuration, VoiceChannel[] deafenedVoiceChannels, MessageReceivedEvent event) {
+    public UserDeafenCommandContainer(User deafener, User deafenedUser, Guild guild, Date deafenTime, String deafenReason, Date deafenDuration, VoiceChannel[] deafenedVoiceChannels, MessageReceivedEvent event) {
         this.deafener = deafener;
         this.deafenedUser = deafenedUser;
         this.guild = guild;

@@ -1,4 +1,4 @@
-package me.Salt.Parser.Commands.Voice;
+package me.Salt.Parser.Commands.User;
 
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.User;
@@ -7,7 +7,7 @@ import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 import java.util.Date;
 
-public class VoiceMuteCommandContainer {
+public class UserVoiceMuteContainer {
     private User muter;
     private User mutedUser;
     private Guild guild;
@@ -18,7 +18,7 @@ public class VoiceMuteCommandContainer {
     private boolean isTempMute;
     private VoiceChannel[] mutedVoiceChannels;
 
-    public VoiceMuteCommandContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, VoiceChannel[] mutedVoiceChannels, MessageReceivedEvent event) {
+    public UserVoiceMuteContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, VoiceChannel[] mutedVoiceChannels, MessageReceivedEvent event) {
         this.muter = muter;
         this.mutedUser = mutedUser;
         this.guild = guild;
