@@ -1,4 +1,4 @@
-package me.Salt.Parser.Channel;
+package me.Salt.Parser.Admin.Channel;
 
 import me.Salt.Parser.CommandParser;
 

@@ -1,4 +1,4 @@
-package me.Salt.Parser.Channel;
+package me.Salt.Parser.Admin.User;
 
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.TextChannel;
@@ -11,9 +11,8 @@ import java.util.Date;
  * Created by Salt001 on 05/11/2016.
  */
 
-public class ChannelMuteContainer {
+public class UserTextChannelMuteContainer {
     private TextChannel[] mutedChannels;
-    private TextChannel[] mutedChannelIDs;
     private User muter;
     private User mutedUser;
     private Guild guild;
@@ -21,22 +20,13 @@ public class ChannelMuteContainer {
     private String muteReason;
     private Date muteDuration;
     private MessageReceivedEvent event;
-    private boolean notifyUser; //notify user of their inability to voice chat
 
-    public ChannelMuteContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, TextChannel[] mutedChannels, boolean notifyUser, MessageReceivedEvent event) {
+    public UserTextChannelMuteContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, TextChannel[] mutedChannels, MessageReceivedEvent event) {
 
-    }
-
-    public boolean isNotifyUser() {
-        return notifyUser;
     }
 
     public TextChannel[] getMutedChannels() {
         return mutedChannels;
-    }
-
-    public TextChannel[] getMutedChannelIDs() {
-        return mutedChannelIDs;
     }
 
     public User getMuter() {

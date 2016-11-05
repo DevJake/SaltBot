@@ -1,4 +1,4 @@
-package me.Salt.Parser.User;
+package me.Salt.Parser.Admin.User;
 
 /**
  * Created by zuezy on 05/11/2016.

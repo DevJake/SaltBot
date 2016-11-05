@@ -1,4 +1,4 @@
-package me.Salt.Parser.User;
+package me.Salt.Parser.Admin.User;
 
 import me.Salt.Parser.CommandParser;
 
