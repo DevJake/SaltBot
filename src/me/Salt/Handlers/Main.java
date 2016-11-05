@@ -6,7 +6,7 @@ import me.Salt.Commands.DeafenCommand;
 import me.Salt.Commands.MuteCommand;
 import me.Salt.Commands.TestCommand;
 import me.Salt.Listeners.EventListener;
-import me.Salt.Parser.Commands.CommandParser;
+import me.Salt.Parser.CommandParser;
 import me.Salt.Util.Command;
 import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
