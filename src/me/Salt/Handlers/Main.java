@@ -1,9 +1,9 @@
 package me.Salt.Handlers;
 
+import me.Salt.Commands.Admin.DeafenCommand;
+import me.Salt.Commands.Admin.MuteCommand;
 import me.Salt.Commands.ChangeNameCommand;
 import me.Salt.Commands.Channel.ChannelCommandHandler;
-import me.Salt.Commands.DeafenCommand;
-import me.Salt.Commands.MuteCommand;
 import me.Salt.Commands.TestCommand;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.CommandParser;

@@ -1,6 +1,5 @@
 package me.Salt.Commands.Admin;
 
-import me.Salt.Parser.BanCommandParser;
 import me.Salt.Parser.CommandParser;
 import me.Salt.Util.Command;
 
@@ -9,12 +8,9 @@ import me.Salt.Util.Command;
  */
 public class BanCommand implements Command {
 
-    private BanCommandParser.BanCommandContainer bc;
-
 
     @Override
     public boolean called(CommandParser.CommandContainer cmd) {
-        bc = new BanCommandParser().parse(cmd);
         return false;
     }
 

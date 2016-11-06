@@ -16,9 +16,9 @@ public class UserVoiceMuteContainer {
     private Date muteDuration;
     private MessageReceivedEvent event;
     private boolean isTempMute;
-    private VoiceChannel[] mutedVoiceChannels;
+    private VoiceChannel mutedVoiceChannel;
 
-    public UserVoiceMuteContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, VoiceChannel[] mutedVoiceChannels, MessageReceivedEvent event) {
+    public UserVoiceMuteContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, VoiceChannel mutedVoiceChannel, MessageReceivedEvent event) {
         this.muter = muter;
         this.mutedUser = mutedUser;
         this.guild = guild;
@@ -27,11 +27,11 @@ public class UserVoiceMuteContainer {
         this.muteDuration = muteDuration;
         this.event = event;
         this.isTempMute = muteDuration.getTime() > 0;
-        this.mutedVoiceChannels = mutedVoiceChannels;
+        this.mutedVoiceChannel = mutedVoiceChannel;
     }
 
-    public VoiceChannel[] getMutedVoiceChannels() {
-        return mutedVoiceChannels;
+    public VoiceChannel getMutedVoiceChannel() {
+        return mutedVoiceChannel;
     }
 
     public User getMutedUser() {
