@@ -1,5 +1,5 @@
 package me.Salt.Util;
 
-public class Permissions {
+public enum Permissions {
 
 }
