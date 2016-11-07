@@ -44,11 +44,12 @@ VOICECHANNEL_MULTIDEAFEN_STATE_DURATION,
   KICK_STATE_REASON,
   MULTIKICK_STATE_REASON,
 
-/*
-Admin -- Private VoiceChannel
+
+//Admin -- Private VoiceChannel
 
 PRIVATECHANNEL_STATE_WHITELIST_CMD,
-PRIVATECHANNEL_USE_WHITELIST_CONFIG, /*
+PRIVATECHANNEL_USE_WHITELIST_CONFIG, 
+/*
 Forces usage of guild config. Useful to ensure staff can never be restricted from a private VoiceChannel
 */
 
