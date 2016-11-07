@@ -1,6 +1,8 @@
 package me.Salt.Util;
 
-public enum Permissions { //Also used for Restrictions, as permission-states are neutral before being analysed for a prefix in the config file
+public enum Permissions { 
+  //Also used for Restrictions, as permission-states are neutral before being analysed for a prefix in the config file
+  
 //User banning
   BAN_USER_TEMP,
   BAN_USER_PERM,
