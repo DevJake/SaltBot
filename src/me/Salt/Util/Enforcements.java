@@ -47,16 +47,6 @@ VOICECHANNEL_MULTIDEAFEN_STATE_DURATION,
 /*
 Admin -- Private VoiceChannel
 
-A private VoiceChannel kicks all users out of the VoiceChannel of the executor. 
-An optional Whitelist can be provided, which prevents specific users from being kicked. 
-Users attempting to join the VoiceChannel will also be kicked. 
-A config whitelist can also be integrated, to allow default whitelist members. Ideal for quick-setup meetings. 
-A duration and reason can be provided, as well as a temporary new VoiceChannel name. 
-Private VoiceChannel's can be disabled by an alternate command. 
-After the disable command's execution, the private VoiceChannel owner cannot create new private VoiceChannel's for 30 seconds. 
-This prevents admin abuse.  
-*/
-
 PRIVATECHANNEL_STATE_WHITELIST_CMD,
 PRIVATECHANNEL_USE_WHITELIST_CONFIG, /*
 Forces usage of guild config. Useful to ensure staff can never be restricted from a private VoiceChannel
