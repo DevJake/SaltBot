@@ -64,10 +64,24 @@ public enum Permissions { //Also used for Restrictions, as permission-states are
   KICK_MULTIPLE_USERS_BY_ID,
   KICK_USER_BY_ROLE,
 
-/**
+/*
 Admin -- Private VoiceChannel
 
-**/
+A private VoiceChannel kicks all users out of the VoiceChannel of the executor. An optional Whitelist can be provided, which prevents specific users from being kicked. Users attempting to join the VoiceChannel will also be kicked. A config whitelist can also be integrated, to allow default whitelist members. Ideal for quick-setup meetings. A duration and reason can be provided, as well as a temporary new VoiceChannel name. Private VoiceChannel's can be disabled by an alternate command. After the disable command's execution, the private VoiceChannel owner cannot create new private VoiceChannel's for 30 seconds. This prevents admin abuse. 
+*/
+
+CREATE_PRIVATE_VOICECHANNEL,
+DELETE_PRIVATE_VOICECHANNEL,
+EDIT_PRIVATE_VOICECHANNEL_WHITELIST_CONFIG,
+EDIT_PRIVATE_VOICECHANNEL_WHITELIST_CMD,
+SET_PRIVATE_VOICECHANNEL_DURATION,
+SET_PRIVATE_VOICECHANNEL_REASON,
+SET_PRIVATE_VOICECHANNEL_TEMP_NAME,
+SET_PRIVATE_VOICECHANNEL_LOBBY_VOICECHANNEL_BY_NAME,
+SET_PRIVATE_VOICECHANNEL_LOBBY_BY_ID,
+BYPASS_PRIVATE_CHANNEL_COOLDOWN,
+BYPASS_PRIVATE_CHANNEL_WHITELIST
+
 
 //Permission editing
 //User config editing
