@@ -47,10 +47,29 @@ public enum Permissions { //Also used for Restrictions, as permission-states are
   MUTE_CHANNEL_BY_ID,
   MUTE_MULTIPLE_CHANNELS_BY_NAME,
   MUTE_MULTIPLE_CHANNELS_BY_ID,
-  MUTE_CHANNEL_CROSSGUILD
+  MUTE_CHANNEL_CROSSGUILD,
+
+
+//VoiceChannel deafening
+  DEAFEN_CHANNEL_TEMP,
+  DEAFEN_CHANNEL_PERM,
+  DEAFEN_CHANNEL_BY_NAME,
+  DEAFEN_CHANNEL_BY_ID,
+
+//User VoiceChannel kicking -- Kicks a user from their current VoiceChannel
+
+  KICK_USER_BY_NAME,
+  KICK_USER_BY_ID,
+  KICK_MULTIPLE_USERS_BY_NAME,
+  KICK_MULTIPLE_USERS_BY_ID,
+  KICK_USER_BY_ROLE,
+
+/**
+Admin -- Private VoiceChannel
+
+**/
 
 //Permission editing
-//VoiceChannel deafening
 //User config editing
 //Guild config editing
 //System config editing
