@@ -11,18 +11,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserVoiceMuteParser {
+    User mutedUser;
+    String muteReason;
+    Date muteDuration;
+    VoiceChannel voiceChannel;
 
     public UserVoiceMuteContainer parse(CommandParser.CommandContainer cmd) {
-        String muteReason = null;
-        Date muteDuration = null;
-        User[] mutedUsers = {};
+
 
         final String userPrefix = "u:";
         final String reasonPrefix = "r:";
         final String durationPrefix = "t:";
-        final String VoiceChannelPrefix = "c:";
+        final String VoiceChannelPrefix = "vc:";
 
-        VoiceChannel mutedVoiceChannel = null;
 
         if (!(cmd.getRaw().contains(userPrefix))) {
             cmd.getEvent().getTextChannel().sendMessage("You didn't specify a user! Use ***" + Main.cmdPrefix + cmd.getCmd() + " help*** to receive help");
@@ -30,48 +31,35 @@ public class UserVoiceMuteParser {
         }
 
         for (String arg : cmd.getArgs()) {
-            if (arg.startsWith(userPrefix)) {
-                if (arg.substring(userPrefix.length(), userPrefix.length() + 1).equals(" ")) {
-                    return null;
-                } else {
-                    cmd.getEvent().getGuild().getUsers().stream().filter(user -> user.getUsername().contains(arg.substring(userPrefix.length(), arg.length()))).forEach(user -> {
-                        System.out.println(user.getUsername());
-                        mutedUsers[mutedUsers.length] = user;
-                    });
+            if (arg.startsWith(userPrefix) && arg.length()>userPrefix.length()) {
+                try {
+                    mutedUser = Main.jda.getUsersByName(arg.substring(userPrefix.length(), arg.length())).get(0);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
-            } else if (arg.startsWith(reasonPrefix)) {
-                if (arg.substring(reasonPrefix.length(), reasonPrefix.length() + 1).equals(" ")) {
-                    return null;
-                } else {
-                    System.out.println(arg);
-                    muteReason = arg;
+            } else if (arg.startsWith(reasonPrefix) && arg.length()>reasonPrefix.length()){
+                muteReason = arg.substring(reasonPrefix.length(), arg.length());
+            } else if (arg.startsWith(durationPrefix) && arg.length()>durationPrefix.length()){
+                try {
+                    muteDuration = new SimpleDateFormat("yyyyMMdd").parse(arg.substring(durationPrefix.length(), arg.length()));
+                } catch (ParseException ex){
+                    ex.printStackTrace();
                 }
-            } else if (arg.startsWith(durationPrefix)) {
-                if (arg.substring(durationPrefix.length(), durationPrefix.length() + 1).equals(" ")) {
-                    return null;
-                } else {
-                    try {
-                        muteDuration = new SimpleDateFormat("yyyyMMdd").parse(arg);
-                    } catch (ParseException ex) {
-                        ex.printStackTrace();
-                    }
-                }
-            } else if (arg.startsWith(VoiceChannelPrefix)) {
-                if (arg.substring(durationPrefix.length(), durationPrefix.length() + 1).equals(" ")) {
-                    return null;
-                } else {
-                    if (Main.jda.getVoiceChannelByName(arg.substring(VoiceChannelPrefix.length(), arg.length())).size() < 1) {
-                        cmd.getEvent().getTextChannel().sendMessage("The VoiceChannel(s) specified could not be found!");
-                        return null;
-                    } else {
-                        mutedVoiceChannel = Main.jda.getVoiceChannelByName(arg.substring(VoiceChannelPrefix.length(), arg.length())).get(0);
-                    }
+            } else if (arg.startsWith(VoiceChannelPrefix) && arg.length()>VoiceChannelPrefix.length()){
+                try {
+                    voiceChannel = Main.jda.getVoiceChannelByName(arg.substring(VoiceChannelPrefix.length(), VoiceChannelPrefix.length())).get(0);
+                } catch (Exception ex){
+                    ex.printStackTrace();
                 }
             }
 
         }
 
-        return new UserVoiceMuteContainer(cmd.getEvent().getAuthor(), mutedUsers, cmd.getEvent().getGuild(), new Date(), muteReason, muteDuration, mutedVoiceChannel, cmd.getEvent());
+        if (mutedUser==null || muteDuration==null || muteReason==null || voiceChannel==null){
+            return null;
+        }
+
+        return new UserVoiceMuteContainer(cmd.getEvent().getAuthor(), mutedUser, cmd.getEvent().getGuild(), new Date(), muteReason, muteDuration, voiceChannel, cmd.getEvent());
     }
 
 }
