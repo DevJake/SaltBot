@@ -6,9 +6,9 @@ import me.Salt.Parser.CommandParser;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.entities.VoiceChannel;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class UserVoiceMuteParser {
     User mutedUser;
@@ -28,31 +28,57 @@ public class UserVoiceMuteParser {
         List<User> mutedUsers = new ArrayList<>();
 
 
-        for (String arg : cmd.getArgs()){
-            if (arg.startsWith(prefixes.get(0))){
+        for (String arg:cmd.getArgs()) {
+            if (!(arg.startsWith(prefixes.get(0)) || arg.startsWith(prefixes.get(1)) || arg.startsWith(prefixes.get(2)) || arg.startsWith(prefixes.get(3)))) {
+                cmd.getEvent().getTextChannel().sendMessageAsync("Please wrap text with spaces in quotation marks (\") or apostrophes (\')", null);
+                return null;
+            }
+        }
+
+        if (cmd.getArgs().length>prefixes.size()) {
+            cmd.getEvent().getTextChannel().sendMessageAsync("The limit of arguments is " + prefixes.size(), null);
+            return null;
+        }
+
+        for (String arg : cmd.getArgs()) {
+            if (arg.equalsIgnoreCase(prefixes.get(0))){
+                cmd.getEvent().getTextChannel().sendMessageAsync("Parameter \"" + prefixes.get(0) + "\" specifies no data", null);
+                return null;
+            }
+            if (arg.startsWith(prefixes.get(0))) {
                 for (String a : arg.substring(prefixes.get(0).length(), arg.length()).split(";")) {
-                    for (User user : Main.jda.getUsers()){
-                        if (user.getUsername().contains(a) || user.getId().equals(a)){
+                    a = a.replace("\"", "");
+                    a = a.replace("'", "");
+
+                    if (a.equals("") || a.contains(" ")){
+                        cmd.getEvent().getTextChannel().sendMessageAsync("You cannot query quotation marks (\") or apostrophes (\')", null);
+                        return null;
+                    }
+
+                    for (User user : Main.jda.getUsers()) {
+                        if (user.getUsername().toLowerCase().contains(a.toLowerCase()) || user.getId().equals(a)) {
                             mutedUsers.add(mutedUsers.size(), user);
                         }
+                    }
+
+                    if (mutedUsers.size() <= 0) {
+                        cmd.getEvent().getTextChannel().sendMessageAsync("No users could be found!", null);
+                        return null;
                     }
                 }
 
                 StringBuilder sb = new StringBuilder();
                 sb.append("```\n");
-                for (User user : mutedUsers){
+                for (User user : mutedUsers) {
                     sb.append(user.getUsername() + "\n");
                 }
                 sb.append("```");
                 cmd.getEvent().getTextChannel().sendMessage(sb.toString());
 
-            } else if (arg.startsWith(prefixes.get(1))){
+            } else if (arg.startsWith(prefixes.get(1))) {
 
             }
         }
-
-
-
 
 
 //        if (!(cmd.getRaw().contains(userPrefix))) {
