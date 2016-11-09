@@ -1,8 +1,10 @@
 package me.Salt.Commands.Admin;
 
+import me.Salt.Parser.CommandParser;
 import me.Salt.Util.Command;
 import me.Salt.Handlers.Main;
 import net.dv8tion.jda.entities.User;
+import net.dv8tion.jda.events.Event;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.exceptions.PermissionException;
 
@@ -15,12 +17,14 @@ public class DeafenCommand implements Command {
     private final String HELP = "USAGE: " + Main.cmdPrefix + "deafen [Username] [Duration]";
 
     @Override
-    public boolean called(String[] args, MessageReceivedEvent event) {
+    public boolean called(CommandParser.CommandContainer cmd) {
         return true;
     }
 
     @Override
-    public void action(String raw, String cmd, String beheaded, String splitBeheaded[], String[] args, String[] argsUpper, MessageReceivedEvent event) {
+    public void action(CommandParser.CommandContainer cmd) {
+        MessageReceivedEvent event = cmd.getEvent();
+        String[] args = cmd.getArgs();
 
         Iterator<User> users = event.getGuild().getVoiceStatusOfUser(event.getAuthor()).getChannel().getUsers().iterator();
         int count = 0;
@@ -70,7 +74,7 @@ public class DeafenCommand implements Command {
     }
 
     @Override
-    public void executed(boolean success, MessageReceivedEvent event) {
+    public void executed(boolean success) {
 
     }
 }
