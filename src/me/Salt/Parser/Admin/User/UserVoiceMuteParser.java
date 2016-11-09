@@ -28,29 +28,40 @@ public class UserVoiceMuteParser {
         List<User> mutedUsers = new ArrayList<>();
 
 
-        for (String arg:cmd.getArgs()) {
+        for (String arg : cmd.getArgs()) {
             if (!(arg.startsWith(prefixes.get(0)) || arg.startsWith(prefixes.get(1)) || arg.startsWith(prefixes.get(2)) || arg.startsWith(prefixes.get(3)))) {
                 cmd.getEvent().getTextChannel().sendMessageAsync("Please wrap text with spaces in quotation marks (\") or apostrophes (\')", null);
                 return null;
             }
         }
 
-        if (cmd.getArgs().length>prefixes.size()) {
+        if (cmd.getArgs().length > prefixes.size()) {
             cmd.getEvent().getTextChannel().sendMessageAsync("The limit of arguments is " + prefixes.size(), null);
             return null;
         }
 
         for (String arg : cmd.getArgs()) {
-            if (arg.equalsIgnoreCase(prefixes.get(0))){
+            if (arg.equalsIgnoreCase(prefixes.get(0))) {
                 cmd.getEvent().getTextChannel().sendMessageAsync("Parameter \"" + prefixes.get(0) + "\" specifies no data", null);
                 return null;
+            } else if (arg.equalsIgnoreCase(prefixes.get(1))) {
+                cmd.getEvent().getTextChannel().sendMessageAsync("Parameter \"" + prefixes.get(1) + "\" specifies no data", null);
+                return null;
+            } else if (arg.equalsIgnoreCase(prefixes.get(2))) {
+                cmd.getEvent().getTextChannel().sendMessageAsync("Parameter \"" + prefixes.get(2) + "\" specifies no data", null);
+                return null;
+            } else if (arg.equalsIgnoreCase(prefixes.get(3))) {
+                cmd.getEvent().getTextChannel().sendMessageAsync("Parameter \"" + prefixes.get(3) + "\" specifies no data", null);
+                return null;
             }
+
+
             if (arg.startsWith(prefixes.get(0))) {
                 for (String a : arg.substring(prefixes.get(0).length(), arg.length()).split(";")) {
                     a = a.replace("\"", "");
                     a = a.replace("'", "");
 
-                    if (a.equals("") || a.contains(" ")){
+                    if (a.equals("") || a.contains(" ")) {
                         cmd.getEvent().getTextChannel().sendMessageAsync("You cannot query quotation marks (\") or apostrophes (\')", null);
                         return null;
                     }
