@@ -9,16 +9,16 @@ import java.util.Date;
 
 public class UserVoiceMuteContainer {
     private User muter;
-    private User mutedUser;
+    private User[] mutedUser;
     private Guild guild;
     private Date muteTime;
-    private String muteReason;
-    private Date muteDuration;
+    private String[] muteReason;
+    private Date[] muteDuration;
     private MessageReceivedEvent event;
     private boolean isTempMute;
-    private VoiceChannel mutedVoiceChannel;
+    private VoiceChannel[] mutedVoiceChannel;
 
-    public UserVoiceMuteContainer(User muter, User mutedUser, Guild guild, Date muteTime, String muteReason, Date muteDuration, VoiceChannel mutedVoiceChannel, MessageReceivedEvent event) {
+    public UserVoiceMuteContainer(User muter, User[] mutedUser, Guild guild, Date muteTime, String[] muteReason, Date[] muteDuration, VoiceChannel[] mutedVoiceChannel, MessageReceivedEvent event) {
         this.muter = muter;
         this.mutedUser = mutedUser;
         this.guild = guild;
@@ -26,21 +26,17 @@ public class UserVoiceMuteContainer {
         this.muteReason = muteReason;
         this.muteDuration = muteDuration;
         this.event = event;
-        this.isTempMute = muteDuration.getTime() > 0;
         this.mutedVoiceChannel = mutedVoiceChannel;
     }
 
-    public VoiceChannel getMutedVoiceChannel() {
+    public VoiceChannel[] getMutedVoiceChannel() {
         return mutedVoiceChannel;
     }
 
-    public User getMutedUser() {
+    public User[] getMutedUser() {
         return mutedUser;
     }
 
-    public boolean isTempMute() {
-        return isTempMute;
-    }
 
     public MessageReceivedEvent getEvent() {
         return event;
@@ -58,11 +54,11 @@ public class UserVoiceMuteContainer {
         return muteTime;
     }
 
-    public String getMuteReason() {
+    public String[] getMuteReason() {
         return muteReason;
     }
 
-    public Date getMuteDuration() {
+    public Date[] getMuteDuration() {
         return muteDuration;
     }
 }

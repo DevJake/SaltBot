@@ -20,12 +20,12 @@ public class MuteCommand implements Command {
     @Override
     public boolean called(CommandParser.CommandContainer cmd) {
         c = new UserVoiceMuteParser().parse(cmd);
-        return false;
+        return true;
     }
 
     @Override
     public void action(CommandParser.CommandContainer cmd) {
-        cmd.getEvent().getTextChannel().sendMessage(c.getMutedUser().getUsername() + c.getMuteDuration().getTime() + c.getMutedVoiceChannel().getName() + c.getMuter().getUsername() + c.getMuteTime().getTime());
+
     }
 
     @Override
