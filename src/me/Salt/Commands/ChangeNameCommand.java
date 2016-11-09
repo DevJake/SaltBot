@@ -1,5 +1,6 @@
 package me.Salt.Commands;
 
+import me.Salt.Parser.CommandParser;
 import me.Salt.Util.Command;
 import me.Salt.Handlers.Main;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
@@ -11,7 +12,9 @@ public class ChangeNameCommand implements Command {
     private final String HELP = "USAGE: " + Main.cmdPrefix + "ChangeName [New bot name]";
 
     @Override
-    public boolean called(String[] args, MessageReceivedEvent event) {
+    public boolean called(CommandParser.CommandContainer cmd) {
+        MessageReceivedEvent event = cmd.getEvent();
+        String[] args = cmd.getArgs();
         if (args.length <= 0) {
             event.getTextChannel().sendMessage("You did not enter any arguments! " + event.getAuthor().getAsMention());
             return false;
@@ -25,7 +28,9 @@ public class ChangeNameCommand implements Command {
     }
 
     @Override
-    public void action(String raw, String cmd, String beheaded, String[] splitBeheaded, String[] args, String[] argsUpper, MessageReceivedEvent event) {
+    public void action(CommandParser.CommandContainer cmd) {
+        MessageReceivedEvent event = cmd.getEvent();
+        String[] args = cmd.getArgs();
         String oldName = Main.jda.getUserById("203821834108534785").getUsername();
         Main.jda.getAccountManager().setNickname(event.getGuild(), args[0]);
         event.getTextChannel().sendMessage(event.getAuthor().getUsername() +
@@ -33,7 +38,7 @@ public class ChangeNameCommand implements Command {
     }
 
     @Override
-    public void executed(boolean success, MessageReceivedEvent event) {
+    public void executed(boolean success) {
 
     }
 

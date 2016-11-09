@@ -1,5 +1,6 @@
 package me.Salt.Commands.Channel;
 
+import me.Salt.Parser.CommandParser;
 import me.Salt.Util.Command;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
@@ -8,17 +9,17 @@ import net.dv8tion.jda.events.message.MessageReceivedEvent;
  */
 public class SetupCommand implements Command {
     @Override
-    public boolean called(String[] args, MessageReceivedEvent event) {
+    public boolean called(CommandParser.CommandContainer cmd) {
         return true;
     }
 
     @Override
-    public void action(String raw, String cmd, String beheaded, String[] splitBeheaded, String[] args, String[] argsUpper, MessageReceivedEvent event) {
+    public void action(CommandParser.CommandContainer cmd) {
 
     }
 
     @Override
-    public void executed(boolean success, MessageReceivedEvent event) {
+    public void executed(boolean success) {
 
     }
 
