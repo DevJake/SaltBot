@@ -13,7 +13,7 @@ import net.dv8tion.jda.hooks.ListenerAdapter;
  */
 public class EventListener extends ListenerAdapter {
 
-    private static FileLogger fl = new FileLogger();
+    //private static FileLogger fl = new FileLogger();
 
     private boolean isCmdSafe(String content, Boolean isBot) {
         return (content.startsWith(Main.cmdPrefix) && !isBot);
@@ -27,8 +27,8 @@ public class EventListener extends ListenerAdapter {
         }
     }
 
-    @Override
-    public void onEvent(Event event) {
-        LoggerEventDistributor led = new LoggerEventDistributor(event);
-    }
+//    public void onEvent(Event event) {
+//        //TODO LoggerEventDistributor led = new LoggerEventDistributor(event);
+//    }
+//    Uncommenting results in events not being registered. Sort out LoggerEventDistributor, then remove onEvent method.
 }

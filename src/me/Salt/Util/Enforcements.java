@@ -67,5 +67,3 @@ PRIVATECHANNEL_STATE_TEMPNAME
 //General commands
 //Logging permissions
 }
-
-}
