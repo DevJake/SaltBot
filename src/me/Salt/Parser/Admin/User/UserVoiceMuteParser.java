@@ -5,18 +5,57 @@ import me.Salt.Handlers.Main;
 import me.Salt.Parser.CommandParser;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.entities.VoiceChannel;
+import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 public class UserVoiceMuteParser {
+    private static int durationInSeconds;
     User mutedUser;
     String muteReason;
     Date muteDuration;
     VoiceChannel voiceChannel;
+    MessageReceivedEvent event;
+    private HashMap<String, Integer> timeMap = new HashMap<>();
+
+    private void addTime(String timeScale, int duration) {
+        if (timeScale.equalsIgnoreCase("s") && duration > 500000000) {
+            event.getTextChannel().sendMessageAsync("The seconds cannot exceed 500 million", null);
+        } else if (timeScale.equalsIgnoreCase("m") && duration > 8000000) {
+            event.getTextChannel().sendMessageAsync("The minutes cannot exceed 8 million", null);
+        } else if (timeScale.equalsIgnoreCase("h") && duration > 138000) {
+            event.getTextChannel().sendMessageAsync("The hours cannot exceed 138,000", null);
+        } else if (timeScale.equalsIgnoreCase("d") && duration > 5000) {
+            event.getTextChannel().sendMessageAsync("The days cannot exceed 5000", null);
+        } else if (timeScale.equalsIgnoreCase("w") && duration > 800) {
+            event.getTextChannel().sendMessageAsync("The weeks cannot exceed 800", null);
+        } else {
+            if (timeScale.equalsIgnoreCase("s")) {
+                durationInSeconds = durationInSeconds + duration * timeMap.get(timeScale);
+            } else if (timeScale.equalsIgnoreCase("m")) {
+                durationInSeconds = durationInSeconds + duration * timeMap.get(timeScale);
+            } else if (timeScale.equalsIgnoreCase("h")) {
+                durationInSeconds = durationInSeconds + duration * timeMap.get(timeScale);
+            } else if (timeScale.equalsIgnoreCase("d")) {
+                durationInSeconds = durationInSeconds + duration * timeMap.get(timeScale);
+            } else if (timeScale.equalsIgnoreCase("w")) {
+                durationInSeconds = durationInSeconds + duration * timeMap.get(timeScale);
+            }
+
+            event.getTextChannel().sendMessageAsync("durationInSeconds: " + durationInSeconds, null);
+        }
+    }
 
     public UserVoiceMuteContainer parse(CommandParser.CommandContainer cmd) {
+        this.event = cmd.getEvent();
+        timeMap.put("s", 1);
+        timeMap.put("m", 60);
+        timeMap.put("h", 3600);
+        timeMap.put("d", 86400);
+        timeMap.put("w", 604800);
 
         final List<String> prefixes = new ArrayList<>();
 
@@ -33,6 +72,11 @@ public class UserVoiceMuteParser {
                 cmd.getEvent().getTextChannel().sendMessageAsync("Please wrap text with spaces in quotation marks (\") or apostrophes (\')", null);
                 return null;
             }
+        }
+
+        if (cmd.getArgs().length <= 0) {
+            cmd.getEvent().getTextChannel().sendMessageAsync("**You must specify the parameter, \"" + prefixes.get(0) + "\"**", null);
+            return null;
         }
 
         if (cmd.getArgs().length > prefixes.size()) {
@@ -86,8 +130,52 @@ public class UserVoiceMuteParser {
                 sb.append("```");
                 cmd.getEvent().getTextChannel().sendMessage(sb.toString());
 
-            } else if (arg.startsWith(prefixes.get(1))) {
 
+            } else if (arg.startsWith(prefixes.get(1))){
+
+            } else if (arg.startsWith(prefixes.get(2))) {
+                arg = arg.substring(prefixes.get(1).length(), arg.length());
+                arg = arg.replace("\"", "");
+                arg = arg.replace("'", "");
+
+                event.getTextChannel().sendMessage(arg);
+
+                if (arg.equals("") || arg.contains(" ")) {
+                    cmd.getEvent().getTextChannel().sendMessageAsync("You cannot query quotation marks (\") or apostrophes (\')", null);
+                    return null;
+                }
+
+                if (arg.length() > 1) {
+                    while (arg.contains("s") || arg.contains("m") || arg.contains("h") || arg.contains("d") || arg.contains("w") && arg.length()>1) {
+                        try {
+                            if (arg.indexOf("s") <= 1) {
+                                event.getTextChannel().sendMessageAsync(String.valueOf(arg.charAt(arg.indexOf("s") - 1)), null);
+                                addTime("s", Integer.valueOf(String.valueOf(arg.substring(0, arg.indexOf("s") - 1))));
+                                arg = arg.substring(arg.indexOf("s") + 1, arg.length());
+                            } else if (arg.indexOf("m") <= 1) {
+                                event.getTextChannel().sendMessageAsync(String.valueOf(arg.charAt(arg.indexOf("m") - 1)), null);
+                                addTime("m", Integer.valueOf(String.valueOf(arg.substring(0, arg.indexOf("m") - 1))));
+                                arg = arg.substring(arg.indexOf("m") + 1, arg.length());
+                            } else if (arg.indexOf("h") <= 1) {
+                                event.getTextChannel().sendMessageAsync(String.valueOf(arg.charAt(arg.indexOf("h") - 1)), null);
+                                addTime("h", Integer.valueOf(String.valueOf(arg.substring(0, arg.indexOf("h") - 1))));
+                                arg = arg.substring(arg.indexOf("h") + 1, arg.length());
+                            } else if (arg.indexOf("d") <= 1) {
+                                event.getTextChannel().sendMessageAsync(String.valueOf(arg.charAt(arg.indexOf("d") - 1)), null);
+                                addTime("d", Integer.valueOf(String.valueOf(arg.substring(0, arg.indexOf("d") - 1))));
+                                arg = arg.substring(arg.indexOf("d") + 1, arg.length());
+                            } else if (arg.indexOf("w") <= 1) {
+                                event.getTextChannel().sendMessageAsync(String.valueOf(arg.charAt(arg.indexOf("w") - 1)), null);
+                                addTime("w", Integer.valueOf(String.valueOf(arg.substring(0, arg.indexOf("w") - 1))));
+                                arg = arg.substring(arg.indexOf("w") + 1, arg.length());
+                            }
+                        } catch (ArrayIndexOutOfBoundsException|StringIndexOutOfBoundsException ex) {
+                            continue;
+                        }
+                    }
+                } else {
+                    cmd.getEvent().getTextChannel().sendMessageAsync("You can use `w, d, h, m, s`\nExample duration: 10m30s", null);
+                }
             }
         }
 

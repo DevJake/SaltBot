@@ -21,7 +21,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            jda = new JDABuilder().setBotToken("MjAzODIxODM0MTA4NTM0Nzg1.Cmuf6w.sFr92ghjfrWFpG-3bVp_aA05ph0").buildBlocking();
+            jda = new JDABuilder().setBotToken("MjQ2MzA5NDI1OTAyNjQ5MzQ1.CwZHLw.SDE5mlbpbOm0kjvbjNE3hO7gReI").buildBlocking();
             jda.addEventListener(new EventListener());
             jda.setAutoReconnect(true);
         } catch (LoginException e) {
