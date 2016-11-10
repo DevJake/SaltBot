@@ -1,7 +1,6 @@
 package me.Salt.Parser.Admin.User;
 
 
-import me.Salt.Handlers.Main;
 import me.Salt.Parser.CommandParser;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.entities.VoiceChannel;
@@ -15,12 +14,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserVoiceMuteParser {
-    private int durationInSeconds = 0;
     User mutedUser;
     String muteReason;
     Date muteDuration;
     VoiceChannel voiceChannel;
     MessageReceivedEvent event;
+    List<VoiceChannel> voiceChannels = new ArrayList<>();
+    List<User> mutedUsers = new ArrayList<>();
+    List<String> reasons = new ArrayList<>();
+    private int durationInSeconds = 0;
 
     private void addTime(String timeScale, int duration) {
         HashMap<String, Integer> timeMap = new HashMap<>();
@@ -43,15 +45,15 @@ public class UserVoiceMuteParser {
             event.getTextChannel().sendMessageAsync("The weeks cannot exceed 800", null);
         } else {
             if (timeScale.equalsIgnoreCase("s")) {
-                durationInSeconds+=duration;
+                durationInSeconds += duration;
             } else if (timeScale.equalsIgnoreCase("m")) {
-                durationInSeconds+=duration*60;
+                durationInSeconds += duration * 60;
             } else if (timeScale.equalsIgnoreCase("h")) {
-                durationInSeconds+=duration*3600;
+                durationInSeconds += duration * 3600;
             } else if (timeScale.equalsIgnoreCase("d")) {
-                durationInSeconds+=duration*86400;
+                durationInSeconds += duration * 86400;
             } else if (timeScale.equalsIgnoreCase("w")) {
-                durationInSeconds+=duration*604800;
+                durationInSeconds += duration * 604800;
             }
         }
     }
@@ -112,7 +114,7 @@ public class UserVoiceMuteParser {
                         return null;
                     }
 
-                    for (User user : Main.jda.getUsers()) {
+                    for (User user : event.getGuild().getUsers()) {
                         if (user.getUsername().toLowerCase().contains(a.toLowerCase()) || user.getId().equals(a)) {
                             mutedUsers.add(mutedUsers.size(), user);
                         }
@@ -124,16 +126,17 @@ public class UserVoiceMuteParser {
                     }
                 }
 
-                StringBuilder sb = new StringBuilder();
-                sb.append("```\n");
                 for (User user : mutedUsers) {
-                    sb.append(user.getUsername() + "\n");
+                    this.mutedUsers.add(user);
                 }
-                sb.append("```");
-                cmd.getEvent().getTextChannel().sendMessage(sb.toString());
 
 
-            } else if (arg.startsWith(prefixes.get(1))){
+            } else if (arg.startsWith(prefixes.get(1)) && !(arg.equalsIgnoreCase(prefixes.get(1)))) {
+                arg = arg.replaceFirst(prefixes.get(1), "");
+                String[] reasons = arg.split(";");
+                for (String reason : reasons) {
+                    this.reasons.add(reason);
+                }
 
             } else if (arg.startsWith(prefixes.get(2)) && !(arg.equalsIgnoreCase(prefixes.get(2)))) {
 
@@ -142,48 +145,35 @@ public class UserVoiceMuteParser {
 
                 List<String> times = new ArrayList<>();
 
-                if (!(Pattern.compile("\\d?\\d?\\d?\\d[smhdw]").matcher(arg)).find()){
+                if (!(Pattern.compile("\\d?\\d?\\d?\\d[smhdw]").matcher(arg)).find()) {
                     cmd.getEvent().getTextChannel().sendMessageAsync("You can use `w, d, h, m, s`\nExample duration: 10m30s", null);
                     return null;
                 }
 
-                while (pat.find()){
+                while (pat.find()) {
                     times.add(pat.group());
                     arg = arg.replaceFirst("\\d?\\d?\\d?\\d[smhdw]", "");
                 }
 
-                for (String item : times){
-                    addTime(item.substring(item.length()-1), Integer.parseInt(item.substring(0, item.length() - 1)));
+                for (String item : times) {
+                    addTime(item.substring(item.length() - 1), Integer.parseInt(item.substring(0, item.length() - 1)));
+                }
+
+
+            } else if (arg.startsWith(prefixes.get(3)) && !(arg.equalsIgnoreCase(prefixes.get(3)))) {
+
+                arg = arg.replaceFirst(prefixes.get(3), "");
+                String[] vcs = arg.split(";");
+                for (String a : vcs) {
+                    for (VoiceChannel vc : event.getGuild().getVoiceChannels()) {
+                        if (vc.getName().toLowerCase().contains(a.toLowerCase()) || vc.getId().equalsIgnoreCase(a)) {
+                            voiceChannels.add(vc);
+                        }
+                    }
                 }
             }
         }
-
-
-//        if (!(cmd.getRaw().contains(userPrefix))) {
-//            cmd.getEvent().getTextChannel().sendMessage("You didn't specify a user! Use ***" + Main.cmdPrefix + cmd.getCmd() + " help*** to receive help");
-//            return null;
-//        }
-//
-//        for (String arg : cmd.getArgs()) {
-//            if (arg.startsWith(userPrefix) && arg.length()>userPrefix.length()) {
-//                try {
-//                    mutedUser = Main.jda.getUsersByName(arg.substring(userPrefix.length(), arg.length())).get(0);
-//                } catch (Exception ex) {
-//                    ex.printStackTrace();
-//                }
-//            }
-//
-//        }
-
-//        if (mutedUser==null || muteDuration==null || muteReason==null || voiceChannel==null){
-//            return null;
-//        }
-
-//        System.out.println(cmd.getEvent().getAuthor() + "\n" + mutedUser + "\n" +
-//                cmd.getEvent().getGuild() + "\n" + new Date() + "\n" + muteReason +
-//                "\n" + muteDuration + "\n" + voiceChannel + "\n" + cmd.getEvent());
-
-        return new UserVoiceMuteContainer(null, null, null, null, null, null, null, null);
+        return new UserVoiceMuteContainer(cmd.getEvent().getAuthor(), this.mutedUsers, cmd.getEvent().getGuild(), new Date(), this.reasons, durationInSeconds, cmd.getEvent(), this.voiceChannels);
     }
 
 }
