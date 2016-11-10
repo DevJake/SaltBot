@@ -26,6 +26,8 @@ public class MuteCommand implements Command {
     @Override
     public void action(CommandParser.CommandContainer cmd) {
 
+
+        //Check user is actually online
     }
 
     @Override
