@@ -7,32 +7,20 @@ import net.dv8tion.jda.entities.VoiceChannel;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserVoiceMuteParser {
-    User mutedUser;
-    String muteReason;
-    Date muteDuration;
-    VoiceChannel voiceChannel;
-    MessageReceivedEvent event;
-    List<VoiceChannel> voiceChannels = new ArrayList<>();
-    List<User> mutedUsers = new ArrayList<>();
-    List<String> reasons = new ArrayList<>();
+    private MessageReceivedEvent event;
+    private List<VoiceChannel> voiceChannels = new ArrayList<>();
+    private List<User> mutedUsers = new ArrayList<>();
+    private List<String> reasons = new ArrayList<>();
     private int durationInSeconds = 0;
 
     private void addTime(String timeScale, int duration) {
-        HashMap<String, Integer> timeMap = new HashMap<>();
-
-        timeMap.put("s", 1);
-        timeMap.put("m", 60);
-        timeMap.put("h", 3600);
-        timeMap.put("d", 86400);
-        timeMap.put("w", 604800);
-
         if (timeScale.equalsIgnoreCase("s") && duration > 500000000) {
             event.getTextChannel().sendMessageAsync("The seconds cannot exceed 500 million", null);
         } else if (timeScale.equalsIgnoreCase("m") && duration > 8000000) {
@@ -67,9 +55,6 @@ public class UserVoiceMuteParser {
         prefixes.add("r:");
         prefixes.add("d:");
         prefixes.add("vc:");
-
-        List<User> mutedUsers = new ArrayList<>();
-
 
         for (String arg : cmd.getArgs()) {
             if (!(arg.startsWith(prefixes.get(0)) || arg.startsWith(prefixes.get(1)) || arg.startsWith(prefixes.get(2)) || arg.startsWith(prefixes.get(3)))) {
@@ -116,27 +101,20 @@ public class UserVoiceMuteParser {
 
                     for (User user : event.getGuild().getUsers()) {
                         if (user.getUsername().toLowerCase().contains(a.toLowerCase()) || user.getId().equals(a)) {
-                            mutedUsers.add(mutedUsers.size(), user);
+                            this.mutedUsers.add(user);
                         }
                     }
 
-                    if (mutedUsers.size() <= 0) {
+                    if (this.mutedUsers.size() <= 0) {
                         cmd.getEvent().getTextChannel().sendMessageAsync("No users could be found!", null);
                         return null;
                     }
                 }
 
-                for (User user : mutedUsers) {
-                    this.mutedUsers.add(user);
-                }
-
-
             } else if (arg.startsWith(prefixes.get(1)) && !(arg.equalsIgnoreCase(prefixes.get(1)))) {
                 arg = arg.replaceFirst(prefixes.get(1), "");
                 String[] reasons = arg.split(";");
-                for (String reason : reasons) {
-                    this.reasons.add(reason);
-                }
+                Collections.addAll(this.reasons, reasons);
 
             } else if (arg.startsWith(prefixes.get(2)) && !(arg.equalsIgnoreCase(prefixes.get(2)))) {
 
@@ -164,8 +142,8 @@ public class UserVoiceMuteParser {
 
                 arg = arg.replaceFirst(prefixes.get(3), "");
                 String[] vcs = arg.split(";");
-                for (String a : vcs) {
-                    for (VoiceChannel vc : event.getGuild().getVoiceChannels()) {
+                for (VoiceChannel vc : event.getGuild().getVoiceChannels()) {
+                    for (String a : vcs) {
                         if (vc.getName().toLowerCase().contains(a.toLowerCase()) || vc.getId().equalsIgnoreCase(a)) {
                             voiceChannels.add(vc);
                         }
