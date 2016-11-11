@@ -30,14 +30,27 @@ public class MuteCommand implements Command {
     public void action(CommandParser.CommandContainer cmd) {
         StringBuilder sb = new StringBuilder();
 
-        String n = c.getMuteDuration() <= 0 ? "Duration: Indefinite" : "Duration: " + c.getMuteDuration();
+        sb.append("```");
 
-        sb.append("```\n" + n);
-
-        for (User user : c.getMutedUsers()) {
-            if (user.getOnlineStatus().equals(OnlineStatus.ONLINE)) {
-                sb.append("\nUser: " + user.getUsername());
+        if (c.getMuteDuration() != null) {
+            for (Integer dur : c.getMuteDuration()){
+            if (dur >= 1){
+                sb.append("\nDuration: " + dur);
+            } else {
+                sb.append("\nDuration: Indefinite");
             }
+        }
+    }
+
+        if (c.getMutedUsers().size()>=1) {
+            for (User user : c.getMutedUsers()) {
+                if (user.getOnlineStatus().equals(OnlineStatus.ONLINE)) {
+                    sb.append("\nUser: " + user.getUsername());
+                }
+            }
+        } else {
+            c.getEvent().getTextChannel().sendMessageAsync("Required parameter `u:` had no data specified!", null);
+            return;
         }
 
         if (c.getMuteReasons()!=null) {
@@ -52,6 +65,7 @@ public class MuteCommand implements Command {
             }
         }
 
+        sb.append("\nSuccessive: " + c.isSuccessive());
         sb.append("```");
 
         c.getEvent().getTextChannel().sendMessageAsync(sb.toString(), null);

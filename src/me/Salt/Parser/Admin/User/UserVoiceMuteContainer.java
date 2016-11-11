@@ -14,11 +14,12 @@ public class UserVoiceMuteContainer {
     private Guild guild;
     private Date muteTime;
     private List<String> muteReasons;
-    private int muteDuration;
+    private List<Integer> muteDuration;
     private MessageReceivedEvent event;
     private List<VoiceChannel> mutedVoiceChannel;
+    private boolean isSuccessive;
 
-    public UserVoiceMuteContainer(User muter, List<User> mutedUsers, Guild guild, Date muteTime, List<String> muteReasons, int muteDuration, MessageReceivedEvent event, List<VoiceChannel> mutedVoiceChannel) {
+    public UserVoiceMuteContainer(User muter, List<User> mutedUsers, Guild guild, Date muteTime, List<String> muteReasons, List<Integer> muteDuration, MessageReceivedEvent event, List<VoiceChannel> mutedVoiceChannel, boolean isSuccessive) {
         this.muter = muter;
         this.mutedUsers = mutedUsers;
         this.guild = guild;
@@ -27,70 +28,43 @@ public class UserVoiceMuteContainer {
         this.muteDuration = muteDuration;
         this.event = event;
         this.mutedVoiceChannel = mutedVoiceChannel;
+        this.isSuccessive = isSuccessive;
     }
 
     public User getMuter() {
         return muter;
     }
 
-    public void setMuter(User muter) {
-        this.muter = muter;
-    }
-
     public List<User> getMutedUsers() {
         return mutedUsers;
-    }
-
-    public void setMutedUsers(List<User> mutedUsers) {
-        this.mutedUsers = mutedUsers;
     }
 
     public Guild getGuild() {
         return guild;
     }
 
-    public void setGuild(Guild guild) {
-        this.guild = guild;
-    }
-
     public Date getMuteTime() {
         return muteTime;
-    }
-
-    public void setMuteTime(Date muteTime) {
-        this.muteTime = muteTime;
     }
 
     public List<String> getMuteReasons() {
         return muteReasons;
     }
 
-    public void setMuteReasons(List<String> muteReasons) {
-        this.muteReasons = muteReasons;
-    }
-
-    public int getMuteDuration() {
+    public List<Integer> getMuteDuration() {
         return muteDuration;
-    }
-
-    public void setMuteDuration(int muteDuration) {
-        this.muteDuration = muteDuration;
     }
 
     public MessageReceivedEvent getEvent() {
         return event;
     }
 
-    public void setEvent(MessageReceivedEvent event) {
-        this.event = event;
-    }
-
     public List<VoiceChannel> getMutedVoiceChannel() {
         return mutedVoiceChannel;
     }
 
-    public void setMutedVoiceChannel(List<VoiceChannel> mutedVoiceChannel) {
-        this.mutedVoiceChannel = mutedVoiceChannel;
+    public boolean isSuccessive() {
+        return isSuccessive;
     }
 
 
