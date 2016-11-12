@@ -1,7 +1,7 @@
 package me.Salt.Parser.Admin.User;
 
 
-import me.Salt.Parser.CommandParser;
+import me.Salt.Parser.Command.CommandParser;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.entities.VoiceChannel;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;

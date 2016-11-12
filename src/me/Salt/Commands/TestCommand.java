@@ -1,12 +1,7 @@
 package me.Salt.Commands;
 
-import me.Salt.Parser.CommandParser;
+import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 
 /**
  * Created by zuezy on 14/09/2016.

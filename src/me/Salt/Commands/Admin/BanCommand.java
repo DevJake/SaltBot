@@ -1,6 +1,6 @@
 package me.Salt.Commands.Admin;
 
-import me.Salt.Parser.CommandParser;
+import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 
 /**

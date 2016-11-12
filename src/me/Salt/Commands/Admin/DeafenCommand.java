@@ -1,10 +1,9 @@
 package me.Salt.Commands.Admin;
 
-import me.Salt.Parser.CommandParser;
+import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 import me.Salt.Handlers.Main;
 import net.dv8tion.jda.entities.User;
-import net.dv8tion.jda.events.Event;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.exceptions.PermissionException;
 

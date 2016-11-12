@@ -1,6 +1,6 @@
 package me.Salt.Util;
 
-import me.Salt.Parser.CommandParser;
+import me.Salt.Parser.Command.CommandParser;
 
 /**
  * Created by zuezy on 06/08/2016.
