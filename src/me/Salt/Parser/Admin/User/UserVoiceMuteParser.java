@@ -60,7 +60,7 @@ public class UserVoiceMuteParser {
 
         for (String arg : cmd.getArgs()) {
             if (!(arg.contains("succ") || arg.startsWith(prefixes.get(0)) || arg.startsWith(prefixes.get(1)) || arg.startsWith(prefixes.get(2)) || arg.startsWith(prefixes.get(3)))) {
-                cmd.getEvent().getTextChannel().sendMessageAsync("Please wrap text with spaces in quotation marks (\") or apostrophes (\')", null);
+                cmd.getEvent().getTextChannel().sendMessageAsync("Please replace spaces with an underscore (\"_\")", null);
                 return null;
             }
         }
@@ -111,9 +111,8 @@ public class UserVoiceMuteParser {
             } else if (arg.startsWith(prefixes.get(1)) && !(arg.equalsIgnoreCase(prefixes.get(1)))) {
                 arg = arg.replaceFirst(prefixes.get(1), "");
                 String[] reasons = arg.split(";");
-                StringBuilder sb = new StringBuilder();
-                if (arg.startsWith("\"")){
-
+                for (String reason : reasons){
+                    reason = reason.replaceAll("_", " ");
                 }
 
                 Collections.addAll(this.reasons, reasons);
