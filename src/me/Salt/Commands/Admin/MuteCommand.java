@@ -5,6 +5,7 @@ import me.Salt.Parser.Admin.User.UserVoiceMuteContainer;
 import me.Salt.Parser.Admin.User.UserVoiceMuteParser;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
+import net.dv8tion.jda.OnlineStatus;
 import net.dv8tion.jda.Permission;
 import net.dv8tion.jda.utils.PermissionUtil;
 
@@ -27,6 +28,9 @@ public class MuteCommand implements Command {
 
         if (PermissionUtil.checkPermission(Main.jda.getUserById(Main.jda.getSelfInfo().getId()), Permission.VOICE_MUTE_OTHERS, cmd.getEvent().getGuild()) && c!=null) {
             for (int i = 0; i < c.getMutedUsers().size(); i++) {
+                if (!(c.getMutedUsers().get(i).getOnlineStatus().equals(OnlineStatus.ONLINE))){
+                    continue;
+                }
                 sb.append("`");
                 sb.append(c.getMutedUsers().get(i));
                 if (c.getMuteDuration().size() > i) {
