@@ -7,7 +7,10 @@ import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 import net.dv8tion.jda.OnlineStatus;
 import net.dv8tion.jda.Permission;
+import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.utils.PermissionUtil;
+
+import java.util.List;
 
 /**
  * Created by zuezy on 06/08/2016.
@@ -15,6 +18,7 @@ import net.dv8tion.jda.utils.PermissionUtil;
 public class MuteCommand implements Command {
 
     private UserVoiceMuteContainer c;
+    private List<User> users;
 
     @Override
     public boolean called(CommandParser.CommandContainer cmd) {
@@ -26,13 +30,19 @@ public class MuteCommand implements Command {
     public void action(CommandParser.CommandContainer cmd) {
         StringBuilder sb = new StringBuilder();
 
-        if (PermissionUtil.checkPermission(Main.jda.getUserById(Main.jda.getSelfInfo().getId()), Permission.VOICE_MUTE_OTHERS, cmd.getEvent().getGuild()) && c!=null) {
-            for (int i = 0; i < c.getMutedUsers().size(); i++) {
-                if (!(c.getMutedUsers().get(i).getOnlineStatus().equals(OnlineStatus.ONLINE))){
-                    continue;
+        if (c.getMutedUsers()!=null) {
+            users = c.getMutedUsers();
+            for (int i = 0;i<users.size();i++) {
+                if (!(users.get(i).getOnlineStatus().equals(OnlineStatus.ONLINE))) {
+                    users.remove(users.get(i));
                 }
+            }
+        }
+
+        if (PermissionUtil.checkPermission(Main.jda.getUserById(Main.jda.getSelfInfo().getId()), Permission.VOICE_MUTE_OTHERS, cmd.getEvent().getGuild()) && c!=null) {
+            for (int i = 0; i < users.size(); i++) {
                 sb.append("`");
-                sb.append(c.getMutedUsers().get(i));
+                sb.append("User: " + users.get(i).getUsername());
                 if (c.getMuteDuration().size() > i) {
                     if (c.getMuteDuration().get(i) > 1) {
                         sb.append("\nDuration: " + c.getMuteDuration().get(i));
@@ -45,15 +55,15 @@ public class MuteCommand implements Command {
                 }
 
                 if (c.getMuteReasons().size() > i) {
-                    sb.append(c.getMuteReasons().get(i));
+                    sb.append("\nReason: " + c.getMuteReasons().get(i));
                 } else {
-                    sb.append("--No Reason--");
+                    sb.append("\nReason: None");
                 }
 
                 if (c.getMutedVoiceChannel().size() > i) {
-                    sb.append(c.getMutedVoiceChannel().get(0).getName());
+                    sb.append("\nVoiceChannel: " + c.getMutedVoiceChannel().get(0).getName());
                 } else {
-                    sb.append("--No VoiceChannel--");
+                    sb.append("\nVoiceChannel: None");
                 }
 
                 sb.append("`");
