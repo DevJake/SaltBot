@@ -1,5 +1,6 @@
 package me.Salt.Commands.Admin;
 
+import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 import me.Salt.Handlers.Main;
@@ -16,8 +17,8 @@ public class DeafenCommand implements Command {
     private final String HELP = "USAGE: " + Main.cmdPrefix + "deafen [Username] [Duration]";
 
     @Override
-    public boolean called(CommandParser.CommandContainer cmd) {
-        return true;
+    public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
+        return false;
     }
 
     @Override

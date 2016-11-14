@@ -1,5 +1,6 @@
 package me.Salt.Commands.Channel;
 
+import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 
@@ -7,9 +8,10 @@ import me.Salt.Util.Command;
  * Created by zuezy on 21/09/2016.
  */
 public class SetupCommand implements Command {
+
     @Override
-    public boolean called(CommandParser.CommandContainer cmd) {
-        return true;
+    public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
+        return false;
     }
 
     @Override

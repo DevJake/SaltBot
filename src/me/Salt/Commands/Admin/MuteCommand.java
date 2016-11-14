@@ -12,7 +12,6 @@ import net.dv8tion.jda.Permission;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.utils.PermissionUtil;
 
-import java.net.ServerSocket;
 import java.util.List;
 
 /**
@@ -20,16 +19,13 @@ import java.util.List;
  */
 public class MuteCommand implements Command {
 
+    public MuteHandler m;
     private UserVoiceMuteContainer c;
     private List<User> users;
     private String waitResult;
     private EventListener eventListener;
 
-
-
-    public MuteHandler m;
-
-    public void setWaitResult(String input){
+    public void setWaitResult(String input) {
         this.waitResult = input;
     }
 
@@ -44,16 +40,16 @@ public class MuteCommand implements Command {
     public void action(CommandParser.CommandContainer cmd) {
         StringBuilder sb = new StringBuilder();
 
-        if (c.getMutedUsers()!=null) {
+        if (c.getMutedUsers() != null) {
             users = c.getMutedUsers();
-            for (int i = 0;i<users.size();i++) {
+            for (int i = 0; i < users.size(); i++) {
                 if (!(users.get(i).getOnlineStatus().equals(OnlineStatus.ONLINE))) {
                     users.remove(users.get(i));
                 }
             }
         }
 
-        if (PermissionUtil.checkPermission(Main.jda.getUserById(Main.jda.getSelfInfo().getId()), Permission.VOICE_MUTE_OTHERS, cmd.getEvent().getGuild()) && c!=null) {
+        if (PermissionUtil.checkPermission(Main.jda.getUserById(Main.jda.getSelfInfo().getId()), Permission.VOICE_MUTE_OTHERS, cmd.getEvent().getGuild()) && c != null) {
             for (int i = 0; i < users.size(); i++) {
                 c.getGuild().getManager().mute(users.get(i));
                 sb.append("Muted " + users.get(i));

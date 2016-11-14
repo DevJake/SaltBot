@@ -39,9 +39,6 @@ public class EventListener extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        for (CommandHandler waiter : waiters){
-            waiter.receive(event);
-        }
 
         if (isCmdSafe(event.getMessage().getContent(), event.getMessage().getAuthor().isBot())) {
             Main.handleCommand(new CommandParser().parse(

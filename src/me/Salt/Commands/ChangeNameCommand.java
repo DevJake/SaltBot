@@ -1,5 +1,6 @@
 package me.Salt.Commands;
 
+import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 import me.Salt.Handlers.Main;
@@ -12,7 +13,7 @@ public class ChangeNameCommand implements Command {
     private final String HELP = "USAGE: " + Main.cmdPrefix + "ChangeName [New bot name]";
 
     @Override
-    public boolean called(CommandParser.CommandContainer cmd) {
+    public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
         MessageReceivedEvent event = cmd.getEvent();
         String[] args = cmd.getArgs();
         if (args.length <= 0) {
