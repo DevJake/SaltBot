@@ -1,6 +1,8 @@
 package me.Salt.Commands.Admin;
 
 import me.Salt.Handlers.Main;
+import me.Salt.Handlers.MuteHandler.MuteHandler;
+import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Admin.User.UserVoiceMuteContainer;
 import me.Salt.Parser.Admin.User.UserVoiceMuteParser;
 import me.Salt.Parser.Command.CommandParser;
@@ -10,6 +12,7 @@ import net.dv8tion.jda.Permission;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.utils.PermissionUtil;
 
+import java.net.ServerSocket;
 import java.util.List;
 
 /**
@@ -19,10 +22,21 @@ public class MuteCommand implements Command {
 
     private UserVoiceMuteContainer c;
     private List<User> users;
+    private String waitResult;
+    private EventListener eventListener;
+
+
+
+    public MuteHandler m;
+
+    public void setWaitResult(String input){
+        this.waitResult = input;
+    }
 
     @Override
-    public boolean called(CommandParser.CommandContainer cmd) {
+    public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
         c = new UserVoiceMuteParser().parse(cmd);
+        this.eventListener = eventListener;
         return true;
     }
 
@@ -41,37 +55,38 @@ public class MuteCommand implements Command {
 
         if (PermissionUtil.checkPermission(Main.jda.getUserById(Main.jda.getSelfInfo().getId()), Permission.VOICE_MUTE_OTHERS, cmd.getEvent().getGuild()) && c!=null) {
             for (int i = 0; i < users.size(); i++) {
-                sb.append("`");
-                sb.append("User: " + users.get(i).getUsername());
+                c.getGuild().getManager().mute(users.get(i));
+                sb.append("Muted " + users.get(i));
                 if (c.getMuteDuration().size() > i) {
                     if (c.getMuteDuration().get(i) > 1) {
-                        sb.append("\nDuration: " + c.getMuteDuration().get(i));
+                        sb.append(" for *" + c.getMuteDuration().get(i) + "* seconds, ");
                     } else {
-                        sb.append("\nDuration: Indefinite");
+                        sb.append(" *indefinitely* ");
                     }
 
                 } else {
-                    sb.append("\nDuration: Indefinite");
+                    sb.append(" *indefinitely* ");
                 }
 
                 if (c.getMuteReasons().size() > i) {
-                    sb.append("\nReason: " + c.getMuteReasons().get(i));
+                    sb.append("for reason: *\"" + c.getMuteReasons().get(i) + "\"*, in ");
                 } else {
-                    sb.append("\nReason: None");
+                    sb.append("*without reason*, in ");
                 }
 
                 if (c.getMutedVoiceChannel().size() > i) {
-                    sb.append("\nVoiceChannel: " + c.getMutedVoiceChannel().get(0).getName());
+                    sb.append("VoiceChannel *" + c.getMutedVoiceChannel().get(0).getName() + "*");
                 } else {
-                    sb.append("\nVoiceChannel: None");
+                    sb.append("*all VoiceChannels*");
                 }
 
-                sb.append("`");
-
-                c.getEvent().getTextChannel().sendMessageAsync(sb.toString(), null);
-
-                sb.delete(0, sb.length());
+                sb.append("\n");
             }
+
+
+            m = new MuteHandler(c, cmd, users);
+            m.register(eventListener);
+            //c.getEvent().getTextChannel().sendMessageAsync(sb.toString(), null);
         }
 
     }
