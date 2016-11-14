@@ -76,4 +76,9 @@ public class DeafenCommand implements Command {
     public void executed(boolean success) {
 
     }
+
+    @Override
+    public void setWaitResult(String input) {
+
+    }
 }
