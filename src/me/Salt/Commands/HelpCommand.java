@@ -1,5 +1,6 @@
 package me.Salt.Commands;
 
+import me.Salt.Handlers.Main;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
@@ -15,7 +16,15 @@ public class HelpCommand implements Command {
 
     @Override
     public void execution(CommandParser.CommandContainer cmd) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Command prefix: \"" + Main.cmdPrefix + "\"\n```");
+        for (String key : Main.commands.keySet()){
+            sb.append("\n" + key);
+        }
 
+        sb.append("```");
+
+        cmd.getEvent().getTextChannel().sendMessageAsync(sb.toString(), null);
     }
 
     @Override
