@@ -2,6 +2,7 @@ package me.Salt.Handlers;
 
 import me.Salt.Commands.*;
 import me.Salt.Commands.Admin.DeafenCommand;
+import me.Salt.Commands.Admin.DescribeCommand;
 import me.Salt.Commands.Admin.MuteCommand;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
@@ -41,6 +42,7 @@ public class Main {
         commands.put("search", new SearchCommand());
         commands.put("eval", new EvalCommand());
         commands.put("help", new HelpCommand());
+        commands.put("describe", new DescribeCommand());
     }
 
     public static void handleCommand(CommandParser.CommandContainer cmd) {
