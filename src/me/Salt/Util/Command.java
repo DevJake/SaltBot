@@ -16,5 +16,4 @@ public interface Command {
     void setWaitResult(String input); //Allows for users to confirm actions. Additional user input is sent back to the waiting object
 
     String help();
-
 }
