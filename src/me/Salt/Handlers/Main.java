@@ -4,6 +4,7 @@ import me.Salt.Commands.Admin.DeafenCommand;
 import me.Salt.Commands.Admin.MuteCommand;
 import me.Salt.Commands.ChangeNameCommand;
 import me.Salt.Commands.Channel.ChannelCommandHandler;
+import me.Salt.Commands.PingCommand;
 import me.Salt.Commands.TestCommand;
 import me.Salt.Commands.statisticsCommand;
 import me.Salt.Listeners.EventListener;
@@ -43,10 +44,11 @@ public class Main {
         commands.put("test", new TestCommand());
         commands.put("channel", new ChannelCommandHandler());
         commands.put("stats", new statisticsCommand());
+        commands.put("ping", new PingCommand());
     }
 
     public static void handleCommand(CommandParser.CommandContainer cmd) {
-        if (commands.containsKey(cmd.getCmd())) {
+        if (commands.containsKey(cmd.getCmd().toLowerCase())) {
             boolean safe = commands.get(cmd.getCmd()).called(cmd, eventListener);
 
             if (safe) {
