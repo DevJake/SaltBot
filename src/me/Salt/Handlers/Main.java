@@ -1,12 +1,9 @@
 package me.Salt.Handlers;
 
+import me.Salt.Commands.*;
 import me.Salt.Commands.Admin.DeafenCommand;
 import me.Salt.Commands.Admin.MuteCommand;
-import me.Salt.Commands.ChangeNameCommand;
 import me.Salt.Commands.Channel.ChannelCommandHandler;
-import me.Salt.Commands.PingCommand;
-import me.Salt.Commands.TestCommand;
-import me.Salt.Commands.statisticsCommand;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
@@ -14,18 +11,17 @@ import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
 
 import javax.security.auth.login.LoginException;
-import java.awt.*;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class Main {
+    public static final Date startTime = new Date();
     public static HashMap<String, Command> commands = new HashMap<>();
     public static String cmdPrefix = ".";
     public static JDA jda;
     public static EventListener eventListener = new EventListener();
-    public static final Date startTime = new Date();
+    public static int TotalMessageCount = 0;
+    public static int BotMessageCount = 0;
 
     public static void main(String[] args) {
         try {
@@ -43,19 +39,20 @@ public class Main {
         commands.put("changename", new ChangeNameCommand());
         commands.put("test", new TestCommand());
         commands.put("channel", new ChannelCommandHandler());
-        commands.put("stats", new statisticsCommand());
+        commands.put("stats", new StatisticsCommand());
         commands.put("ping", new PingCommand());
+        commands.put("search", new SearchCommand());
     }
 
     public static void handleCommand(CommandParser.CommandContainer cmd) {
         if (commands.containsKey(cmd.getCmd().toLowerCase())) {
-            boolean safe = commands.get(cmd.getCmd()).called(cmd, eventListener);
+            boolean safe = commands.get(cmd.getCmd().toLowerCase()).called(cmd, eventListener);
 
             if (safe) {
-                commands.get(cmd.getCmd()).action(cmd);
-                commands.get(cmd.getCmd()).executed(safe);
+                commands.get(cmd.getCmd().toLowerCase()).action(cmd);
+                commands.get(cmd.getCmd().toLowerCase()).executed(safe);
             } else {
-                commands.get(cmd.getCmd()).executed(safe);
+                commands.get(cmd.getCmd().toLowerCase()).executed(safe);
             }
         }
     }
