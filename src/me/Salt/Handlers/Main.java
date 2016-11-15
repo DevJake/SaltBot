@@ -3,7 +3,6 @@ package me.Salt.Handlers;
 import me.Salt.Commands.*;
 import me.Salt.Commands.Admin.DeafenCommand;
 import me.Salt.Commands.Admin.MuteCommand;
-import me.Salt.Commands.Channel.ChannelCommandHandler;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
@@ -37,23 +36,22 @@ public class Main {
         commands.put("mute", new MuteCommand());
         commands.put("deafen", new DeafenCommand());
         commands.put("changename", new ChangeNameCommand());
-        commands.put("test", new TestCommand());
-        commands.put("channel", new ChannelCommandHandler());
         commands.put("stats", new StatisticsCommand());
         commands.put("ping", new PingCommand());
         commands.put("search", new SearchCommand());
         commands.put("eval", new EvalCommand());
+        commands.put("help", new HelpCommand());
     }
 
     public static void handleCommand(CommandParser.CommandContainer cmd) {
         if (commands.containsKey(cmd.getCmd().toLowerCase())) {
-            boolean safe = commands.get(cmd.getCmd().toLowerCase()).called(cmd, eventListener);
+            boolean safe = commands.get(cmd.getCmd().toLowerCase()).preExecution(cmd, eventListener);
 
             if (safe) {
-                commands.get(cmd.getCmd().toLowerCase()).action(cmd);
-                commands.get(cmd.getCmd().toLowerCase()).executed(safe);
+                commands.get(cmd.getCmd().toLowerCase()).execution(cmd);
+                commands.get(cmd.getCmd().toLowerCase()).postExecution(safe);
             } else {
-                commands.get(cmd.getCmd().toLowerCase()).executed(safe);
+                commands.get(cmd.getCmd().toLowerCase()).postExecution(safe);
             }
         }
     }

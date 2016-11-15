@@ -17,12 +17,12 @@ public class DeafenCommand implements Command {
     private final String HELP = "USAGE: " + Main.cmdPrefix + "deafen [Username] [Duration]";
 
     @Override
-    public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
+    public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
         return false;
     }
 
     @Override
-    public void action(CommandParser.CommandContainer cmd) {
+    public void execution(CommandParser.CommandContainer cmd) {
         MessageReceivedEvent event = cmd.getEvent();
         String[] args = cmd.getArgs();
 
@@ -74,7 +74,7 @@ public class DeafenCommand implements Command {
     }
 
     @Override
-    public void executed(boolean success) {
+    public void postExecution(boolean success) {
 
     }
 

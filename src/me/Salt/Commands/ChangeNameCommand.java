@@ -13,7 +13,7 @@ public class ChangeNameCommand implements Command {
     private final String HELP = "USAGE: " + Main.cmdPrefix + "ChangeName [New bot name]";
 
     @Override
-    public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
+    public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
         MessageReceivedEvent event = cmd.getEvent();
         String[] args = cmd.getArgs();
         if (args.length <= 0) {
@@ -29,7 +29,7 @@ public class ChangeNameCommand implements Command {
     }
 
     @Override
-    public void action(CommandParser.CommandContainer cmd) {
+    public void execution(CommandParser.CommandContainer cmd) {
         MessageReceivedEvent event = cmd.getEvent();
         String[] args = cmd.getArgs();
         String oldName = Main.jda.getUserById("203821834108534785").getUsername();
@@ -39,7 +39,7 @@ public class ChangeNameCommand implements Command {
     }
 
     @Override
-    public void executed(boolean success) {
+    public void postExecution(boolean success) {
 
     }
 

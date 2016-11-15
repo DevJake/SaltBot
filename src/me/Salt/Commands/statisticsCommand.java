@@ -12,12 +12,12 @@ import java.util.Date;
  */
 public class StatisticsCommand implements Command {
     @Override
-    public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
+    public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
         return true;
     }
 
     @Override
-    public void action(CommandParser.CommandContainer cmd) {
+    public void execution(CommandParser.CommandContainer cmd) {
         cmd.getEvent().getTextChannel().sendTyping();
         try {
             Thread.sleep(1000);
@@ -35,7 +35,7 @@ public class StatisticsCommand implements Command {
     }
 
     @Override
-    public void executed(boolean success) {
+    public void postExecution(boolean success) {
 
     }
 

@@ -18,12 +18,12 @@ public class SearchCommand implements Command {
     private boolean onlineOnly = false;
 
     @Override
-    public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
+    public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
         return true;
     }
 
     @Override
-    public void action(CommandParser.CommandContainer cmd) {
+    public void execution(CommandParser.CommandContainer cmd) {
 
 
         for (String arg : cmd.getArgs()) {
@@ -96,7 +96,7 @@ public class SearchCommand implements Command {
     }
 
     @Override
-    public void executed(boolean success) {
+    public void postExecution(boolean success) {
 
     }
 

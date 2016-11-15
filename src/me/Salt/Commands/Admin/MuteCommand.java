@@ -30,14 +30,14 @@ public class MuteCommand implements Command {
     }
 
     @Override
-    public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
+    public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
         c = new UserVoiceMuteParser().parse(cmd);
         this.eventListener = eventListener;
         return true;
     }
 
     @Override
-    public void action(CommandParser.CommandContainer cmd) {
+    public void execution(CommandParser.CommandContainer cmd) {
         StringBuilder sb = new StringBuilder();
 
         if (c.getMutedUsers() != null) {
@@ -88,7 +88,7 @@ public class MuteCommand implements Command {
     }
 
     @Override
-    public void executed(boolean success) {
+    public void postExecution(boolean success) {
 
     }
 

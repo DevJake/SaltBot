@@ -7,11 +7,11 @@ import me.Salt.Parser.Command.CommandParser;
  * Created by zuezy on 06/08/2016.
  */
 public interface Command {
-    boolean called(CommandParser.CommandContainer cmd, EventListener eventListener);
+    boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener);
 
-    void action(CommandParser.CommandContainer cmd);
+    void execution(CommandParser.CommandContainer cmd);
 
-    void executed(boolean success);
+    void postExecution(boolean success);
 
     void setWaitResult(String input); //Allows for users to confirm actions. Additional user input is sent back to the waiting object
 
