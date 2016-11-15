@@ -18,12 +18,6 @@ public class StatisticsCommand implements Command {
 
     @Override
     public void execution(CommandParser.CommandContainer cmd) {
-        cmd.getEvent().getTextChannel().sendTyping();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ex){
-            cmd.getEvent().getTextChannel().sendMessageAsync(ex.getMessage(), null);
-        }
 
         cmd.getEvent().getTextChannel().sendMessageAsync("```" +
                 "\nName: " + Main.jda.getSelfInfo().getUsername() + " (ID:" + Main.jda.getSelfInfo().getId() + ")" +
