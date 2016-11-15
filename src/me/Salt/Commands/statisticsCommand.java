@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Created by Salt001 on 14/11/2016.
  */
-public class statisticsCommand implements Command {
+public class StatisticsCommand implements Command {
     @Override
     public boolean called(CommandParser.CommandContainer cmd, EventListener eventListener) {
         return true;
@@ -18,7 +18,20 @@ public class statisticsCommand implements Command {
 
     @Override
     public void action(CommandParser.CommandContainer cmd) {
-        cmd.getEvent().getTextChannel().sendMessageAsync("```\nUptime (Seconds): " + (new Date().getTime() - Main.startTime.getTime())/1000, null);
+        cmd.getEvent().getTextChannel().sendTyping();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex){
+            cmd.getEvent().getTextChannel().sendMessageAsync(ex.getMessage(), null);
+        }
+
+        cmd.getEvent().getTextChannel().sendMessageAsync("```" +
+                "\nName: " + Main.jda.getSelfInfo().getUsername() + " (ID:" + Main.jda.getSelfInfo().getId() + ")" +
+                "\nUptime (Seconds): " + (new Date().getTime() - Main.startTime.getTime())/1000 +
+                "\nGuild count: " + Main.jda.getGuilds().size() +
+                "\nTotal Message count: " + String.valueOf(Main.TotalMessageCount) +
+                "\nUser Message count: " + String.valueOf(Main.TotalMessageCount - Main.BotMessageCount) +
+                "\nBot Message count: " + String.valueOf(Main.BotMessageCount) + "\n```", null);
     }
 
     @Override
