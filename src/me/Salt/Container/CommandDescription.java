@@ -1,13 +1,49 @@
 package me.Salt.Container;
 
-import me.Salt.Parser.Command.CommandParser;
+import java.util.HashMap;
 
 /**
  * Created by Salt001 on 15/11/2016.
  */
 public class CommandDescription {
+    String description;
+    String author;
+    boolean isFinished;
+    boolean supportsPermissions;
+    private HashMap<String, Boolean> parameters;
+    private HashMap<String, Boolean> definers;
 
-    public CommandDescription(CommandParser.CommandContainer cmd){
-
+    public CommandDescription(HashMap<String, Boolean> parameters, HashMap<String, Boolean> definers, String CommandDescription, String author, boolean isFinished, boolean supportsPermissions) {
+        this.parameters = parameters;
+        this.definers = definers;
+        this.description = CommandDescription;
+        this.author = author;
+        this.isFinished = isFinished;
+        this.supportsPermissions = supportsPermissions;
     }
+
+    public HashMap<String, Boolean> getParameters() {
+        return parameters;
+    }
+
+    public HashMap<String, Boolean> getDefiners() {
+        return definers;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public boolean isFinished() {
+        return isFinished;
+    }
+
+    public boolean isSupportsPermissions() {
+        return supportsPermissions;
+    }
+
 }
