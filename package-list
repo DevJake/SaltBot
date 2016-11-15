@@ -1,0 +1,10 @@
+me.Salt.Commands
+me.Salt.Commands.Admin
+me.Salt.Commands.Channel
+me.Salt.Handlers
+me.Salt.Handlers.Logging
+me.Salt.Handlers.MuteHandler
+me.Salt.Listeners
+me.Salt.Parser.Admin.User
+me.Salt.Parser.Command
+me.Salt.Util
