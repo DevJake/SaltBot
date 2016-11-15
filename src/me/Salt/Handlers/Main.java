@@ -42,6 +42,7 @@ public class Main {
         commands.put("stats", new StatisticsCommand());
         commands.put("ping", new PingCommand());
         commands.put("search", new SearchCommand());
+        commands.put("eval", new EvalCommand());
     }
 
     public static void handleCommand(CommandParser.CommandContainer cmd) {
