@@ -13,9 +13,12 @@ public class CommandDescription {
     private HashMap<String, Boolean> parameters;
     private HashMap<String, Boolean> definers;
 
+    private final HashMap<String, Boolean> nullMap = new HashMap<>();
+
     public CommandDescription(HashMap<String, Boolean> parameters, HashMap<String, Boolean> definers, String CommandDescription, String author, boolean isFinished, boolean supportsPermissions) {
-        this.parameters = parameters;
-        this.definers = definers;
+        nullMap.put("", false);
+        this.parameters = parameters==null ? nullMap : parameters;
+        this.definers = definers==null ? nullMap : definers;
         this.description = CommandDescription;
         this.author = author;
         this.isFinished = isFinished;
