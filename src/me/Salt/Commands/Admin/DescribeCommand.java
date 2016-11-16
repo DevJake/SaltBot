@@ -14,27 +14,52 @@ import java.util.Map;
  */
 public class DescribeCommand implements Command {
     private static HashMap<String, CommandDescription> cmdDescs = new HashMap<>();
-    private static HashMap<String, HashMap<String, String>> paramDescs = new HashMap<>();
-
-    private static HashMap<HashMap<String, String>, Boolean> cmdParamMap = new HashMap<>(); //First string is the prefix used, second string is the name and description, boolean is if the parameter is required
-    private static HashMap<String, Boolean> cmdDefinerMap = new HashMap<>();
-
-    private static Map<String, >
 
     @Override
     public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
         return true;
     }
 
-    private HashMap<String, String> temp1(String prefix, String name, String description){
-        HashMap<String, String> temp1 = new HashMap<>();
-        temp1.put(prefix, name + ":" + description);
-        return temp1;
+    private HashMap<String, Boolean> createMap(String[] data, String[] name, String[] description, Boolean[] required){
+        if (data.length+name.length+description.length+required.length==data.length*4) {
+            HashMap<String, Boolean> temp1 = new HashMap<>();
+            for (int i = 0;i<data.length;i++){
+                temp1.put(data[i] + ":" + name[i] + ":" + description[i], required[i]);
+            }
+            return temp1;
+        }
+        return null;
     }
     @Override
     public void execution(CommandParser.CommandContainer cmd) {
 
-        cmdParamMap.put(temp1("u:", "UID", "Specifies the username or ID of a user"), true);
+        cmdDescs.put("mute", new CommandDescription(
+                createMap(
+                        new String[]{"u", "d", "r", "vc"},
+                        new String[]{"UiD", "Duration", "Reason", "VoiceChannel"},
+                        new String[]{"Part of a username or a full UserID", "A timescale in the data format", "A reason for the mute", "Part of a VoiceChannel name or a full VoiceChannelID to apply the mute in"},
+                        new Boolean[]{true, false, false, false}),
+                null,
+                "Allows for the server muting of a user or users, by name, part name, or ID",
+                "Salt001",
+                false,
+                false));
+
+        cmdDescs.put("deafen", new CommandDescription(
+                null,
+                null,
+                "Allows for the server deafening of a user or users, by name, part name, or ID",
+                "Salt001",
+                false,
+                false));
+
+        cmdDescs.put("deafen", new CommandDescription(
+                null,
+                null,
+                "Allows for the server deafening of a user or users, by name, part name, or ID",
+                "Salt001",
+                false,
+                false));
     }
 
     @Override
