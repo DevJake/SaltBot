@@ -4,6 +4,7 @@ import me.Salt.Commands.Admin.DeafenCommand;
 import me.Salt.Commands.Admin.DescribeCommand;
 import me.Salt.Commands.Admin.MuteCommand;
 import me.Salt.Commands.*;
+import me.Salt.Handlers.Games.Alchemy.Alchemy;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
@@ -11,6 +12,8 @@ import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
 
 import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -43,6 +46,12 @@ public class Main {
         commands.put("eval", new EvalCommand());
         commands.put("help", new HelpCommand());
         commands.put("describe", new DescribeCommand());
+
+        try {
+            Alchemy al = new Alchemy();
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void handleCommand(CommandParser.CommandContainer cmd) {
