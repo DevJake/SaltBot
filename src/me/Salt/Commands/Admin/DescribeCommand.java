@@ -7,6 +7,7 @@ import me.Salt.Util.Command;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Map;
  */
 public class DescribeCommand implements Command {
     private static HashMap<String, CommandDescription> cmdDescs = new HashMap<>(); //Stores the command, followed by a CommandDescription
-    private static HashMap<String, List<String>> cmdAlias = new HashMap<>(); 
+    private static HashMap<String, List<String>> cmdAlias = new HashMap<>();
     
     /*
     Stores the command, followed by a List<String> of the aliases. 
