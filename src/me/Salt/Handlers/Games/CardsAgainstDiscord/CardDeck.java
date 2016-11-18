@@ -1,6 +1,7 @@
 package me.Salt.Handlers.Games.CardsAgainstDiscord;
 
-import java.util.ArrayList;
+import me.Salt.Handlers.Games.CardsAgainstDiscord.Util.CardPack;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,10 +18,15 @@ public class CardDeck {
         return blackCards;
     }
 
+    public CardPack getCardPack(){
+        return cardPack;
+    }
+
     private List<String> whiteCards;
     private List<String> blackCards;
+    private CardPack cardPack;
 
-    public CardDeck(String[] whiteCards, String[] blackCards) {
+    public CardDeck(String[] whiteCards, String[] blackCards, CardPack cardPack) {
         this.whiteCards = Arrays.asList(whiteCards);
         this.blackCards = Arrays.asList(blackCards);
     }
