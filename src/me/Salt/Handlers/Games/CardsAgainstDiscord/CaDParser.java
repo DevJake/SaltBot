@@ -9,13 +9,6 @@ public class CaDParser {
 
     public CaDContainer parse(CommandParser.CommandContainer cmd){
 
-        String[] users;
-        for (String arg : cmd.getArgs()){
-
-        }
-
-
-
-        return new CaDContainer(cmd.getEvent().getAuthor(), );
+        return new CaDContainer();
     }
 }
