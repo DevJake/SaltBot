@@ -3,7 +3,7 @@ package me.Salt.Handlers.Games.CardsAgainstDiscord.Util;
 /**
  * Created by Salt001 on 18/11/2016.
  */
-public enum CardPacks {
+public enum CardPack {
     BASE_GAME_1,
     BASE_GAME_1_3,
     BASE_GAME_1_5,
