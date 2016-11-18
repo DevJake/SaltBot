@@ -11,13 +11,13 @@ public class CaHPlayer {
     private User player;
     private List<String> deck;
     private int score;
-    private boolean isTurn;
+    private boolean isCzar;
 
-    public CaHPlayer(User player, List<String> deck, int score, boolean isTurn) {
+    public CaHPlayer(User player, List<String> deck, int score, boolean isCzar) {
         this.player = player;
         this.deck = deck;
         this.score = score;
-        this.isTurn = isTurn;
+        this.isCzar = isCzar;
     }
 
     public User getPlayer() {
@@ -40,8 +40,12 @@ public class CaHPlayer {
         this.score = score;
     }
 
-    public boolean isTurn() {
-        return isTurn;
+    public boolean isCzar() {
+        return isCzar;
+    }
+
+    public void setCzar(boolean czar) {
+        isCzar = czar;
     }
 
     public void setTurn(boolean turn) {
