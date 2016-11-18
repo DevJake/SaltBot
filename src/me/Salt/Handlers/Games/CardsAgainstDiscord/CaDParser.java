@@ -9,7 +9,7 @@ public class CaDParser {
 
     public CaDContainer parse(CommandParser.CommandContainer cmd){
 
-        String[] users = new String[];
+        String[] users;
         for (String arg : cmd.getArgs()){
 
         }

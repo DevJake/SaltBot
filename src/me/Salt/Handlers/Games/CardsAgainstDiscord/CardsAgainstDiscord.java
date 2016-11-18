@@ -11,4 +11,5 @@ public class CardsAgainstDiscord implements Game {
     public CardsAgainstDiscord(CommandParser.CommandContainer cmd){
         this.cad = new CaDParser().parse(cmd);
     }
+
 }

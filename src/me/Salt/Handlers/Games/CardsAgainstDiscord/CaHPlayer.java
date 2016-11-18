@@ -48,8 +48,4 @@ public class CaHPlayer {
         isCzar = czar;
     }
 
-    public void setTurn(boolean turn) {
-        isTurn = turn;
-    }
-
 }
