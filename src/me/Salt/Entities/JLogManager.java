@@ -1,6 +1,7 @@
 package me.Salt.Entities;
 
 import me.Salt.Exceptions.LogNotFoundException;
+import me.Salt.Util.JLogComponent;
 
 import java.util.Date;
 import java.util.List;
@@ -25,4 +26,11 @@ public interface JLogManager {
 
     List<JLog> getLogs(JGuild jGuild, Date beginDate) throws LogNotFoundException;
 
+    List<JLogComponent> getLoggedEvents(JUser jUser);
+
+    List<JLogComponent> getLoggedEvents(JGuild jGuild);
+
+    boolean isLogged(JUser jUser);
+
+    boolean isLogged(JGuild jGuild);
 }
