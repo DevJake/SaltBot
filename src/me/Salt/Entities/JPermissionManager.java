@@ -9,7 +9,17 @@ import java.util.List;
  */
 public interface JPermissionManager {
 
-    void addPermission(JUser jUser, JGuild jGuild);
+    void addPermission(JUser jUser, JGuild jGuild, Permission permission);
+
+    void addPermission(JUser jUser, Permission permission);
+
+    void addPermission(JGuild jGuild, Permission permission);
+
+    void addPermission(JUser jUser, JGuild jGuild, List<Permission> permission);
+
+    void addPermission(JUser jUser, List<Permission> permission);
+
+    void addPermission(JGuild jGuild, List<Permission> permission);
 
     List<Permission> getPermissions(JUser jUser);
 
