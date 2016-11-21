@@ -13,7 +13,7 @@ import java.util.Date;
 public class StatisticsCommand implements Command {
     @Override
     public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
-        return true;
+        return true; //No preExecution checks
     }
 
     @Override
