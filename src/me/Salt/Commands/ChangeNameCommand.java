@@ -3,14 +3,14 @@ package me.Salt.Commands;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
-import me.Salt.Handlers.Main;
+import me.Salt.Handlers.main;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 /**
  * Created by zuezy on 07/08/2016.
  */
 public class ChangeNameCommand implements Command {
-    private final String HELP = "USAGE: " + Main.cmdPrefix + "ChangeName [New bot name]";
+    private final String HELP = "USAGE: " + main.cmdPrefix + "ChangeName [New bot name]";
 
     @Override
     public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
@@ -32,8 +32,8 @@ public class ChangeNameCommand implements Command {
     public void execution(CommandParser.CommandContainer cmd) {
         MessageReceivedEvent event = cmd.getEvent();
         String[] args = cmd.getArgs();
-        String oldName = Main.jda.getUserById("203821834108534785").getUsername();
-        Main.jda.getAccountManager().setNickname(event.getGuild(), args[0]);
+        String oldName = main.jda.getUserById("203821834108534785").getUsername();
+        main.jda.getAccountManager().setNickname(event.getGuild(), args[0]);
         event.getTextChannel().sendMessage(event.getAuthor().getUsername() +
                 " (ID: " + event.getAuthor().getId() + ") changed the name of the bot from \"" + oldName + "\" to \"" + args[0] + "\"");
     }

@@ -1,6 +1,6 @@
 package me.Salt.Listeners;
 
-import me.Salt.Handlers.Main;
+import me.Salt.Handlers.main;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.CommandHandler;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
@@ -30,20 +30,20 @@ public class EventListener extends ListenerAdapter {
     }
 
     private boolean isCmdSafe(String content, Boolean isBot) {
-        return (content.startsWith(Main.cmdPrefix) && !isBot);
+        return (content.startsWith(main.cmdPrefix) && !isBot);
     }
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        Main.TotalMessageCount++;
+        main.TotalMessageCount++;
 
         if (event.getAuthor().isBot()){
-            Main.BotMessageCount++;
+            main.BotMessageCount++;
         }
 
         if (isCmdSafe(event.getMessage().getContent(), event.getMessage().getAuthor().isBot())) {
-            Main.handleCommand(new CommandParser().parse(
-                    event.getMessage().getContent(), event, Main.cmdPrefix));
+            main.handleCommand(new CommandParser().parse(
+                    event.getMessage().getContent(), event, main.cmdPrefix));
         }
     }
 

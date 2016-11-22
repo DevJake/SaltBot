@@ -1,6 +1,6 @@
 package me.Salt.Commands.Admin;
 
-import me.Salt.Handlers.Main;
+import me.Salt.Handlers.main;
 import me.Salt.Handlers.MuteHandler.MuteHandler;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Admin.User.UserVoiceMuteContainer;
@@ -49,7 +49,7 @@ public class MuteCommand implements Command {
             }
         }
 
-        if (PermissionUtil.checkPermission(Main.jda.getUserById(Main.jda.getSelfInfo().getId()), Permission.VOICE_MUTE_OTHERS, cmd.getEvent().getGuild()) && c != null) {
+        if (PermissionUtil.checkPermission(main.jda.getUserById(main.jda.getSelfInfo().getId()), Permission.VOICE_MUTE_OTHERS, cmd.getEvent().getGuild()) && c != null) {
             for (int i = 0; i < users.size(); i++) {
                 c.getGuild().getManager().mute(users.get(i));
                 sb.append("Muted " + users.get(i));

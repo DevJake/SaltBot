@@ -3,7 +3,7 @@ package me.Salt.Commands.Admin;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
-import me.Salt.Handlers.Main;
+import me.Salt.Handlers.main;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.exceptions.PermissionException;
@@ -14,7 +14,7 @@ import java.util.Iterator;
  * Created by zuezy on 06/08/2016.
  */
 public class DeafenCommand implements Command {
-    private final String HELP = "USAGE: " + Main.cmdPrefix + "deafen [Username] [Duration]";
+    private final String HELP = "USAGE: " + main.cmdPrefix + "deafen [Username] [Duration]";
 
     @Override
     public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {

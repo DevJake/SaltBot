@@ -8,16 +8,17 @@ import me.Salt.Handlers.Games.Alchemy.Alchemy;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
+import me.Salt.Util.Config;
 import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
 
 import javax.security.auth.login.LoginException;
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 
-public class Main {
+public class main {
     public static final Date startTime = new Date();
     public static HashMap<String, Command> commands = new HashMap<>();
     public static String cmdPrefix = ".";
@@ -35,6 +36,17 @@ public class Main {
             System.out.println("Login Exception");
         } catch (InterruptedException e) {
             System.out.println("Interrupted Exception");
+        }
+
+        HashMap<File, Boolean> fb = Config.createDefaults();
+        List<File> keySet = new ArrayList<>(fb.keySet());
+        for (File f : keySet) {
+            if (fb.get(f)) {
+                System.out.println("Successfully created default file at: " + f.getPath());
+
+            } else {
+                System.out.println("Couldn't create default file at: " + f.getPath());
+            }
         }
 
         commands.put("mute", new MuteCommand());

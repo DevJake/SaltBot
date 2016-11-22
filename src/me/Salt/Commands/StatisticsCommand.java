@@ -1,6 +1,6 @@
 package me.Salt.Commands;
 
-import me.Salt.Handlers.Main;
+import me.Salt.Handlers.main;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
@@ -20,12 +20,12 @@ public class StatisticsCommand implements Command {
     public void execution(CommandParser.CommandContainer cmd) {
 
         cmd.getEvent().getTextChannel().sendMessageAsync("```" +
-                "\nName: " + Main.jda.getSelfInfo().getUsername() + " (ID:" + Main.jda.getSelfInfo().getId() + ")" +
-                "\nUptime (Seconds): " + (new Date().getTime() - Main.startTime.getTime())/1000 +
-                "\nGuild count: " + Main.jda.getGuilds().size() +
-                "\nTotal Message count: " + String.valueOf(Main.TotalMessageCount) +
-                "\nUser Message count: " + String.valueOf(Main.TotalMessageCount - Main.BotMessageCount) +
-                "\nBot Message count: " + String.valueOf(Main.BotMessageCount) + "\n```", null);
+                "\nName: " + main.jda.getSelfInfo().getUsername() + " (ID:" + main.jda.getSelfInfo().getId() + ")" +
+                "\nUptime (Seconds): " + (new Date().getTime() - main.startTime.getTime())/1000 +
+                "\nGuild count: " + main.jda.getGuilds().size() +
+                "\nTotal Message count: " + String.valueOf(main.TotalMessageCount) +
+                "\nUser Message count: " + String.valueOf(main.TotalMessageCount - main.BotMessageCount) +
+                "\nBot Message count: " + String.valueOf(main.BotMessageCount) + "\n```", null);
     }
 
     @Override

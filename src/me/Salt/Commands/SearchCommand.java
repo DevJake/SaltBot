@@ -1,6 +1,6 @@
 package me.Salt.Commands;
 
-import me.Salt.Handlers.Main;
+import me.Salt.Handlers.main;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
@@ -35,7 +35,7 @@ public class SearchCommand implements Command {
             if (arg.startsWith("u:") && !arg.equalsIgnoreCase("u:")) {
                 arg = arg.replaceFirst("u:", "");
                 String[] args = arg.split(";");
-                List<User> allUsers = new ArrayList<>(Main.jda.getUsers());
+                List<User> allUsers = new ArrayList<>(main.jda.getUsers());
                 for (User u : allUsers) {
                     for (String user : args) {
                         if (u.getUsername().toLowerCase().contains(user.toLowerCase()) || u.getId().equals(u) && !users.contains(u)) {
