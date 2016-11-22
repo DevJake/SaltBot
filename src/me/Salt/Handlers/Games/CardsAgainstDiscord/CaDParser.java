@@ -9,6 +9,6 @@ public class CaDParser {
 
     public CaDContainer parse(CommandParser.CommandContainer cmd){
 
-        return new CaDContainer();
+        return new CaDContainer(null, null, 0, 0, 0, false);
     }
 }
