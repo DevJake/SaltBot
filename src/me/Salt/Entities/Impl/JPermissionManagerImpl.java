@@ -13,7 +13,32 @@ import java.util.List;
 public class JPermissionManagerImpl implements JPermissionManager {
 
     @Override
-    public void addPermission(JUser jUser, JGuild jGuild) {
+    public void addPermission(JUser jUser, JGuild jGuild, Permission permission) {
+
+    }
+
+    @Override
+    public void addPermission(JUser jUser, Permission permission) {
+
+    }
+
+    @Override
+    public void addPermission(JGuild jGuild, Permission permission) {
+
+    }
+
+    @Override
+    public void addPermission(JUser jUser, JGuild jGuild, List<Permission> permission) {
+
+    }
+
+    @Override
+    public void addPermission(JUser jUser, List<Permission> permission) {
+
+    }
+
+    @Override
+    public void addPermission(JGuild jGuild, List<Permission> permission) {
 
     }
 
