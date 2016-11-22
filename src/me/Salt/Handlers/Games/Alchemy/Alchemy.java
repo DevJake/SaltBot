@@ -36,9 +36,10 @@ public class Alchemy {
 
             }
 
-            for (String key : counter.keySet()){
-                System.out.println("Key: " + key + " Value: " + counter.get(key));
-            }
+//            for (String key : counter.keySet()){
+//                System.out.println("Key: " + key + " Value: " + counter.get(key));
+//            }
+
         } finally {
             br.close();
         }
