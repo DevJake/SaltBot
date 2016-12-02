@@ -11,20 +11,18 @@ import net.dv8tion.jda.exceptions.PermissionException;
 import java.util.Iterator;
 
 /**
-A class for handling any Deafen commands. Implements the {@Link Command} interface  
+A class for handling any Deafen commands. Implements the Command interface.
  */
 public class DeafenCommand implements Command {
-    /**
-    Defines the help information presented for the {@DeafenCommand}. 
-    */
+
     private final String HELP = "USAGE: " + main.cmdPrefix + "deafen [Username] [Duration]";
 
     /**
     Manages the pre-execution of the Deafen command. 
-    @param cmd The {@CommandContainer} for the entered command
+    @param cmd The CommandContainer for the entered command
     @param eventListener The event listener that this class was instantiated from
     @return Returns true
-    @see CommandContainer
+    @see CommandParser.CommandContainer
     @see EventListener
     */
     @Override
@@ -33,9 +31,9 @@ public class DeafenCommand implements Command {
     }
 
     /**
-    Handles the core execution code of the Deafen command. 
-    @param cmd The {@CommandContainer} for the entered command
-    @see CommandContainer
+    Handles the core execution code of the Deafen command. CommandContainer
+    @param cmd The CommandContainer for the entered command
+    @see CommandParser.CommandContainer
     */
     @Override
     public void execution(CommandParser.CommandContainer cmd) {
@@ -85,7 +83,7 @@ public class DeafenCommand implements Command {
 
     /**
     Returns the help text
-    @return {@HELP}
+    @return HELP
     */
     @Override
     public String help() {
@@ -93,9 +91,10 @@ public class DeafenCommand implements Command {
     }
     
     /**
-    Handles the post-execution of the {@DeafenCommand}
-    
+    Handles the post-execution of the DeafenCommand
+
     @param success If the pre-execution was successful
+     @see DeafenCommand
     */
     @Override
     public void postExecution(boolean success) {
@@ -107,3 +106,4 @@ public class DeafenCommand implements Command {
 
     }
 }
+vn
