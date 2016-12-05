@@ -18,7 +18,7 @@ public class CaDContainer {
     private int winningScore;
     private int cardsPerPlayer;
     private double roundDelay;
-    private boolean showPack;
+    private boolean showPack; //Show pack the card originates from?
 
     public CaDContainer(CommandParser.CommandContainer cmd, User gameOwner, List<CaHPlayer> players, int winningScore, int cardsPerPlayer, double roundDelay, boolean showPack) {
         this.cmd = cmd;
@@ -62,6 +62,7 @@ public class CaDContainer {
     //TODO: Add 'Flags' setting, so custom game rules can be enabled on game-launch
 
     public CardDeck getDeck(CardPack cardpack) throws NoCardpackException {
+
         //TODO: modify from hardcode to allow users to edit pack contents, such as via a file
         switch (cardpack) {
 
