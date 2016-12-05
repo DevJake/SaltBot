@@ -3,6 +3,7 @@ package me.Salt.Listeners;
 import me.Salt.Handlers.main;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.CommandHandler;
+import net.dv8tion.jda.events.Event;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.events.message.priv.PrivateMessageReceivedEvent;
 import net.dv8tion.jda.events.voice.VoiceJoinEvent;
@@ -16,23 +17,6 @@ import java.util.List;
 public class EventListener extends ListenerAdapter {
 
     //private static FileLogger fl = new FileLogger();
-    private List<CommandHandler> waiters;
-
-    public void register(CommandHandler cmdhandle) {
-        waiters.add(cmdhandle);
-    }
-
-    public boolean unregister(CommandHandler cmdhandle) {
-        if (waiters.contains(cmdhandle)) {
-            waiters.remove(cmdhandle);
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isCmdSafe(String content, Boolean isBot) {
-        return (content.startsWith(main.cmdPrefix) && !isBot);
-    }
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -43,7 +27,7 @@ public class EventListener extends ListenerAdapter {
             main.BotMessageCount++;
         }
 
-        if (isCmdSafe(event.getMessage().getContent(), event.getMessage().getAuthor().isBot())) {
+        if (event.getMessage().getContent().startsWith(main.cmdPrefix) && !(event.getMessage().getAuthor().isBot())) {
             main.handleCommand(new CommandParser().parse(
                     event.getMessage().getContent(), event, main.cmdPrefix));
         }
