@@ -1,4 +1,4 @@
-package me.Salt.Handlers.Games.CardsAgainstDiscord.Exceptions;
+package me.Salt.Entities.Games.CardsAgainstDiscord.Exceptions;
 
 /**
  * Created by Salt001 on 18/11/2016.

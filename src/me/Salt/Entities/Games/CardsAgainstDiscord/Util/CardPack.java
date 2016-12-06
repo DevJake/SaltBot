@@ -1,4 +1,4 @@
-package me.Salt.Handlers.Games.CardsAgainstDiscord.Util;
+package me.Salt.Entities.Games.CardsAgainstDiscord.Util;
 
 /**
  * Created by Salt001 on 18/11/2016.
