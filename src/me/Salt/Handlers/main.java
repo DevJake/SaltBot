@@ -5,7 +5,6 @@ import me.Salt.Commands.Admin.DescribeCommand;
 import me.Salt.Commands.Admin.MuteCommand;
 import me.Salt.Commands.*;
 import me.Salt.Handlers.Games.Alchemy.Alchemy;
-import me.Salt.Handlers.Games.CardsAgainstDiscord.CardsAgainstDiscord;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
@@ -59,7 +58,6 @@ public class main {
         commands.put("eval", new EvalCommand());
         commands.put("help", new HelpCommand());
         commands.put("describe", new DescribeCommand());
-        commands.put("cmd", new CardsAgainstDiscord());
 
         try {
             Alchemy al = new Alchemy();
