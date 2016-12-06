@@ -1,5 +1,8 @@
 package me.Salt.Entities.Impl;
 
+import me.Salt.Entities.Games.CardsAgainstDiscord.Impl.JCaDImpl;
+import me.Salt.Entities.Games.CardsAgainstDiscord.JCaD;
+import me.Salt.Entities.Games.Game;
 import me.Salt.Entities.JCore;
 import me.Salt.Entities.JUser;
 import me.Salt.Handlers.main;
@@ -26,4 +29,11 @@ public class JCoreImpl implements JCore {
     public JUser getJUserById(String ID) {
         return new JUserImpl(main.jda.getUserById(ID));
     }
+
+    @Override
+    public JCaD CaDGame() {
+        return new JCaDImpl();
+    }
+
+
 }

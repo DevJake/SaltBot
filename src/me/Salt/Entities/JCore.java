@@ -1,5 +1,8 @@
 package me.Salt.Entities;
 
+import me.Salt.Entities.Games.CardsAgainstDiscord.JCaD;
+import me.Salt.Entities.Games.Game;
+
 import java.util.List;
 
 /**
@@ -10,4 +13,7 @@ public interface JCore {
     List<JUser> getJUsersByName(String name);
 
     JUser getJUserById(String ID);
+
+    JCaD CaDGame();
+
 }
