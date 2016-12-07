@@ -1,7 +1,6 @@
 package me.Salt.Entities;
 
 import me.Salt.Entities.Games.CardsAgainstDiscord.JCaD;
-import me.Salt.Entities.Games.Game;
 
 import java.util.List;
 

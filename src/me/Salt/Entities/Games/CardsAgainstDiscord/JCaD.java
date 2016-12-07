@@ -1,6 +1,8 @@
 package me.Salt.Entities.Games.CardsAgainstDiscord;
 
+import me.Salt.Entities.Games.CardsAgainstDiscord.Container.JCaDManager;
 import me.Salt.Entities.Games.CardsAgainstDiscord.Exceptions.CaDException;
+import me.Salt.Entities.Games.CardsAgainstDiscord.Util.GameEndType;
 import me.Salt.Parser.Command.CommandParser;
 
 /**
@@ -9,5 +11,9 @@ import me.Salt.Parser.Command.CommandParser;
 public interface JCaD {
 
     void createGame(CommandParser.CommandContainer cmd) throws CaDException;
+
+    void endGame(GameEndType gameEndType);
+
+    JCaDManager getManager();
 }
 

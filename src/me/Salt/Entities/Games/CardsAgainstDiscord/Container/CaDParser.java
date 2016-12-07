@@ -7,8 +7,8 @@ import me.Salt.Parser.Command.CommandParser;
  */
 public class CaDParser {
 
-    public CaDContainer parse(CommandParser.CommandContainer cmd){
+    public JCaDManager parse(CommandParser.CommandContainer cmd){
 
-        return new CaDContainer();
+        return new JCaDManager(cmd, cmd.getEvent().getAuthor(), );
     }
 }

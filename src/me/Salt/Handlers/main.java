@@ -4,6 +4,11 @@ import me.Salt.Commands.Admin.DeafenCommand;
 import me.Salt.Commands.Admin.DescribeCommand;
 import me.Salt.Commands.Admin.MuteCommand;
 import me.Salt.Commands.*;
+import me.Salt.Entities.Games.CardsAgainstDiscord.Impl.JBlackCard;
+import me.Salt.Entities.Games.CardsAgainstDiscord.Impl.JWhiteCard;
+import me.Salt.Entities.Games.CardsAgainstDiscord.JCaD;
+import me.Salt.Entities.Impl.JCoreImpl;
+import me.Salt.Entities.JCore;
 import me.Salt.Handlers.Games.Alchemy.Alchemy;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
@@ -26,8 +31,11 @@ public class main {
     public static EventListener eventListener = new EventListener();
     public static int TotalMessageCount = 0;
     public static int BotMessageCount = 0;
+    public static JCore JCore = new JCoreImpl();
 
     public static void main(String[] args) {
+        JCaD j = JCore.CaDGame();
+        j.getManager().
         try {
             jda = new JDABuilder().setBotToken("MjQ2MzA5NDI1OTAyNjQ5MzQ1.CwZHLw.SDE5mlbpbOm0kjvbjNE3hO7gReI").buildBlocking();
             jda.addEventListener(eventListener);

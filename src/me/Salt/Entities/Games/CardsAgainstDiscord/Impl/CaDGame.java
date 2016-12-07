@@ -1,6 +1,6 @@
 package me.Salt.Entities.Games.CardsAgainstDiscord.Impl;
 
-import me.Salt.Entities.Games.CardsAgainstDiscord.Util.Flags;
+import me.Salt.Entities.Games.CardsAgainstDiscord.Util.Flag;
 import me.Salt.Parser.Command.CommandParser;
 
 import java.util.ArrayList;
@@ -20,14 +20,14 @@ public class CaDGame {
         this.cmd = cmd;
     }
 
-    public List<Flag> getFlags() {
-        List<Flag> flags = new ArrayList<>();
+    public List<me.Salt.Entities.Games.CardsAgainstDiscord.Impl.Flag> getFlags() {
+        List<me.Salt.Entities.Games.CardsAgainstDiscord.Impl.Flag> flags = new ArrayList<>();
         for (int i = 0; i<flag.matcher(cmd.getRaw()).groupCount();i++){
             switch (flag.matcher(cmd.getRaw()).group(i)){
                 case "--inverse":
-                    flags.add(new Flag(Flags.INVERSE));
+                    flags.add(new me.Salt.Entities.Games.CardsAgainstDiscord.Impl.Flag(Flag.INVERSE));
                 case "--showpack":
-                    flags.add(new Flag(Flags.SHOW_PACK));
+                    flags.add(new me.Salt.Entities.Games.CardsAgainstDiscord.Impl.Flag(Flag.SHOW_PACK));
 
             }
         }
