@@ -12,12 +12,12 @@ import java.util.List;
  */
 public class JUserImpl implements JUser {
     private User user;
+    private List<JPerk> perks;
 
-    public void setPerks(List<JPerk> perks) {
-        this.perks = perks;
+    public JUserImpl(User user) {
+        this.user = user;
     }
 
-    private List<JPerk> perks;
     public JUserImpl(User user, List<JPerk> perks) {
         this.user = user;
         this.perks = perks;
@@ -25,6 +25,10 @@ public class JUserImpl implements JUser {
 
     public List<JPerk> getPerks() {
         return perks;
+    }
+
+    public void setPerks(List<JPerk> perks) {
+        this.perks = perks;
     }
 
     @Override

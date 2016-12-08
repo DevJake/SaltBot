@@ -4,12 +4,9 @@ import me.Salt.Commands.Admin.DeafenCommand;
 import me.Salt.Commands.Admin.DescribeCommand;
 import me.Salt.Commands.Admin.MuteCommand;
 import me.Salt.Commands.*;
-import me.Salt.Entities.Games.CardsAgainstDiscord.Impl.JBlackCard;
-import me.Salt.Entities.Games.CardsAgainstDiscord.Impl.JWhiteCard;
-import me.Salt.Entities.Games.CardsAgainstDiscord.JCaD;
-import me.Salt.Entities.Impl.JCoreImpl;
 import me.Salt.Entities.JCore;
-import me.Salt.Handlers.Games.Alchemy.Alchemy;
+import me.Salt.Entities.JCoreBuilder;
+import me.Salt.Handlers.Games.CardsAgainstDiscord.CaD;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
@@ -19,9 +16,10 @@ import net.dv8tion.jda.JDABuilder;
 
 import javax.security.auth.login.LoginException;
 import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 public class main {
     public static final Date startTime = new Date();
@@ -31,11 +29,9 @@ public class main {
     public static EventListener eventListener = new EventListener();
     public static int TotalMessageCount = 0;
     public static int BotMessageCount = 0;
-    public static JCore JCore = new JCoreImpl();
+    public static JCore JCore = new JCoreBuilder().getJCore();
 
     public static void main(String[] args) {
-        JCaD j = JCore.CaDGame();
-        j.getManager().
         try {
             jda = new JDABuilder().setBotToken("MjQ2MzA5NDI1OTAyNjQ5MzQ1.CwZHLw.SDE5mlbpbOm0kjvbjNE3hO7gReI").buildBlocking();
             jda.addEventListener(eventListener);
@@ -66,12 +62,8 @@ public class main {
         commands.put("eval", new EvalCommand());
         commands.put("help", new HelpCommand());
         commands.put("describe", new DescribeCommand());
+        commands.put("cad", new CaD());
 
-        try {
-            Alchemy al = new Alchemy();
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
-        }
     }
 
     public static void handleCommand(CommandParser.CommandContainer cmd) {

@@ -15,20 +15,23 @@ public class JCaDImpl implements JCaD {
     private JCaDManager game;
 
     @Override
-    public void createGame(CommandParser.CommandContainer cmd) throws CaDException {
+    public JCaDManager createGame(CommandParser.CommandContainer cmd) throws CaDException {
         if (!(this.game==null)){
         this.game = new CaDParser().parse(cmd);
     } else {
         throw new CaDException("The game has already been created!");
         }
+
+        return game;
     }
 
     @Override
-    public void endGame(GameEndType gameEndType) {
+    public void endGame(GameEndType gameEndType, JCaDManager game) {
         for (CaDPlayer u : game.getPlayers()){
-            u.getPlayer().getPrivateChannel().sendMessage("The game has finished!")
+            u.getPlayer().getPrivateChannel().sendMessage("The game has finished!");
         }
     }
+
 
     @Override
     public JCaDManager getManager() {

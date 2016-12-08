@@ -34,11 +34,6 @@ public class StatisticsCommand implements Command {
     }
 
     @Override
-    public void setWaitResult(String input) {
-
-    }
-
-    @Override
     public String help() {
         return null;
     }

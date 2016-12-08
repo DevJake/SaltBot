@@ -1,6 +1,5 @@
 package me.Salt.Entities.Games.CardsAgainstDiscord.Impl;
 
-import me.Salt.Entities.Games.CardsAgainstDiscord.JCard;
 import me.Salt.Entities.Games.CardsAgainstDiscord.JCardPack;
 
 import java.util.List;
@@ -10,5 +9,30 @@ import java.util.List;
  */
 public class JCardPackImpl implements JCardPack {
     String name;
-    List<JCard> cards;
+    String description;
+    String author;
+    List<JCardImpl> cards;
+
+    public JCardPackImpl(String name, String description, String author, List<JCardImpl> cards) {
+        this.name = name;
+        this.description = description;
+        this.author = author;
+        this.cards = cards;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public List<JCardImpl> getCards() {
+        return cards;
+    }
 }

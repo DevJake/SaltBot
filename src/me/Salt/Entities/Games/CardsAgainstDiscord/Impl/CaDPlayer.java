@@ -8,8 +8,8 @@ import java.util.List;
 /**
  * Created by 15122390 on 18/11/2016.
  */
-public class CaDPlayer implements User {
-    public CaDPlayer(User player, List<JCard> deck, int score, boolean isCzar) {
+public abstract class CaDPlayer implements User {
+    public CaDPlayer(User player, List<JCardImpl> deck, int score, boolean isCzar) {
         this.player = player;
         this.deck = deck;
         this.score = score;
@@ -20,7 +20,7 @@ public class CaDPlayer implements User {
         return player;
     }
 
-    public List<JCard> getDeck() {
+    public List<JCardImpl> getDeck() {
         return deck;
     }
 
@@ -32,7 +32,7 @@ public class CaDPlayer implements User {
         return isCzar;
     }
 
-    public void setDeck(List<JCard> deck) {
+    public void setDeck(List<JCardImpl> deck) {
         this.deck = deck;
     }
 
@@ -45,7 +45,7 @@ public class CaDPlayer implements User {
     }
 
     private User player;
-    private List<JCard> deck;
+    private List<JCardImpl> deck;
     private int score;
     private boolean isCzar;
 
