@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class CommandParser {
 
     public CommandContainer parse(String raw, MessageReceivedEvent event, String cmdPrefix) {
-        ArrayList<String> split = new ArrayList<String>();
+        ArrayList<String> split = new ArrayList<>();
         String beheaded = raw.replaceFirst(cmdPrefix, "");
         String[] splitBeheaded = beheaded.split(" ");
         for (String s : splitBeheaded) {
