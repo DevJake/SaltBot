@@ -3,7 +3,7 @@ package me.Salt.Commands.Admin;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
-import me.Salt.Handlers.main;
+import me.Salt.Handlers.Main;
 import net.dv8tion.jda.entities.User;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.exceptions.PermissionException;
@@ -15,7 +15,7 @@ A class for handling any Deafen commands. Implements the Command interface.
  */
 public class DeafenCommand implements Command {
 
-    private final String HELP = "USAGE: " + main.cmdPrefix + "deafen [Username] [Duration]";
+    private final String HELP = "USAGE: " + Main.cmdPrefix + "deafen [Username] [Duration]";
 
     /**
     Manages the pre-execution of the Deafen command. 
@@ -101,9 +101,4 @@ public class DeafenCommand implements Command {
 
     }
 
-    @Override
-    public void setWaitResult(String input) {
-
-    }
 }
-vn

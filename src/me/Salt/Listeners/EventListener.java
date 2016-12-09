@@ -1,15 +1,11 @@
 package me.Salt.Listeners;
 
-import me.Salt.Handlers.main;
+import me.Salt.Handlers.Main;
 import me.Salt.Parser.Command.CommandParser;
-import me.Salt.Util.CommandHandler;
-import net.dv8tion.jda.events.Event;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.events.message.priv.PrivateMessageReceivedEvent;
 import net.dv8tion.jda.events.voice.VoiceJoinEvent;
 import net.dv8tion.jda.hooks.ListenerAdapter;
-
-import java.util.List;
 
 /**
  * Created by zuezy on 06/08/2016.
@@ -21,15 +17,15 @@ public class EventListener extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
 
-        main.TotalMessageCount++;
+        Main.TotalMessageCount++;
 
         if (event.getAuthor().isBot()){
-            main.BotMessageCount++;
+            Main.BotMessageCount++;
         }
 
-        if (event.getMessage().getContent().startsWith(main.cmdPrefix) && !(event.getMessage().getAuthor().isBot())) {
-            main.handleCommand(new CommandParser().parse(
-                    event.getMessage().getContent(), event, main.cmdPrefix));
+        if (event.getMessage().getContent().startsWith(Main.cmdPrefix) && !(event.getMessage().getAuthor().isBot())) {
+            Main.handleCommand(new CommandParser().parse(
+                    event.getMessage().getContent(), event, Main.cmdPrefix));
         }
     }
 
