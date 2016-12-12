@@ -1,0 +1,502 @@
+acid rain:rain:smoke
+aeroplane:metal:bird
+alarm clock:sound:clock
+alcohol:time:fruit
+algae:water:plant
+alien:space:life
+allergy:dust:human
+alligator:swamp:lizard
+alpaca:mountain:sheep
+ambulance:hospital:car
+angel:bird:human
+angler:human:fishing rod
+ant:grass:wild animal
+antarctica:desert:snow
+aquarium:water:glass
+archipelago:isle:isle
+armadillo:wild animal:armour
+armour:metal:tool
+ash:energy:volcano
+astronaut:human:moon
+astronaut icecream:astronaut:ice cream
+aurora:antarctica:sun
+atmosphere:air:pressure
+atomic bomb:energy:explosion
+avalanche:energy:snow
+axe:blade:wood
+bacon:fire:pig
+bacteria:swamp:life
+baker:human:bread
+bakery:house:baker
+banana:monkey:fruit
+banana bread:bread:banana
+bandage:blood:fabric
+bank:house:money
+barn:house:livestock
+bat:sky:mouse
+batman:bat:human
+batter:flour:milk
+bayonet:blade:gun
+bbq:campfire:meat
+beach:water:sand
+beaver:wild animal:wood
+bee:flour:wild animal
+beehive:house:bee
+beer:alcohol:wheat
+bicycle:wheel:wheel
+bird:sky:egg
+birdhouse:bird:house
+black hole:star:pressure
+blade:stone:metal
+blizzard:snow:wind
+blood:human:blade
+boat:water:wood
+boiler:metal:steam
+bone:time:corpse
+bonsai tree:scissors:tree
+book:paper:wood
+bread:fire:dough
+brick:fire:mud
+bridge:river:wood
+bullet:gunpowder:metal
+bulletproof vest:armour:bullet
+bus:car:car
+butcher:human:meat
+butter:milk:pressure
+butterfly:flower:wild animal
+cactus:plant:sand
+chocolate egg:chocolate:egg
+cake:dough:candle
+camel:desert:wild animal
+campfire:fire:wood
+candle:fire:wax
+candy cane:sugar:christmas tree
+cannon:gunpowder:pirate ship
+car:metal:wheel
+caramel:fire:sugar
+carbon dioxide:human:oxygen
+cart:wood:wheel
+castle:knight:house
+cat:wild animal:milk
+catnip:cat:plant
+cauldron:witch:fireplace
+caviar:human:fish
+centaur:human:horse
+cereal:milk:wheat
+chain:metal:rope
+chainsaw:electricity:axe
+chameleon:rainbow:lizard
+charcoal:fire:wood
+cheese:time:milk
+cheeseburger:hamburger:cheese
+chicken:bird:livestock
+chicken soup:chicken:water
+chicken wing:chicken:bone
+chimney:house:fireplace
+chocolate:willy wonka:river
+chocolate milk:chocolate:milk
+christmas stocking:fireplace:wool
+christmas tree:light bulb:tree
+cigarette:paper:tobacco
+city:village:village
+clay:mud:sand
+clock:electricity:time
+cloud:air:steam
+coal:plant:pressure
+coconut:palm:fruit
+coconut milk:coconut:tool
+coffin:wood:corpse
+cold:rain:human
+computer:nerd:tool
+computer mouse:computer:mouse
+confetti:paper:blade
+constellation:star:star
+cookie:sugar:dough
+corpse:human:gun
+cotton:cloud:plant
+cotton candy:sugar:electricity
+cow:livestock:grass
+crayon:rainbow:wax
+crow:bird:scarecrow
+crystal ball:glass:witch
+cuckoo:clock:bird
+cyborg:human:robot
+cyclist:human:bicycle
+dam:beaver:river
+darth vader:jedi:fire
+day:sun:time
+desert:sand:sand
+dew:grass:fog
+diamond:coal:pressure
+dinosaur:time:lizard
+doctor:hospital:human
+dog:wild animal:human
+doge:dog:internet
+doghouse:dog:house
+doughnut:dough:oil
+double rainbow:rainbow:rainbow
+dough:water:flour
+dragon:fire:lizard
+drone:aeroplane:robot
+drum:leather:wood
+drunk:human:alcohol
+dry ice:carbon dioxide:cold
+duck:water:bird
+dune:beach:wind
+dust:earth:air
+dynamite:wire:gunpowder
+eagle:mountain:bird
+earthquake:energy:earth
+eclipse:sun:moon
+egg:stone:life
+egg timer:egg:clock
+electric car:electricity:car
+electric eel:electricity:fish
+electrician:electricity:human
+electricity:energy:metal
+email:letter:computer
+energy:fire:air
+engineer:human:tool
+eruption:energy:volcano
+explosion:fire:gunpowder
+excalibur:stone:sword
+Fabric:Thread:Tool
+Family:Human:House
+Family Tree:Family:Tree
+Farmer:Human:Field
+Faun:Human:Goat
+Fence:Wood:Wall
+Field:Earth:Tool
+Fireman:Fire:Human
+Fireplace:Campfire:House
+Firetruck:Sky:Explosion
+Fish:Time:Hard Roe
+Flamethrower:Fire:Gun
+Flashlight:Tool:Light
+Flood:Rain:Rain
+Flour:Stone:Wheat
+Flower:Plant:Garden
+Flute:Wind:Wood
+Flying Fish:Bird:Fish
+Flying Squirrel:Bird:Squirrel
+Fog:Cookie:Paper
+Fossil:Dinosaur:Earth
+Fountain:Statue:Water
+Fox:Chicken:Wild Animal
+French Fries:Oil:Vegetable
+Fridge:Metal:Cold
+Frog:Wild Animal:Pond
+Frozen Yogurt:Cold:Yogurt
+Fruit:Tree:Farmer
+Fruit Tree:Fruit:Tree
+Fun Dip:Sugar:Sand
+Galaxy:Star:Star
+Garden:Plant:Grass
+Gardener:Garden:Human
+Geyser:Earth:Steam
+Ghost:Graveyard:Night
+Gift:Santa:Chimney
+Gingerbread Man:Dough:Life
+Glacier:Ice:Mountain
+Glass:Electricity:Sand
+Glasses:Glass:Metal
+Glasshouse:Plant:Glass
+Goat:Livestock:Mountain
+Godzilla:Dinosaur:City
+Gold:Sun:Metal
+Goldfish:Fish:Cheese
+Gnome:Garden:Statue
+Golem:Life:Clay
+Granite:Lava:Pressure
+Grass:Earth:Plant
+Gravestone:Stone:Grave
+Graveyard:Grave:Grave
+Green House:Plant:Glass
+Grenade:Explosion:Metal
+Grilled Cheese:Cheese:Toast
+Grim Reaper:Scythe:Human
+Guiness Float:Beer:Ice Cream
+Gun:Metal:Bullet
+Gunpowder:Fire:Dust
+Hail:Cloud:Ice
+Ham:Meat:Smoke
+Hamburger:Meat:Bread
+Hammer:Metal:Wood
+Hamster:Wheel :Mouse
+Hard Roe:Water:Egg
+Harp:Angel:Music
+Hay:Scythe:Grass
+Hay Bale:Hay:Hay
+Helicopter:Airplane:Blade
+Hero:Dragon:Knight
+Honey:Hospital:Sickness:House
+Hourglass:Sand:Glass
+House:Brick:Human
+Human:Earth:Life
+Hummingbird:Flower:Bird
+Hurricane:Energy:Wind
+Ice:Water:Cold
+Ice Cream:Cold:Milk
+Ice Cream Truck:Ice Cream:Car
+Iceberg:Sea:Ice
+Iced Tea:Ice:Tea
+Idea:Light Bulb:Human
+Igloo:Ice:House
+Internet:Computer:Computer
+Isle:Volcano:Ocean
+Ivy:Plant:Wall
+Jack-O-Lantern:Fire:Pumpkin
+Jam:Fruit:Sugar
+Jedi:Lightsaber:Human
+Juice:Pressure:Fruit
+Juicy Fruit:Juice:Fruit
+Keyboard Cat:Cat:Music
+Kite:Paper:Wind
+Lamp:Light bulb:Metal
+Lawn Mower:Tool:Grass
+Lava:Fire:Earth
+Lava Lamp:Lava:Lamp
+Leaf:Tree:Wind
+Leather:Blade:Cow
+Lemonade:Water:Fruit
+Letter:Paper:Pencil
+Life:Energy:Swamp
+Light:Electricity:Light bulb
+Light Bulb:Electricity:Glass
+Lighthouse:Light:Ocean
+Lion:Cat:Wild Animal
+Livestock:Life:Farmer
+Lizard:Swamp:Egg
+Log Cabin:Wood:House
+Love:Human:Human
+Lumberjack:Human:Axe
+Mac And Cheese:Cheese:Pasta
+Mailman:Letter:Human
+Manatee:Cow:Sea
+Map:Paper:Earth
+Mars:Rust:Planet
+Marshmallow:Sugar:Campfire
+Mayonnaise:Egg:Oil
+Meat:Tool:Cow
+Medusa:Human:Snake
+Mermaid:Human:Fish
+Metal:Stone:Space
+Milk:Farmer:Cow
+Milk Shake:Milk:Ice Cream
+Milky Way:Milk:Space
+Minotaur:Glass:Metal
+Mold:Bread:Time
+Money:Paper:Gold
+Monkey:Wild Animal:Tree
+Moon:Sky:Cheese
+Moss:Plant:Stone
+Bicycle:Energy
+Mountain:Earthquake:Earth
+Mountain Range:Mountain:Mountain
+Mounds:Chocolate:Coconut
+Mouse:Wild Animal:Cheese
+Mousetrap:Cheese:Wood
+Mud:Water:Earth
+Music:Sound:Human
+Needle:Hay:Metal
+Nerd:Glasses:Human
+Nerds:Sugar:Nerd
+Nest:Bird:Tree
+Newspaper:Paper:Paper
+Night:Time:Moon
+Ninja:Human:Shuriken
+Ninja Turtle:Turtle:Ninja
+Oasis:Water:Desert
+Obsidian:Water:Lava
+Ocean:Water:Sea
+Oil:Sunflower:Pressure
+Omelette:Fire:Egg
+Optical Fiber:Wire:Light
+Orchard:Fruit Tree:Fruit Tree
+Origami:Bird:Paper
+Ostrich:Bird:Earth
+Owl:Night:Bird
+Oxygen:Sun:Plant
+Ozone:Oxygen:Oxygen
+Palm:Isle:Tree
+Paper:Wood:Pressure
+Paper Airplane:Paper:Airplane
+Parachute:Pilot:Fabric
+Parrot:Pirate:Bird
+Pasta:Egg:Flour
+Peacock:Bird:Rainbow
+Peeps:Sugar:Chicken
+Pencil Sharpener:Blade:Pencil
+Pencil:Charcoal:Wood
+Penguin:Ice:Bird
+Phoenix:Fire:Bird
+Picnic:Sandwich:Grass
+Pie:Dough:Fruit
+Pig:Mud:Livestock
+Pigeon:Letter:Bird
+Pilot:Tool:Hay
+Pinocchio:Life:Wood
+Pipe:Wood:Tobacco
+Piranha:Pirate:Boat
+Pirate Ship:Pirate:Boat
+Pizza:Cheese:Dough
+Planet:Earth:Space
+Plankton:Water:Life
+Plant:Rain:Earth
+Platypus:Duck:Beaver
+Pokki:Computer:Squirrel
+Pond:Water:Garden
+Pop Rocks:Stone:Explosion
+Popsicle:Ice:Juice
+Pottery:Fire:Clay
+Pressure:Earth:Earth
+Printer:Computer:Paper
+Prism:Glass:Rainbow
+Pyramid:Desert:Stone
+Quicksand:Sand:Swamp
+Rain:Water:Air
+Rainbow:Sun:Rain
+Rat:Wild Animal:Sailboat
+Red Vines:Sugar:Wire
+Reindeer:Santa:Wild Animal
+Ring:Diamond:Metal
+Ring Pop:Diamond:Sugar
+River:Water:Mountain
+Robot:Metal:Life
+Rocket:Airplane:Space
+Roomba:Robot:Vacuum Cleaner
+Rope:Thread:Thread
+Rose:Love:Plant
+Ruins:Time:Castle
+Ruler:Wood:Pencil
+Rust:Air:Metal
+RV:House:Car
+Sailboat:Human:Boat
+Salt:Sun:Ocean
+Sand:Stone:Air
+Sand Castle:Sand:Castle
+Sandpaper:Sand:Paper
+Sandstone:Energy:Sand
+Sandwich:Bread:Ham
+Santa:Human:Christmas Tree
+Scarecrow:Wild Animal:Dune
+Scythe:Blade:Grass
+Sea:Water:Water
+Seagull:Seal:Dog:Sea
+Seaplane:Sea:Plane
+Seasickness:Sickness:Sea
+Seaweed:Plant:Ocean
+Sewing Machine:Robot:Needle
+Shark:Blood:Ocean
+Sheep:Cloud:Livestock
+Sheet Music:Music:Paper
+Shuriken:Star:Blade
+Sickness:Rain:Human
+Skateboard:Snowboard:Wheel
+Ski Goggles:Snow:Glasses
+Skittles:Rainbow:Sugar
+Sky:Cloud:Air
+Skyscraper:Sky:House
+Sledge:Snow:Cart
+Sloth:Wild Animal:Time
+Smog:Fog:Smoke
+Smoke:Fire:Wood
+Smoothie:Fruit:Blender
+Snake:Wire:Wild Animal
+Snow:Rain:Cold
+Snowball:Human:Snow
+Snowboard:Snow:Wood
+Snow Globe:Snow:Crystal Ball
+Snowman:Snow:Human
+Soap:Ash:Oil
+Solar Cell:Sun:Tool
+Solar System:Sun:Planet
+Sound:Wave:Air
+Space:Star:Sky
+Spaceship:Astronaut:Airplane
+Spider:Wild Animal:Thread
+SpaceStation:House:Space
+Sphinx:Human:Lion
+Sprinkles:Confetti:Sugar
+Squirrel:Mouse:Tree
+Star:Night:Sky
+Starburst:Rocket:Fruit
+Starfish:Star:Fish
+Statue:Stone:Tool
+Steak:Meat:BBQ
+Steam:Water:Fire
+Steam Engine:Boiler:Tool
+Steamboat:Water:Steam Engine
+Steel:Coal:Metal
+Stone:Human:Campfire
+Sugar:Energy:Juice
+Sun:Fire:Sky
+Sundial:Sun:Clock
+Sunflower:Sun:Plant
+Sunglasses:Sun:Glasses
+Super Nova:Star:Explosive
+Surfer:Wave:Human
+Sushi:Seaweed:Caviar
+Swamp:Mud:Plant
+Sweater:Wool:Tool
+Swedish Fish:Fish:Sugar
+Sweethearts:Love:Sugar
+Swim Goggles:Water:Glasses
+Swimmer:Tank:Car:Gun
+Taser:Gun:Electricity
+Tea:Water:Leaf
+Telescope:Sky:Glass
+The One Ring:Thread:Cotton:Tool
+Tide:Moon:Sea
+Time:Sand:Glass
+Titanic:Steamboat:Iceberg
+Toast:Fire:Sandwich
+Tobacco:Fire:Plant
+Tool:Metal:Human
+Toucan:Train:Steel:Steam Engine
+Treasure:Treasure Map:Pirate
+Treasure Map:Pirate:Map
+Tree:Plant:Time
+Treehouse:Tsunami:Earthquake:Ocean
+Tunnel:Engineer:Mountain
+Turtle:Sand:Egg
+Twilight:Day:Night
+Twix:Caramelo:Cookie
+Tyrannosaurus Rex:Meat:Dinosaur
+UFO:Alien:Airplane
+Umbrella:Double Rainbow!:Life
+Vacuum Cleaner:Electricity:Broom
+Vampire:Blood:Human
+Vase:Plant:Pottery
+Vegetable:Fruit:Field
+Village:House:House
+Volcano:Earth:Lava
+Wall:Brick:Brick
+Wand:Watch:Human:Clock
+Waterfall:Mountain:River
+Water Gun:Water:Gun
+Water Lilly:Flower:Pond
+Water Pipe:Water:Pipe
+Wave:Wind:Sea
+Wax:Bee:Beehive
+Web:Spider:Thread
+Werewolf:Wolf:Human
+Wheat:Field:Farmer
+Wheel:Tool:Wood
+Wild Boar:Pig:Wild Animal
+Willy Wonka:Engineer:Sugar
+Wind:Air:Pressure
+Wind Turbine:Windmill:Electricity
+Windmill:Wind:House
+Wine:Alcohol:Fruit
+Wire:Electricity:Metal
+Witch:Wizard:Broom
+Wizard:Human:Energy
+Wolf:Wild Animal:Moon
+Wood:Tree:Tool
+Woodpecker:Bird:Wood
+Wool:Sheep:Tool
+Wrapping Paper:Gift:Paper
+Yoda:Jedi:Swamp
+Yogurt:Bacteria:Milk
+zombie:life:corpse
