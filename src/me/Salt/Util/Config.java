@@ -16,15 +16,10 @@ import java.util.regex.Pattern;
  */
 public class Config { //Config files are written in YAML
 
-    private Pattern p = Pattern.compile("");
     private static File conDir = new File("Data/Config/");
-    private enum ConfigType {
-        SYSTEM,
-        GUILD,
-        USER
-    }
+    private Pattern p = Pattern.compile("");
 
-    public Config(){
+    public Config() {
         HashMap<String, HashMap<String, List<String>>> lookup = new HashMap<>(); //Header, Sub-header, Data-entry (newlines represented as semicolons)
         Pattern comment = Pattern.compile("\\s*+#.+");
         Pattern header = Pattern.compile("(\\w+\\s*+):(.*+)");
@@ -32,10 +27,10 @@ public class Config { //Config files are written in YAML
             BufferedReader in = new BufferedReader(new FileReader(new File("C:\\Users\\jake\\Desktop\\GitHub\\DiscordBot\\src\\me\\Salt\\Util\\test.yml")));
             String read = "";
             String nextLine = in.readLine();
-            while (nextLine!=null){
+            while (nextLine != null) {
                 if (comment.matcher(nextLine).matches()) {
                     read = read + "\n" + nextLine;
-                } else if (header.matcher(nextLine).matches()){
+                } else if (header.matcher(nextLine).matches()) {
                     read = read + "\n" + header.matcher(nextLine).group(1); //TODO: Not working, not sure why. nextLine possibly changing between if-statement and concat to read
                 }
 
@@ -49,23 +44,23 @@ public class Config { //Config files are written in YAML
 
     }
 
-    public static HashMap<File, Boolean> createDefaults(){ //Create default configs, ie system configs
+    public static HashMap<File, Boolean> createDefaults() { //Create default configs, ie system configs
         HashMap<File, Boolean> fb = new HashMap<>();
         HashMap<String, String> dirs = new HashMap<>(); //Extended directory from conDir, then the filename
-            dirs.put("", "System.yml");
+        dirs.put("", "System.yml");
 
         File f;
         f = new File("");
-        for (String key : dirs.keySet()){
+        for (String key : dirs.keySet()) {
             f = new File(conDir + "/" + key);
 
-            if (!f.isDirectory()){
+            if (!f.isDirectory()) {
                 f.mkdirs();
             }
 
             f = new File(conDir + "/" + key, dirs.get(key));
 
-            if (!f.isFile()){
+            if (!f.isFile()) {
                 try {
                     f.createNewFile();
                     fb.put(f, f.isFile());
@@ -79,15 +74,21 @@ public class Config { //Config files are written in YAML
 
     }
 
-    public void createConfig(Guild guild){
+    public void createConfig(Guild guild) {
 
     }
 
-    public void createConfig(Guild guild, User user){
+    public void createConfig(Guild guild, User user) {
 
     }
 
-    public void readConfig(ConfigType configType){
+    public void readConfig(ConfigType configType) {
 
+    }
+
+    private enum ConfigType {
+        SYSTEM,
+        GUILD,
+        USER
     }
 }

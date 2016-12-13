@@ -111,7 +111,7 @@ public class UserVoiceMuteParser {
             } else if (arg.startsWith(prefixes.get(1)) && !(arg.equalsIgnoreCase(prefixes.get(1)))) {
                 arg = arg.replaceFirst(prefixes.get(1), "");
                 String[] reasons = arg.split(";");
-                for (String reason : reasons){
+                for (String reason : reasons) {
                     reason = reason.replaceAll("_", " ");
                 }
 

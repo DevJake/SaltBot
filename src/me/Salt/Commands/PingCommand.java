@@ -15,17 +15,12 @@ public class PingCommand implements Command {
 
     @Override
     public void execution(CommandParser.CommandContainer cmd) {
-            cmd.getEvent().getTextChannel().sendMessageAsync("Pong!", null);
+        cmd.getEvent().getTextChannel().sendMessageAsync("Pong!", null);
 
     }
 
     @Override
     public void postExecution(boolean success) {
-
-    }
-
-    @Override
-    public void setWaitResult(String input) {
 
     }
 

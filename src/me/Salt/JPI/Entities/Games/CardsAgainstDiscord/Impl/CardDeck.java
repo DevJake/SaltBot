@@ -10,6 +10,15 @@ import java.util.List;
  */
 public class CardDeck {
 
+    private List<String> whiteCards;
+    private List<String> blackCards;
+    private CardPack cardPack;
+
+    public CardDeck(String[] whiteCards, String[] blackCards, CardPack cardPack) {
+        this.whiteCards = Arrays.asList(whiteCards);
+        this.blackCards = Arrays.asList(blackCards);
+    }
+
     public List<String> getWhiteCards() {
         return whiteCards;
     }
@@ -18,16 +27,7 @@ public class CardDeck {
         return blackCards;
     }
 
-    public CardPack getCardPack(){
+    public CardPack getCardPack() {
         return cardPack;
-    }
-
-    private List<String> whiteCards;
-    private List<String> blackCards;
-    private CardPack cardPack;
-
-    public CardDeck(String[] whiteCards, String[] blackCards, CardPack cardPack) {
-        this.whiteCards = Arrays.asList(whiteCards);
-        this.blackCards = Arrays.asList(blackCards);
     }
 }

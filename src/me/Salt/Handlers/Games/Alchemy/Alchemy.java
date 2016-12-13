@@ -11,6 +11,12 @@ public class Alchemy {
 
     private static HashMap<String, String> elements = new HashMap<>();
 
+    /**
+     * A constructor for the Alchemy game
+     *
+     * @throws IOException
+     * @throws URISyntaxException
+     */
     public Alchemy() throws IOException, URISyntaxException {
 //        BufferedReader br = new BufferedReader(new FileReader(new File(Alchemy.class.getResource("Elements.txt").toURI())));
 //

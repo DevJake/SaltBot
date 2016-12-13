@@ -9,6 +9,9 @@ import java.util.List;
  * Created by 15122390 on 07/12/2016.
  */
 public class JDeckImpl implements JDeck {
+    private List<JCard> whiteCards;
+    private List<JCard> blackCards;
+
     public JDeckImpl(List<JCard> whiteCards, List<JCard> blackCards) {
         this.whiteCards = whiteCards;
         this.blackCards = blackCards;
@@ -29,7 +32,4 @@ public class JDeckImpl implements JDeck {
     public void setBlackCards(List<JCard> blackCards) {
         this.blackCards = blackCards;
     }
-
-    private List<JCard> whiteCards;
-    private List<JCard> blackCards;
 }

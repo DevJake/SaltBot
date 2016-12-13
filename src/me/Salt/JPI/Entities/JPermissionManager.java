@@ -30,5 +30,4 @@ public interface JPermissionManager {
     void removePermission(JUser jUser, JGuild jGuild);
 
 
-
 }

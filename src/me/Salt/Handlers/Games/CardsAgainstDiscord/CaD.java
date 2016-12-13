@@ -26,9 +26,9 @@ public class CaD implements Command {
         this.eventListener = eventListener;
         this.cmd = cmd;
 
-        switch (cmd.getArgs()[0]){
+        switch (cmd.getArgs()[0]) {
             case "game":
-                switch (cmd.getArgs()[1]){
+                switch (cmd.getArgs()[1]) {
                     case "create": //Create a new game. No current game must be owned.
                     case "start": //Start the game. Stops specific settings (e.g. flags), being modified
                     case "stop": //Stop the current game. Won't give any perks or rewards.
@@ -45,7 +45,8 @@ public class CaD implements Command {
             case "round": //View the current round information
             case "leaderboard": //View leaderboard for current game
             case "flags": //View active flags
-            default: return false;
+            default:
+                return false;
         }
     }
 

@@ -22,12 +22,7 @@ public class MuteCommand implements Command {
     public MuteHandler m;
     private UserVoiceMuteContainer c;
     private List<User> users;
-    private String waitResult;
     private EventListener eventListener;
-
-    public void setWaitResult(String input) {
-        this.waitResult = input;
-    }
 
     @Override
     public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
@@ -50,6 +45,7 @@ public class MuteCommand implements Command {
         }
 
         if (PermissionUtil.checkPermission(Main.jda.getUserById(Main.jda.getSelfInfo().getId()), Permission.VOICE_MUTE_OTHERS, cmd.getEvent().getGuild()) && c != null) {
+            //TODO: Consider changing from #PermissionUtil#checkPermission(), as checkPermission() is outdated
             for (int i = 0; i < users.size(); i++) {
                 c.getGuild().getManager().mute(users.get(i));
                 sb.append("Muted " + users.get(i));

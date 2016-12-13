@@ -18,7 +18,7 @@ public class HelpCommand implements Command {
     public void execution(CommandParser.CommandContainer cmd) {
         StringBuilder sb = new StringBuilder();
         sb.append("Command prefix: \"" + Main.cmdPrefix + "\"\n```");
-        for (String key : Main.commands.keySet()){
+        for (String key : Main.commands.keySet()) {
             sb.append("\n" + key);
         }
 
@@ -29,11 +29,6 @@ public class HelpCommand implements Command {
 
     @Override
     public void postExecution(boolean success) {
-
-    }
-
-    @Override
-    public void setWaitResult(String input) {
 
     }
 

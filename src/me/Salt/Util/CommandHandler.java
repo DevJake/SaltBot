@@ -7,8 +7,24 @@ import net.dv8tion.jda.events.Event;
  * Created by Salt001 on 14/11/2016.
  */
 public interface CommandHandler {
+    /**
+     * Register the class to an EventListener as a desired recipient of events.
+     *
+     * @param eventListener EventListener - The EventListener to register to.
+     */
+    void register(EventListener eventListener);
 
-    void register(EventListener eventListener); //Register to the EventListener as a desired recipient of events
-    void receive(Event event); //Handle incomming data
+    /**
+     * Receive the Event instance
+     *
+     * @param event Event - The Event calling this method
+     */
+    void receive(Event event); //Handle incoming data
+
+    /**
+     * Unregister the class to an EventListener as a desired recipient of events.
+     *
+     * @param eventListener EventListener - The EventListener to register to.
+     */
     void unregister(EventListener eventListener);
 }

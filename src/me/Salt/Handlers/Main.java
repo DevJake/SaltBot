@@ -1,9 +1,9 @@
 package me.Salt.Handlers;
 
-import me.Salt.Commands.*;
 import me.Salt.Commands.Admin.DeafenCommand;
 import me.Salt.Commands.Admin.DescribeCommand;
 import me.Salt.Commands.Admin.MuteCommand;
+import me.Salt.Commands.*;
 import me.Salt.Handlers.Games.CardsAgainstDiscord.CaD;
 import me.Salt.JPI.Entities.JCore;
 import me.Salt.JPI.Entities.JCoreBuilder;
@@ -66,6 +66,13 @@ public class Main {
 
     }
 
+    /**
+     * Calls upon the preExecution method of a class that implements the Command interface.
+     * <p/>
+     * If preExecution returns false, the postExecution method is called, otherwise, execution then postExecution is called.
+     *
+     * @param cmd CommandParser.CommandContainer - The entered command, parsed to a CommandContainer
+     */
     public static void handleCommand(CommandParser.CommandContainer cmd) {
         if (commands.containsKey(cmd.getCmd().toLowerCase())) {
             boolean safe = commands.get(cmd.getCmd().toLowerCase()).preExecution(cmd, eventListener);

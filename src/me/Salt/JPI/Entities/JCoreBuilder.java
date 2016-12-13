@@ -7,10 +7,10 @@ import me.Salt.JPI.Entities.Impl.JCoreImpl;
  */
 public class JCoreBuilder {
 
-    public JCoreBuilder(){
+    public JCoreBuilder() {
     }
 
-    public JCore getJCore(){
+    public JCore getJCore() {
         return new JCoreImpl();
     }
 }

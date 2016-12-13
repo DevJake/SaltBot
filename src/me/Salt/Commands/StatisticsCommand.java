@@ -21,7 +21,7 @@ public class StatisticsCommand implements Command {
 
         cmd.getEvent().getTextChannel().sendMessageAsync("```" +
                 "\nName: " + Main.jda.getSelfInfo().getUsername() + " (ID:" + Main.jda.getSelfInfo().getId() + ")" +
-                "\nUptime (Seconds): " + (new Date().getTime() - Main.startTime.getTime())/1000 +
+                "\nUptime (Seconds): " + (new Date().getTime() - Main.startTime.getTime()) / 1000 +
                 "\nGuild count: " + Main.jda.getGuilds().size() +
                 "\nTotal Message count: " + String.valueOf(Main.TotalMessageCount) +
                 "\nUser Message count: " + String.valueOf(Main.TotalMessageCount - Main.BotMessageCount) +

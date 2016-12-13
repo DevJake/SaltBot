@@ -34,7 +34,9 @@ public interface Command {
      */
     void postExecution(boolean success);
 
-    /**Called upon to provide a string, containing usage information about a command.
+    /**
+     * Called upon to provide a string, containing usage information about a command.
+     *
      * @return String - How to use the command
      */
     String help();

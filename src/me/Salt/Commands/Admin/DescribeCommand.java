@@ -12,8 +12,8 @@ import java.util.List;
  * Created by Salt001 on 15/11/2016.
  */
 public class DescribeCommand implements Command {
-    private static HashMap<String, CommandDescription> cmdDescs = new HashMap<>(); //Stores the command, followed by a CommandDescription
-    private static HashMap<String, List<String>> cmdAlias = new HashMap<>();
+    private static HashMap<String, CommandDescription> cmdDescs = new HashMap<String, CommandDescription>(); //Stores the command, followed by a CommandDescription
+    private static HashMap<String, List<String>> cmdAlias = new HashMap<String, List<String>>();
     
     /*
     Stores the command, followed by a List<String> of the aliases. 
@@ -27,11 +27,22 @@ public class DescribeCommand implements Command {
     each alias as <Alias, Command>. Will create a potentially larger
     HashMap, but will resolve any issues. 
     */
-    
-    private HashMap<String, Boolean> createMap(String[] data, String[] name, String[] description, Boolean[] required){
-        if (data.length+name.length+description.length+required.length==data.length*4) {
-            HashMap<String, Boolean> temp1 = new HashMap<>();
-            for (int i = 0;i<data.length;i++){
+
+    /**
+     * Creates a series of Maps and HashMaps, used for the storage of information about command's and their parameters.
+     * Also stores information on if the parameter is required.
+     * @param data String[] - The command
+     * @param name String[] - The name of the parameter
+     * @param description String[] - A description of the parameter
+     * @param required String[] - If the parameter is required
+     * @return
+     */
+    private HashMap<String, Boolean> createMap(String[] data, String[] name, String[] description, Boolean[] required) {
+        //TODO: MUST redo. Use a custom datatype inheriting an interface instead.
+        // Use interface to allow for set methods to be used, with varying data returned.
+        if (data.length + name.length + description.length + required.length == data.length * 4) {
+            HashMap<String, Boolean> temp1 = new HashMap<String, Boolean>();
+            for (int i = 0; i < data.length; i++) {
                 temp1.put(data[i] + ":" + name[i] + ":" + description[i], required[i]);
             }
             return temp1;
@@ -40,8 +51,8 @@ public class DescribeCommand implements Command {
     }
 
     @Override
-    public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
-        
+    public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) { //TODO: Redo and improve
+
         cmdDescs.put("mute", new CommandDescription(
                 createMap(
                         new String[]{"u", "d", "r", "vc"},
@@ -69,23 +80,18 @@ public class DescribeCommand implements Command {
                 "Salt001",
                 false,
                 false));
-        
+
         return true;
     }
-    
+
     @Override
     public void execution(CommandParser.CommandContainer cmd) {
 
-        
+
     }
 
     @Override
     public void postExecution(boolean success) {
-
-    }
-
-    @Override
-    public void setWaitResult(String input) {
 
     }
 

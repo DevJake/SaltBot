@@ -37,11 +37,6 @@ public class EvalCommand implements Command {
     }
 
     @Override
-    public void setWaitResult(String input) {
-
-    }
-
-    @Override
     public String help() {
         return null;
     }

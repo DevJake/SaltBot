@@ -19,7 +19,7 @@ public class MuteHandler implements CommandHandler {
     private List<User> users;
     private EventListener eventListener;
 
-    public MuteHandler(UserVoiceMuteContainer c, CommandParser.CommandContainer cmd, List<User> users){
+    public MuteHandler(UserVoiceMuteContainer c, CommandParser.CommandContainer cmd, List<User> users) {
         this.c = c;
         this.cmd = cmd;
         this.users = users;
@@ -34,10 +34,10 @@ public class MuteHandler implements CommandHandler {
 
     @Override
     public void receive(Event event) {
-        if (event instanceof VoiceJoinEvent){
+        if (event instanceof VoiceJoinEvent) {
             for (User u : users) {
-                if (((VoiceJoinEvent) event).getUser().getId().equals(u.getId())){
-                    if (!(c.getGuild().getVoiceStatusOfUser(u).isServerMuted())){
+                if (((VoiceJoinEvent) event).getUser().getId().equals(u.getId())) {
+                    if (!(c.getGuild().getVoiceStatusOfUser(u).isServerMuted())) {
                         c.getGuild().getManager().mute(u);
                     }
                 }

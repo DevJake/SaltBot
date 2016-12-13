@@ -19,7 +19,7 @@ public class EventListener extends ListenerAdapter {
 
         Main.TotalMessageCount++;
 
-        if (event.getAuthor().isBot()){
+        if (event.getAuthor().isBot()) {
             Main.BotMessageCount++;
         }
 

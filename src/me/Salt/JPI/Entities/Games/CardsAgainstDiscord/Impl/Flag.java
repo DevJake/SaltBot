@@ -27,10 +27,10 @@ public class Flag {
         }
     }
 
-    private HashMap<me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.Flag, Boolean> getHash(me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.Flag[] flags, Boolean[] val){
+    private HashMap<me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.Flag, Boolean> getHash(me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.Flag[] flags, Boolean[] val) {
         HashMap<me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.Flag, Boolean> hash = new HashMap<>();
-        for (int i = 0;i<flags.length;i++){
-            if (val.length<i){
+        for (int i = 0; i < flags.length; i++) {
+            if (val.length < i) {
                 hash.put(flags[i], val[i]);
             } else {
                 hash.put(flags[i], false); //No matching value defaults to 'false'

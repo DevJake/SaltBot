@@ -13,13 +13,17 @@ import java.util.List;
 public class LoggerEventDistributor {
     private FileLogger fl = new FileLogger();
 
-
     public LoggerEventDistributor(Event event) {
         if (event instanceof MessageReceivedEvent) {
             this.MessageReceivedEvent((MessageReceivedEvent) event);
         }
     }
 
+    /**
+     * Manages the formatting of log entries, where the triggering event is a MessageReceivedEvent instance.
+     *
+     * @param event - MessageReceivedEvent - The event triggering this method.
+     */
     private void MessageReceivedEvent(MessageReceivedEvent event) {
 
         List<Message.Attachment> attachments = event.getMessage().getAttachments();

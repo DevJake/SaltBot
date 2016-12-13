@@ -12,7 +12,7 @@ public class JLogImpl implements JLog {
 
     private class JLogEntryImpl implements JLogEntry {
 
-        private JLogEntryImpl(){
+        private JLogEntryImpl() {
 
         }
 

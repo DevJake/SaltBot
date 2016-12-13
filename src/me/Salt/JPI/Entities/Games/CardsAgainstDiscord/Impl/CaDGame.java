@@ -21,8 +21,8 @@ public class CaDGame {
 
     public List<Flag> getFlags() {
         List<Flag> flags = new ArrayList<>();
-        for (int i = 0; i<flag.matcher(cmd.getRaw()).groupCount();i++){
-            switch (flag.matcher(cmd.getRaw()).group(i)){
+        for (int i = 0; i < flag.matcher(cmd.getRaw()).groupCount(); i++) {
+            switch (flag.matcher(cmd.getRaw()).group(i)) {
                 case "--inverse":
                     flags.add(new Flag(me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.Flag.INVERSE));
                 case "--showpack":

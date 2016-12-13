@@ -1,12 +1,14 @@
 package me.Salt.Commands;
 
 import me.Salt.Handlers.Main;
+import me.Salt.Listeners.*;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 import net.dv8tion.jda.OnlineStatus;
 import net.dv8tion.jda.entities.User;
 
 import java.util.*;
+import java.util.EventListener;
 
 /**
  * Created by Salt001 on 15/11/2016.
@@ -17,7 +19,7 @@ public class SearchCommand implements Command {
     private boolean onlineOnly = false;
 
     @Override
-    public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
+    public boolean preExecution(CommandParser.CommandContainer cmd, me.Salt.Listeners.EventListener eventListener) {
         return true;
     }
 
@@ -99,10 +101,6 @@ public class SearchCommand implements Command {
 
     }
 
-    @Override
-    public void setWaitResult(String input) {
-
-    }
 
     @Override
     public String help() {
