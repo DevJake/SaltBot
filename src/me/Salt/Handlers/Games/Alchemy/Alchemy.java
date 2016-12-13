@@ -14,8 +14,8 @@ public class Alchemy {
     /**
      * A constructor for the Alchemy game
      *
-     * @throws IOException
-     * @throws URISyntaxException
+     * @throws IOException        IOException
+     * @throws URISyntaxException URISyntaxException
      */
     public Alchemy() throws IOException, URISyntaxException {
 //        BufferedReader br = new BufferedReader(new FileReader(new File(Alchemy.class.getResource("Elements.txt").toURI())));

@@ -10,33 +10,17 @@ import net.dv8tion.jda.exceptions.PermissionException;
 
 import java.util.Iterator;
 
-/**
- * A class for handling any Deafen commands. Implements the Command interface.
- */
+
 public class DeafenCommand implements Command {
 
     private final String HELP = "USAGE: " + Main.cmdPrefix + "deafen [Username] [Duration]";
 
-    /**
-     * Manages the pre-execution of the Deafen command.
-     *
-     * @param cmd           The CommandContainer for the entered command
-     * @param eventListener The event listener that this class was instantiated from
-     * @return Returns true
-     * @see CommandParser.CommandContainer
-     * @see EventListener
-     */
+
     @Override
     public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
         return true;
     }
 
-    /**
-     * Handles the core execution code of the Deafen command. CommandContainer
-     *
-     * @param cmd The CommandContainer for the entered command
-     * @see CommandParser.CommandContainer
-     */
     @Override
     public void execution(CommandParser.CommandContainer cmd) { //TODO: Review and improve
         MessageReceivedEvent event = cmd.getEvent();
@@ -83,22 +67,11 @@ public class DeafenCommand implements Command {
         event.getTextChannel().sendMessage("The user, \"" + args[0] + "\", could not be found!\n" + help());
     }
 
-    /**
-     * Returns the help text
-     *
-     * @return HELP
-     */
     @Override
     public String help() {
         return HELP;
     }
 
-    /**
-     * Handles the post-execution of the DeafenCommand
-     *
-     * @param success If the pre-execution was successful
-     * @see DeafenCommand
-     */
     @Override
     public void postExecution(boolean success) {
 

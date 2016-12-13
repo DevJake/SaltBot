@@ -2,7 +2,7 @@ package me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Container;
 
 import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Exceptions.NoCardpackException;
 import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Impl.CaDGame;
-import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Impl.CaHPlayer;
+import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Impl.CaDPlayer;
 import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Impl.CardDeck;
 import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.CardPack;
 import me.Salt.Parser.Command.CommandParser;
@@ -17,19 +17,30 @@ import java.util.List;
 public class CaDContainer {
     private CommandParser.CommandContainer cmd;
     private User gameOwner;
-    private List<CaHPlayer> players;
+    private List<CaDPlayer> players;
     private int winningScore;
     private int cardsPerPlayer;
     private double roundDelay;
     private boolean showPack; //Show pack the card originates from?
 
-    public CaDContainer(CommandParser.CommandContainer cmd, User gameOwner, List<CaHPlayer> players, int winningScore, int cardsPerPlayer, double roundDelay, boolean showPack) {
+    /**
+     * Constructs a new CardsAgainstDiscord game container
+     *
+     * @param cmd            CommandParser.CommandContainer - The command entered by the user
+     * @param gameOwner      User - The owner of the CaD game
+     * @param players        List - A list of players that the game will initially contain
+     * @param winningScore   Integer - The final score required to reach an end-game state
+     * @param cardsPerPlayer Integer - How many white cards each player should have
+     * @param selectionDelay Double - How long to give each player to select a card, before forcefully continuing the round
+     * @param showPack       Boolean - If the cardpack that the current black card originates from should be shown on-screen
+     */
+    public CaDContainer(CommandParser.CommandContainer cmd, User gameOwner, List<CaDPlayer> players, int winningScore, int cardsPerPlayer, double selectionDelay, boolean showPack) {
         this.cmd = cmd;
         this.gameOwner = gameOwner;
         this.players = players;
         this.winningScore = winningScore;
         this.cardsPerPlayer = cardsPerPlayer;
-        this.roundDelay = roundDelay;
+        this.roundDelay = selectionDelay;
         this.showPack = showPack;
     }
 
@@ -41,7 +52,7 @@ public class CaDContainer {
         return gameOwner;
     }
 
-    public List<CaHPlayer> getPlayers() {
+    public List<CaDPlayer> getPlayers() {
         return players;
     }
 

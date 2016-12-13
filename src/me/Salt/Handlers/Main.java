@@ -68,7 +68,6 @@ public class Main {
 
     /**
      * Calls upon the preExecution method of a class that implements the Command interface.
-     * <p/>
      * If preExecution returns false, the postExecution method is called, otherwise, execution then postExecution is called.
      *
      * @param cmd CommandParser.CommandContainer - The entered command, parsed to a CommandContainer

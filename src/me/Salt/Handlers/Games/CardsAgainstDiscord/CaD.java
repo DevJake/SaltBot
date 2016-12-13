@@ -21,6 +21,12 @@ public class CaD implements Command {
     b: boolean - show card pack?
      */
 
+    /*
+     * TODO: initialize(), start(), round(), end(), etc.
+     * TODO: Method for each section of the game's gameplay.
+     */
+
+
     @Override
     public boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener) {
         this.eventListener = eventListener;

@@ -71,7 +71,7 @@ public class FileLogger {
 
     /**
      * Writes an entry to the log, in accordance with the entered data. The data written is dependent on what event
-     * called upon the #write() method, the message to write, and the guild & the user that the data originated from.
+     * called upon the #write() method, the message to write, the source-guild of the message, and the user that the data originated from.
      *
      * @param eventName String - The name of the event calling the method
      * @param message   - String - The message to write to the log

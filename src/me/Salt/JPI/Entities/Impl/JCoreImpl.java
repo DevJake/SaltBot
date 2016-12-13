@@ -1,6 +1,6 @@
 package me.Salt.JPI.Entities.Impl;
 
-import me.Salt.Handlers.main;
+import me.Salt.Handlers.Main;
 import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Impl.JCaDImpl;
 import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.JCaD;
 import me.Salt.JPI.Entities.JCore;
@@ -18,7 +18,7 @@ public class JCoreImpl implements JCore {
     @Override
     public List<JUser> getJUsersByName(String name) {
         List<JUser> jUsers = new ArrayList<>();
-        for (User u : main.jda.getUsersByName(name)) {
+        for (User u : Main.jda.getUsersByName(name)) {
             jUsers.add(new JUserImpl(u));
         }
         return jUsers;
@@ -26,7 +26,7 @@ public class JCoreImpl implements JCore {
 
     @Override
     public JUser getJUserById(String ID) {
-        return new JUserImpl(main.jda.getUserById(ID));
+        return new JUserImpl(Main.jda.getUserById(ID));
     }
 
     @Override
