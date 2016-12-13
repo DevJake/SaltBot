@@ -1,9 +1,8 @@
 package me.Salt.Handlers.Games.Alchemy;
 
-import java.io.*;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.HashMap;
-import java.util.regex.Pattern;
 
 /**
  * Created by Salt001 on 16/11/2016.

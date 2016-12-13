@@ -1,7 +1,6 @@
 package me.Salt.Commands;
 
 import me.Salt.Handlers.Main;
-import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 import net.dv8tion.jda.OnlineStatus;

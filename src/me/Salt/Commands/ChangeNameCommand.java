@@ -1,9 +1,9 @@
 package me.Salt.Commands;
 
+import me.Salt.Handlers.Main;
 import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
-import me.Salt.Handlers.Main;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 /**

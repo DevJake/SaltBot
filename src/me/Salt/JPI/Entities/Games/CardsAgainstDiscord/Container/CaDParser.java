@@ -9,6 +9,6 @@ public class CaDParser {
 
     public JCaDManager parse(CommandParser.CommandContainer cmd){
 
-        return new JCaDManager(cmd, cmd.getEvent().getAuthor(), );
+        return new JCaDManager(cmd, cmd.getEvent().getAuthor(), null, 0, 0, 0, false, null, null); //TODO: Placeholder
     }
 }

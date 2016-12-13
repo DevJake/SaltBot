@@ -15,15 +15,6 @@ public class CommandDescription {
 
     private final HashMap<String, Boolean> nullMap = new HashMap<>();
 
-    /**
-     *
-     * @param parameters HashMap command parameters.
-     * @param definers
-     * @param CommandDescription
-     * @param author
-     * @param isFinished
-     * @param supportsPermissions
-     */
     public CommandDescription(HashMap<String, Boolean> parameters, HashMap<String, Boolean> definers, String CommandDescription, String author, boolean isFinished, boolean supportsPermissions) {
         nullMap.put("", false);
         this.parameters = parameters==null ? nullMap : parameters;
