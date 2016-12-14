@@ -21,6 +21,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * The Main class
+ */
 public class Main {
     public static final Date startTime = new Date();
     public static HashMap<String, Command> commands = new HashMap<>();
@@ -31,6 +34,10 @@ public class Main {
     public static int BotMessageCount = 0;
     public static JCore JCore = new JCoreBuilder().getJCore();
 
+    /**
+     * The #main() method
+     * @param args String[] - The arguments provided when running the application
+     */
     public static void main(String[] args) {
         try {
             jda = new JDABuilder().setBotToken("MjQ2MzA5NDI1OTAyNjQ5MzQ1.CwZHLw.SDE5mlbpbOm0kjvbjNE3hO7gReI").buildBlocking();
@@ -70,7 +77,7 @@ public class Main {
      * Calls upon the preExecution method of a class that implements the Command interface.
      * If preExecution returns false, the postExecution method is called, otherwise, execution then postExecution is called.
      *
-     * @param cmd CommandParser.CommandContainer - The entered command, parsed to a CommandContainer
+     * @param cmd CommandParser.CommandContainer - The command entered by the user, parsed to a CommandContainer
      */
     public static void handleCommand(CommandParser.CommandContainer cmd) {
         if (commands.containsKey(cmd.getCmd().toLowerCase())) {

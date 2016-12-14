@@ -71,4 +71,12 @@ public class CaD implements Command {
     public String help() {
         return null;
     }
+
+    /**
+     * Handles the gameplay, including startup, round-by-round mechanics, and end-game states.
+     * @param cmd
+     */
+    private void init(CommandParser.CommandContainer cmd){
+
+    }
 }
