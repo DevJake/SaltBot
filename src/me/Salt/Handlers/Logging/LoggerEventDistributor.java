@@ -13,6 +13,10 @@ import java.util.List;
 public class LoggerEventDistributor {
     private FileLogger fl = new FileLogger();
 
+    /**
+     *
+     * @param event Event - The Event to use for log entry additions
+     */
     public LoggerEventDistributor(Event event) {
         if (event instanceof MessageReceivedEvent) {
             this.MessageReceivedEvent((MessageReceivedEvent) event);

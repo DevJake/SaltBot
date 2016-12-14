@@ -12,6 +12,7 @@ import java.util.HashMap;
 
 /**
  * Created by Salt001 on 31/10/2016.
+ * Manages the logging of data to according files.
  */
 public class FileLogger {
     private Date now = new Date();

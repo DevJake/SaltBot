@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * Created by Salt001 on 14/11/2016.
+ * Handles the long-term muting of users.
  */
 public class MuteHandler implements CommandHandler {
     private UserVoiceMuteContainer c;

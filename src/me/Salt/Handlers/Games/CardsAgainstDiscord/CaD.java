@@ -7,6 +7,7 @@ import me.Salt.Util.Command;
 
 /**
  * Created by Salt001 on 08/12/2016.
+ * The main class, for the management of the CardsAgainstDiscord game
  */
 public class CaD implements Command {
 
