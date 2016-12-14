@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by 15122390 on 18/11/2016.
+ * Created by Salt001 on 18/11/2016.
  */
 public class CardDeck {
 

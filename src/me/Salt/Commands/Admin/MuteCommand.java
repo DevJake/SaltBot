@@ -15,7 +15,8 @@ import net.dv8tion.jda.utils.PermissionUtil;
 import java.util.List;
 
 /**
- * Created by zuezy on 06/08/2016.
+ * Created by Salt001 on 06/08/2016.
+ * Manages the muting of a user.
  */
 public class MuteCommand implements Command {
 

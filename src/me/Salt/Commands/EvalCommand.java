@@ -8,6 +8,7 @@ import me.Salt.Util.Command;
 
 /**
  * Created by Salt001 on 15/11/2016.
+ * Manages the evaluation of inputted commands, as Java code.
  */
 public class EvalCommand implements Command {
     @Override

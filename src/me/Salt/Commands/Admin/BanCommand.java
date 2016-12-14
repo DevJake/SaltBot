@@ -5,7 +5,8 @@ import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 
 /**
- * Created by zuezy on 03/11/2016.
+ * Created by Salt001 on 03/11/2016.
+ * Manages the banning of a user.
  */
 public class BanCommand implements Command {
 

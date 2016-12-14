@@ -9,6 +9,7 @@ import java.util.Date;
 
 /**
  * Created by Salt001 on 14/11/2016.
+ * Manages the retrieval of bot-statistics.
  */
 public class StatisticsCommand implements Command {
     @Override

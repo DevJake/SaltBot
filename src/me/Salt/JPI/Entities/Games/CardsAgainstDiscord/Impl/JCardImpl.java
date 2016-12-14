@@ -4,7 +4,7 @@ import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.JCard;
 import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.CardType;
 
 /**
- * Created by 15122390 on 07/12/2016.
+ * Created by Salt001 on 07/12/2016.
  */
 public class JCardImpl implements JCard {
     String name;

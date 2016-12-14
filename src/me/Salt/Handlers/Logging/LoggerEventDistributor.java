@@ -8,7 +8,7 @@ import java.util.List;
 
 
 /**
- * Created by zuezy on 01/11/2016.
+ * Created by Salt001 on 01/11/2016.
  */
 public class LoggerEventDistributor {
     private FileLogger fl = new FileLogger();

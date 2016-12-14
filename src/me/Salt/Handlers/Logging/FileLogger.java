@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * Created by zuezy on 31/10/2016.
+ * Created by Salt001 on 31/10/2016.
  */
 public class FileLogger {
     private Date now = new Date();

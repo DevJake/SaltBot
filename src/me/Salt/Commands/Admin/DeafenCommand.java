@@ -10,7 +10,9 @@ import net.dv8tion.jda.exceptions.PermissionException;
 
 import java.util.Iterator;
 
-
+/**
+ * Manages the deafening of a user.
+ */
 public class DeafenCommand implements Command {
 
     private final String HELP = "USAGE: " + Main.cmdPrefix + "deafen [Username] [Duration]";

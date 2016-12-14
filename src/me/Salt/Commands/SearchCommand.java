@@ -12,6 +12,7 @@ import java.util.EventListener;
 
 /**
  * Created by Salt001 on 15/11/2016.
+ * Manages the searching of a user, via username and optionally a guild.
  */
 public class SearchCommand implements Command {
     private List<User> users = new ArrayList<>();

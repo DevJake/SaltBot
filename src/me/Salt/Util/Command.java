@@ -4,7 +4,12 @@ import me.Salt.Listeners.EventListener;
 import me.Salt.Parser.Command.CommandParser;
 
 /**
- * Created by zuezy on 06/08/2016.
+ * Created by Salt001 on 06/08/2016.
+ * Holds the format for a command.
+ * Commands respond to specified user input, and respond in the order of;
+ * 1. preExecution()
+ * 2. execution() (if preExecution returned true)
+ * 3. postExecution()
  */
 public interface Command {
     /**

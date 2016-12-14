@@ -6,6 +6,7 @@ import me.Salt.Util.Command;
 
 /**
  * Created by Salt001 on 15/11/2016.
+ * Manages the pinging (and following response) of the bot.
  */
 public class PingCommand implements Command {
     @Override

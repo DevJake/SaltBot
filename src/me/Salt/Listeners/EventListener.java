@@ -8,7 +8,7 @@ import net.dv8tion.jda.events.voice.VoiceJoinEvent;
 import net.dv8tion.jda.hooks.ListenerAdapter;
 
 /**
- * Created by zuezy on 06/08/2016.
+ * Created by Salt001 on 06/08/2016.
  */
 public class EventListener extends ListenerAdapter {
 

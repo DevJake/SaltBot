@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by Salt001 on 15/11/2016.
+ * Manages the description of a command.
  */
 public class DescribeCommand implements Command {
     private static HashMap<String, CommandDescription> cmdDescs = new HashMap<String, CommandDescription>(); //Stores the command, followed by a CommandDescription

@@ -7,6 +7,7 @@ import me.Salt.Util.Command;
 
 /**
  * Created by Salt001 on 15/11/2016.
+ * Manages the receiving of helpful information about a command's usage.
  */
 public class HelpCommand implements Command {
     @Override

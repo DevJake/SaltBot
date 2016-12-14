@@ -7,7 +7,8 @@ import me.Salt.Util.Command;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 /**
- * Created by zuezy on 07/08/2016.
+ * Created by Salt001 on 07/08/2016.
+ * Manages the changing of the bot's username.
  */
 public class ChangeNameCommand implements Command {
     private final String HELP = "USAGE: " + Main.cmdPrefix + "ChangeName [New bot name]";

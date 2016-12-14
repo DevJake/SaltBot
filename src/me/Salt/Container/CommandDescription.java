@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 /**
  * Created by Salt001 on 15/11/2016.
+ * A custom Datatype for the storing of information relating to a command.
  */
 
 public class CommandDescription {

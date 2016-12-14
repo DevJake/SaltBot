@@ -8,7 +8,7 @@ import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.GameEndType;
 import me.Salt.Parser.Command.CommandParser;
 
 /**
- * Created by 15122390 on 18/11/2016.
+ * Created by Salt001 on 18/11/2016.
  */
 public class JCaDImpl implements JCaD {
 

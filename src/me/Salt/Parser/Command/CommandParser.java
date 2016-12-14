@@ -5,7 +5,7 @@ import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import java.util.ArrayList;
 
 /**
- * Created by zuezy on 06/08/2016.
+ * Created by Salt001 on 06/08/2016.
  */
 public class CommandParser {
 
