@@ -29,8 +29,8 @@ public class JCaDManager {
      * @param cmd            CommandParser.CommandContainer - The command entered by the user
      * @param gameOwner      User - The owner of this CardsAgainstDiscord game instance
      * @param players        List - A list of players to be invited to the game
-     * @param winningScore   Integer - The final score required by a player to win the game
-     * @param cardsPerPlayer Integer - How many white cards each player should be assigned
+     * @param winningScore   int - The final score required by a player to win the game
+     * @param cardsPerPlayer int - How many white cards each player should be assigned
      * @param selectionDelay Double - How long to give each player to select a card, before forcefully continuing the round
      * @param showPack       Boolean - If the cardpack that the current black card originates from should be shown on-screen
      * @param flags          List - A list of flags to be used in this game instance
@@ -55,11 +55,19 @@ public class JCaDManager {
         return banList;
     }
 
+    public void setBanList(List<CaDPlayer> banList) {
+        this.banList = banList;
+    }
+
     /**
      * @return List - A list of flags to be used in this game instance
      */
     public List<JFlagImpl> getFlags() {
         return flags;
+    }
+
+    public void setFlags(List<JFlagImpl> flags) {
+        this.flags = flags;
     }
 
     /**
@@ -83,18 +91,30 @@ public class JCaDManager {
         return players;
     }
 
+    public void setPlayers(List<CaDPlayer> players) {
+        this.players = players;
+    }
+
     /**
-     * @return Integer - The final score required by a player to win the game
+     * @return int - The final score required by a player to win the game
      */
     public int getWinningScore() {
         return winningScore;
     }
 
+    public void setWinningScore(int winningScore) {
+        this.winningScore = winningScore;
+    }
+
     /**
-     * @return Integer - How many white cards each player should be assigned
+     * @return int - How many white cards each player should be assigned
      */
     public int getCardsPerPlayer() {
         return cardsPerPlayer;
+    }
+
+    public void setCardsPerPlayer(int cardsPerPlayer) {
+        this.cardsPerPlayer = cardsPerPlayer;
     }
 
     /**
@@ -102,6 +122,10 @@ public class JCaDManager {
      */
     public double getSelectionDelay() {
         return selectionDelay;
+    }
+
+    public void setSelectionDelay(double selectionDelay) {
+        this.selectionDelay = selectionDelay;
     }
 
     /**
@@ -116,15 +140,6 @@ public class JCaDManager {
      */
     public void setShowPack(boolean showPack) {
         this.showPack = showPack;
-    }
-
-    /**
-     * Invite a player to the current game
-     *
-     * @param player
-     */
-    public void invite(CaDPlayer player) {
-
     }
 
     /**

@@ -4,7 +4,7 @@ import me.Salt.Commands.Admin.DeafenCommand;
 import me.Salt.Commands.Admin.DescribeCommand;
 import me.Salt.Commands.Admin.MuteCommand;
 import me.Salt.Commands.*;
-import me.Salt.Handlers.Games.CardsAgainstDiscord.CaD;
+import me.Salt.Handlers.Games.CardsAgainstDiscord.CaDCommand;
 import me.Salt.JPI.Entities.JCore;
 import me.Salt.JPI.Entities.JCoreBuilder;
 import me.Salt.Listeners.EventListener;
@@ -69,7 +69,7 @@ public class Main {
         commands.put("eval", new EvalCommand());
         commands.put("help", new HelpCommand());
         commands.put("describe", new DescribeCommand());
-        commands.put("cad", new CaD());
+        commands.put("cad", new CaDCommand());
 
     }
 

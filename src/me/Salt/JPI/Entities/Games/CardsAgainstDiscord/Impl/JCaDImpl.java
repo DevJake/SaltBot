@@ -17,7 +17,7 @@ public class JCaDImpl implements JCaD {
     @Override
     public JCaDManager createGame(CommandParser.CommandContainer cmd) throws CaDException {
         if (!(this.game == null)) {
-            this.game = new CaDParser().parse(cmd);
+            this.game = CaDParser.parseGameCreate(cmd);
         } else {
             throw new CaDException("The game has already been created!");
         }

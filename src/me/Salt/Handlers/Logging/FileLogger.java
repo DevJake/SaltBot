@@ -55,7 +55,7 @@ public class FileLogger {
      * When given a string; automatically prepends whitespace characters, in accordance to the value of limit.
      *
      * @param message String - The message to add whitespace characters to.
-     * @param limit   Integer - How many total characters to finish at.
+     * @param limit   int - How many total characters to finish at.
      * @return String message; 'spaced'.
      */
     public String Spacer(String message, int limit) {
