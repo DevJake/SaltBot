@@ -7,6 +7,7 @@ import me.Salt.Parser.Command.CommandParser;
 
 /**
  * Created by Salt001 on 06/12/2016.
+ * An interface for the core of the CardsAgainstDiscord game
  */
 public interface JCaD {
 
@@ -15,6 +16,7 @@ public interface JCaD {
     void endGame(GameEndType gameEndType, JCaDManager game);
 
     JCaDManager getManager();
+
 
 }
 

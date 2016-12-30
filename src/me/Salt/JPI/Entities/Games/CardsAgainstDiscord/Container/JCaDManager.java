@@ -10,7 +10,8 @@ import java.util.List;
 
 /**
  * Created by Salt001 on 18/11/2016.
- * A custom Datatype, for the storage of CardsAgainstDiscord-game-related information
+ * A custom Datatype, for the storage of CardsAgainstDiscord-game-related information.
+ * Stores information about a specific CaD game.
  */
 public class JCaDManager {
     private CommandParser.CommandContainer cmd;

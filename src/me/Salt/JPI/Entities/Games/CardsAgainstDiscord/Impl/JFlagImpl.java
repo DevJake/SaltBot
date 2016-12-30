@@ -14,6 +14,15 @@ public class JFlagImpl implements JFlag {
     HashMap<JFlag, Boolean> stackables;
     Flag flag;
 
+    /**
+     * A constructor for a flag. All flags actions are hardcoded.
+     *
+     * @param name        String - The name of the flag
+     * @param keyword     String - The keyword of the flag
+     * @param description String - A description of the flag
+     * @param stackables  - HashMap - What other flags this flag can and cannot stack with
+     * @param flag        Flag - The enumerated flag that this object represents
+     */
     public JFlagImpl(String name, String keyword, String description, HashMap<JFlag, Boolean> stackables, Flag flag) {
         this.name = name;
         this.keyword = keyword;

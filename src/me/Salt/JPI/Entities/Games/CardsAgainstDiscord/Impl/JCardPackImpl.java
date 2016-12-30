@@ -13,6 +13,14 @@ public class JCardPackImpl implements JCardPack {
     String author;
     List<JCardImpl> cards;
 
+    /**
+     * A cardpack constructor
+     *
+     * @param name        String - The name of the cardpack
+     * @param description String - A description of the cardpack
+     * @param author      String - The cardpack author's name
+     * @param cards       List - The cards in this cardpack
+     */
     public JCardPackImpl(String name, String description, String author, List<JCardImpl> cards) {
         this.name = name;
         this.description = description;

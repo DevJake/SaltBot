@@ -28,9 +28,6 @@ public class MuteHandler implements CommandHandler {
 
     @Override
     public void register(EventListener eventListener) {
-        this.eventListener = eventListener;
-
-        eventListener.register(this);
     }
 
     @Override
@@ -48,6 +45,6 @@ public class MuteHandler implements CommandHandler {
 
     @Override
     public void unregister(EventListener eventListener) {
-        eventListener.unregister(this);
+
     }
 }

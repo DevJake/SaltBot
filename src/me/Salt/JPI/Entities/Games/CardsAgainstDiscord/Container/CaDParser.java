@@ -39,68 +39,69 @@ public class CaDParser {
 -> flags
  */
 
-    public static int parseCpp(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseGameStart(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseGameInvite(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseGameKick(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseGameBan(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseGameCpp(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseGameSetFlag(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parsePlay(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseDeck(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parsePlayers(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseRound(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseLeaderboard(CommandParser.CommandContainer cmd) {
-
-    }
-
-    public static int parseFlags(CommandParser.CommandContainer cmd) {
-
-    }
-
-    /**
-     * Removes the first x amount of arguments from the argument StringArray.
-     * @param cmd CommandParser.CommandContainer - The command to use for argument stripping
-     * @param indent int - How many first arguments to be stripped
-     * @return cmd, with indent first arguments removed
-     */
-    private CommandParser.CommandContainer strip(CommandParser.CommandContainer cmd, int indent) {
-        String raw = Pattern.compile()
-        return new CommandParser().parse();
-    }
+//    public static int parseCpp(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseGameStart(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseGameInvite(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseGameKick(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseGameBan(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseGameCpp(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseGameSetFlag(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parsePlay(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseDeck(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parsePlayers(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseRound(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseLeaderboard(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    public static int parseFlags(CommandParser.CommandContainer cmd) {
+//
+//    }
+//
+//    /**
+//     * Removes the first x amount of arguments from the argument StringArray.
+//     *
+//     * @param cmd    CommandParser.CommandContainer - The command to use for argument stripping
+//     * @param indent int - How many first arguments to be stripped
+//     * @return cmd, with indent first arguments removed
+//     */
+//    private CommandParser.CommandContainer strip(CommandParser.CommandContainer cmd, int indent) {
+//        String raw = Pattern.compile();
+//        return new CommandParser().parse();
+//    }
 
 }
 

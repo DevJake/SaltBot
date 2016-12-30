@@ -14,18 +14,18 @@ import me.Salt.Parser.Command.CommandParser;
 public interface Command {
     /**
      * Runs the first method in a command's operation. preExecution should be used to analyse data required
-     * for the main operation of the command. If any data isn't correct, or present, for the main operation to run,
-     * the main operation can be cancelled by returning false.
-     * If true is returned, the main operation will continue to be run.
+     * for the Main operation of the command. If any data isn't correct, or present, for the Main operation to run,
+     * the Main operation can be cancelled by returning false.
+     * If true is returned, the Main operation will continue to be run.
      *
      * @param cmd           CommandParser.CommandContainer - The command entered by the user, parsed to a CommandContainer.
      * @param eventListener EventListener - The EventListener that called upon the preExecution method of this class.
-     * @return Boolean - If the main operation should be run.
+     * @return Boolean - If the Main operation should be run.
      */
     boolean preExecution(CommandParser.CommandContainer cmd, EventListener eventListener);
 
     /**
-     * The main code of the command should be placed here. If preExecution returned true, this method shall be called upon.
+     * The Main code of the command should be placed here. If preExecution returned true, this method shall be called upon.
      *
      * @param cmd CommandParser.CommandContainer - The command entered by the user, parsed to a CommandContainer.
      */

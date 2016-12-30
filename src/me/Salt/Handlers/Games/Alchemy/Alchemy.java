@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 /**
  * Created by Salt001 on 16/11/2016.
- * The main class, for the management of the Alchemy game
+ * The Main class, for the management of the Alchemy game
  */
 public class Alchemy {
 

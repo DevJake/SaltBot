@@ -12,6 +12,12 @@ public class JDeckImpl implements JDeck {
     private List<JCard> whiteCards;
     private List<JCard> blackCards;
 
+    /**
+     * A constructor for a card deck
+     *
+     * @param whiteCards List - The white cards in the deck
+     * @param blackCards List - The black cards in the deck
+     */
     public JDeckImpl(List<JCard> whiteCards, List<JCard> blackCards) {
         this.whiteCards = whiteCards;
         this.blackCards = blackCards;

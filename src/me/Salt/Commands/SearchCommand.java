@@ -1,14 +1,15 @@
 package me.Salt.Commands;
 
 import me.Salt.Handlers.Main;
-import me.Salt.Listeners.*;
 import me.Salt.Parser.Command.CommandParser;
 import me.Salt.Util.Command;
 import net.dv8tion.jda.OnlineStatus;
 import net.dv8tion.jda.entities.User;
 
-import java.util.*;
-import java.util.EventListener;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Salt001 on 15/11/2016.

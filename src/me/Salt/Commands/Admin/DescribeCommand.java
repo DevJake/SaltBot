@@ -32,10 +32,11 @@ public class DescribeCommand implements Command {
     /**
      * Creates a series of Maps and HashMaps, used for the storage of information about command's and their parameters.
      * Also stores information on if the parameter is required.
-     * @param data String[] - The command
-     * @param name String[] - The name of the parameter
+     *
+     * @param data        String[] - The command
+     * @param name        String[] - The name of the parameter
      * @param description String[] - A description of the parameter
-     * @param required String[] - If the parameter is required
+     * @param required    String[] - If the parameter is required
      * @return
      */
     private HashMap<String, Boolean> createMap(String[] data, String[] name, String[] description, Boolean[] required) {

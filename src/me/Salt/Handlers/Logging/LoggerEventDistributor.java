@@ -14,7 +14,6 @@ public class LoggerEventDistributor {
     private FileLogger fl = new FileLogger();
 
     /**
-     *
      * @param event Event - The Event to use for log entry additions
      */
     public LoggerEventDistributor(Event event) {

@@ -5,6 +5,7 @@ import me.Salt.Commands.Admin.DescribeCommand;
 import me.Salt.Commands.Admin.MuteCommand;
 import me.Salt.Commands.*;
 import me.Salt.Handlers.Games.CardsAgainstDiscord.CaDCommand;
+import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Container.CaDInfo;
 import me.Salt.JPI.Entities.JCore;
 import me.Salt.JPI.Entities.JCoreBuilder;
 import me.Salt.Listeners.EventListener;
@@ -32,13 +33,15 @@ public class Main {
     public static EventListener eventListener = new EventListener();
     public static int TotalMessageCount = 0;
     public static int BotMessageCount = 0;
-    public static JCore JCore = new JCoreBuilder().getJCore();
+    public static JCore jCore = new JCoreBuilder().getJCore();
 
     /**
-     * The #main() method
+     * The #Main() method
+     *
      * @param args String[] - The arguments provided when running the application
      */
     public static void main(String[] args) {
+        CaDInfo.init(); //Calls upon the CardsAgainstDiscord initializer
         try {
             jda = new JDABuilder().setBotToken("MjQ2MzA5NDI1OTAyNjQ5MzQ1.CwZHLw.SDE5mlbpbOm0kjvbjNE3hO7gReI").buildBlocking();
             jda.addEventListener(eventListener);

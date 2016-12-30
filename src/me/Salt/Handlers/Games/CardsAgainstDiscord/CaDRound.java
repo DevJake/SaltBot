@@ -12,16 +12,13 @@ public class CaDRound {
 
     /**
      * A constructor, for gathering all necessary information for further operation
+     *
      * @param JCaD JCaDManager - A CardsAgainstDiscord JCaDManager instance
      */
     public CaDRound(JCaDManager JCaD) {
         this.jCaD = JCaD;
     }
 
-    /**
-     *
-     * @throws CaDException
-     */
     public void nextRound() throws CaDException {
 
     }

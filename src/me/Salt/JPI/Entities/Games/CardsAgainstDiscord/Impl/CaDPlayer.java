@@ -13,6 +13,14 @@ public abstract class CaDPlayer implements User {
     private int score;
     private boolean isCzar;
 
+    /**
+     * A constructor for the CaDPlayer class
+     *
+     * @param player User - The user who is now a player
+     * @param deck   List - The player's deck
+     * @param score  Integer - Their starting score
+     * @param isCzar Boolean - If they are the current Card Czar of this round
+     */
     public CaDPlayer(User player, List<JCardImpl> deck, int score, boolean isCzar) {
         this.player = player;
         this.deck = deck;

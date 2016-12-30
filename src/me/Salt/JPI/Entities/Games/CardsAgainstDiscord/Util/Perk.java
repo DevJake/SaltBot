@@ -2,6 +2,7 @@ package me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util;
 
 /**
  * Created by Salt001 on 07/12/2016.
+ * An Enum of the different available default perks
  */
 public enum Perk {
     RANDOM_CARD_TRADE,

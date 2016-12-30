@@ -14,6 +14,14 @@ public class JPerkImpl implements JPerk {
     Perk perk;
     HashMap<Perk, Boolean> stackables;
 
+    /**
+     * A constructor for a perk. All perk actions are hardcoded.
+     *
+     * @param name        String - The name of the perk
+     * @param description String - A description of the perk
+     * @param perk        Perk - The enumerated perk that this class handles
+     * @param stackables  HashMap - A HashMap of which perks this perk can and cannot stack with
+     */
     public JPerkImpl(String name, String description, Perk perk, HashMap<Perk, Boolean> stackables) {
         this.name = name;
         this.description = description;

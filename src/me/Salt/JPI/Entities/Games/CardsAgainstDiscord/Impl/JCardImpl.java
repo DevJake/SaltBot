@@ -7,32 +7,31 @@ import me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util.CardType;
  * Created by Salt001 on 07/12/2016.
  */
 public class JCardImpl implements JCard {
-    String name;
-    String description;
-    JCardPackImpl cardpack;
+    String text;
     CardType cardType;
 
-    public JCardImpl(String name, String description, JCardPackImpl cardpack, CardType cardType) {
-        this.name = name;
-        this.description = description;
-        this.cardpack = cardpack;
+    /**
+     * A card constructor for WHITE cards
+     *
+     * @param text     String - The card's text
+     * @param cardType CardType - What type of card it is
+     */
+    public JCardImpl(String text, CardType cardType) {
+        this.text = text;
         this.cardType = cardType;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public JCardPackImpl getCardpack() {
-        return cardpack;
-    }
-
+    /**
+     * @return CardType - The card type
+     */
     public CardType getCardType() {
         return cardType;
     }
 
+    /**
+     * @return String - The text on the card
+     */
+    public String getText() {
+        return text;
+    }
 }

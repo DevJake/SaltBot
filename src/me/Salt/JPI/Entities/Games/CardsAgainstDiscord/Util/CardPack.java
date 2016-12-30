@@ -2,6 +2,7 @@ package me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Util;
 
 /**
  * Created by Salt001 on 18/11/2016.
+ * An Enum of the different available default cardpacks
  */
 public enum CardPack {
     BASE_GAME_1,

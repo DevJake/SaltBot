@@ -2,7 +2,7 @@ package me.Salt.JPI.Entities.Games.CardsAgainstDiscord.Exceptions;
 
 /**
  * Created by Salt001 on 06/12/2016.
- * An exception, unique to CardsAgainstDiscord.
+ * A generic exception, unique to CardsAgainstDiscord.
  */
 public class CaDException extends Exception {
 
